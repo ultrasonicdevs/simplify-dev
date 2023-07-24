@@ -1,5 +1,5 @@
 {
-  "name": "simplify",
+  "name": "samplify-dev",
   "version": "0.0.1-a",
   "description": "",
   "type": "module",
@@ -23,8 +23,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michail Panfilov <mic.panfil0v@gmail.com>",
-  "license": "ISC",
-  "repository": "https://github.com/continuousburnout/miigaik-ui.git",
+  "license": "MIT",
+  "repository": "https://github.com/ultrasonicdevs/samplify-dev.git",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
