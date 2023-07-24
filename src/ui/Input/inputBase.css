@@ -1,0 +1,5 @@
+@layer base {
+  input {
+    @apply bg-transparent outline-none outline-offset-0 text-fs-inp mx-mx-inp my-my-inp;
+  }
+}

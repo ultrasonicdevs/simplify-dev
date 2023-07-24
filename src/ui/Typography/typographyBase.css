@@ -1,0 +1,29 @@
+@layer base {
+  h1 {
+    @apply font-fw-h1 text-col-h1 text-fs-h1;
+  }
+  h2 {
+    @apply font-fw-h2 text-col-h2 text-fs-h2;
+  }
+  h3 {
+    @apply font-fw-h3 text-col-h3 text-fs-h3;
+  }
+  h4 {
+    @apply font-fw-h4 text-col-h4 text-fs-h4;
+  }
+  h5 {
+    @apply font-fw-h5 text-col-h5 text-fs-h5;
+  }
+  h6 {
+    @apply font-fw-h6 text-col-h6 text-fs-h6;
+  }
+  p {
+    @apply font-fw-p text-col-p text-fs-p
+  }
+  span {
+    @apply font-fw-span text-col-span text-fs-span
+  }
+  label {
+    @apply font-fw-label text-col-label text-fs-label
+  }
+}
