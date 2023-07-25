@@ -59,61 +59,61 @@ export const BoxVariants: BoxStory = {
   render: (args) => (
     <Box className="flex flex-col gap-[10px]">
       <Box className="flex gap-[10px]">
-        <Box className="bg-grey-200" rounded="none" padding="none">
+        <Box className="bg-sky-300" rounded="none" padding="none">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="sm" padding="none">
+        <Box className="bg-sky-300" rounded="sm" padding="none">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="md" padding="none">
+        <Box className="bg-sky-300" rounded="md" padding="none">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="lg" padding="none">
-          {args.children}
-        </Box>
-      </Box>
-
-      <Box className="flex gap-[10px]">
-        <Box className="bg-grey-200" rounded="none" padding="sm">
-          {args.children}
-        </Box>
-        <Box className="bg-grey-200" rounded="sm" padding="sm">
-          {args.children}
-        </Box>
-        <Box className="bg-grey-200" rounded="md" padding="sm">
-          {args.children}
-        </Box>
-        <Box className="bg-grey-200" rounded="lg" padding="sm">
+        <Box className="bg-sky-300" rounded="lg" padding="none">
           {args.children}
         </Box>
       </Box>
 
       <Box className="flex gap-[10px]">
-        <Box className="bg-grey-200" rounded="none" padding="md">
+        <Box className="bg-sky-300" rounded="none" padding="sm">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="sm" padding="md">
+        <Box className="bg-sky-300" rounded="sm" padding="sm">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="md" padding="md">
+        <Box className="bg-sky-300" rounded="md" padding="sm">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="lg" padding="md">
+        <Box className="bg-sky-300" rounded="lg" padding="sm">
           {args.children}
         </Box>
       </Box>
 
       <Box className="flex gap-[10px]">
-        <Box className="bg-grey-200" rounded="none" padding="lg">
+        <Box className="bg-sky-300" rounded="none" padding="md">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="sm" padding="lg">
+        <Box className="bg-sky-300" rounded="sm" padding="md">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="md" padding="lg">
+        <Box className="bg-sky-300" rounded="md" padding="md">
           {args.children}
         </Box>
-        <Box className="bg-grey-200" rounded="lg" padding="lg">
+        <Box className="bg-sky-300" rounded="lg" padding="md">
+          {args.children}
+        </Box>
+      </Box>
+
+      <Box className="flex gap-[10px]">
+        <Box className="bg-sky-300" rounded="none" padding="lg">
+          {args.children}
+        </Box>
+        <Box className="bg-sky-300" rounded="sm" padding="lg">
+          {args.children}
+        </Box>
+        <Box className="bg-sky-300" rounded="md" padding="lg">
+          {args.children}
+        </Box>
+        <Box className="bg-sky-300" rounded="lg" padding="lg">
           {args.children}
         </Box>
       </Box>

@@ -6,10 +6,11 @@ import loaderIcon from './loader.svg'
 import Box from 'ui/Box/Box'
 import { FC } from 'react'
 
-export interface LoaderProps extends VariantProps<typeof loaderVariants>, PolymorphProps<'div'> {
-  rounded: never
-  padding: never
-}
+export type LoaderProps = VariantProps<typeof loaderVariants> &
+  PolymorphProps<'div'> & {
+    rounded: never
+    padding: never
+  }
 
 const Loader: FC<LoaderProps> = ({ size, className, ...props }) => {
   return (
