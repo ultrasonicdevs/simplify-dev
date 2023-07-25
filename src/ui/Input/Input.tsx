@@ -14,7 +14,7 @@ export enum InputTypeVariants {
   time,
 }
 
-interface InputProps extends PolymorphProps<'input'> {
+export type InputProps = PolymorphProps<'input'> & {
   type?: keyof typeof InputTypeVariants
   children?: never
 }

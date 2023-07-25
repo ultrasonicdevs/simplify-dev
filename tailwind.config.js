@@ -52,25 +52,6 @@ module.exports = {
         ...BoxPadding,
       },
       colors: {
-        // base
-        dark: {
-          '500': '#303030',
-        },
-        grey: {
-          '200': '#E0E0E0',
-          '500': '#30303099',
-        },
-        red: {
-          '100': '#ffdddd',
-          '200': '#ffbbbb',
-          '300': '#ff9999',
-          '400': '#ff7777',
-          '500': '#ff5555',
-          '600': '#cc4444',
-          '700': '#993333',
-          '800': '#662222',
-          '900': '#331111',
-        },
         //components tw constants
         ...TextButtonBackgroundColors,
         ...ButtonBackgroundColors,

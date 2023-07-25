@@ -35,11 +35,6 @@ const meta: Meta<typeof Button> = {
       defaultValue: { summary: false },
       control: 'boolean',
     },
-    disabled: {
-      description: '**Button HTML disabled status**',
-      defaultValue: { summary: false },
-      control: 'boolean',
-    },
   },
 }
 

@@ -1,25 +1,35 @@
-import { ComponentPropsWithRef, ElementType, forwardRef, ReactNode, Ref } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  PropsWithChildren,
+} from 'react'
 
 const defaultElement = 'div' as const
 
-type ExcludeDuplicateKeys<E, D> = E & Omit<D, keyof E>
-
-export type PolymorphProps<T extends ElementType> = ExcludeDuplicateKeys<
-  PolymorphOwnProps<T>,
-  ComponentPropsWithRef<T>
->
-type PolymorphRef<R extends HTMLElement = HTMLElement> = Ref<R>
-interface PolymorphOwnProps<T extends ElementType> {
-  as?: T
-  className?: string
-  children?: ReactNode
+type AsProp<C extends ElementType> = {
+  as?: C
 }
 
+type PolymorphicPropsWithoutRef<C extends ElementType, P = {}> = PropsWithChildren<P> &
+  AsProp<C> &
+  ComponentPropsWithoutRef<C>
+
+type PolymorphicComponentPropWithRef<
+  C extends ElementType,
+  Props = {},
+> = PolymorphicPropsWithoutRef<C, Props> & { ref?: PolymorphicRef<C> }
+
+export type PolymorphProps<C extends ElementType, Props = {}> =
+  | PolymorphicPropsWithoutRef<C>
+  | PolymorphicComponentPropWithRef<C, Props>
+
+// This is the type for the "ref" only
+export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref']
+
 const Polymorph = forwardRef(
-  <T extends ElementType, R extends HTMLElement = HTMLElement>(
-    props: PolymorphProps<T>,
-    ref: PolymorphRef<R>,
-  ) => {
+  <T extends ElementType>(props: PolymorphProps<T>, ref: PolymorphicRef<T>) => {
     const { as = defaultElement, children, ...otherProps } = props
     const PolymorphElement = as as ElementType
 

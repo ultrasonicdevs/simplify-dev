@@ -13,7 +13,7 @@ enum BoxAsVariants {
   ol,
 }
 
-interface BoxProps extends PolymorphProps<keyof typeof BoxAsVariants> {
+export type BoxProps = PolymorphProps<keyof typeof BoxAsVariants> & {
   padding?: 'none' | 'sm' | 'md' | 'lg'
   rounded?: 'none' | 'sm' | 'md' | 'lg'
 }
