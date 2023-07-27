@@ -4,9 +4,9 @@ module.exports = {
   content: ['./src/**/*.{ts,tsx,js,jsx}', './stories/**/*.{ts,tsx,js,jsx}'],
   theme: {
     extend: {
-        fontFamily: {
-          serif: '"Inter", sans-serif',
-        },
+      fontFamily: {
+        sans: '"Inter", sans-serif',
+      },
     }
   },
 }

@@ -59,6 +59,6 @@
   }
 
   * {
-    font-family: "Inter",sans-serif;
+    @apply font-sans;
   }
 }
