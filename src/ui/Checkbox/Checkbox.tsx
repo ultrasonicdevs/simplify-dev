@@ -13,15 +13,16 @@ enum RoundedVariants {
 
 export interface CheckboxProps {
   rounded?: keyof typeof RoundedVariants
-  toggleClassName?: string
+  checkedClassName?: string
   className?: string
   disabled?: boolean
+  checkedIcon?: string
 }
 
 type CheckboxType = ForwardRefExoticComponent<Omit<CheckboxProps, 'ref'> & RefAttributes<boolean>>
 
 const Checkbox: CheckboxType = forwardRef(
-  ({ disabled = false, className, toggleClassName, rounded }, ref) => {
+  ({ disabled = false, className, checkedIcon, checkedClassName, rounded }, ref) => {
     const [checked, changeState] = useCheckbox(disabled, ref)
 
     return (
@@ -30,11 +31,13 @@ const Checkbox: CheckboxType = forwardRef(
         rounded={rounded || 'sm'}
         onClick={changeState}
         className={CheckboxVariants({ disabled, className })}>
-        <img
-          src={CheckedIcon}
-          alt=" "
-          className={CheckboxToggleVariants({ checked, disabled, className: toggleClassName })}
-        />
+        {
+          <img
+            src={checkedIcon || CheckedIcon}
+            alt=" "
+            className={CheckboxToggleVariants({ checked, disabled, className: checkedClassName })}
+          />
+        }
       </Box>
     )
   },

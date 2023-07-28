@@ -17,7 +17,7 @@ const meta: Meta<typeof Checkbox> = {
     className: {
       defaultValue: { summary: 'undefined' },
     },
-    toggleClassName: {
+    checkedClassName: {
       defaultValue: { summary: 'undefined' },
     },
     rounded: {
