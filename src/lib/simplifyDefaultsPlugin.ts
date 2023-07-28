@@ -60,7 +60,7 @@ export default plugin(({ addBase, theme }) => {
       backgroundColor: theme('colors.transparent'),
       outlineOffset: theme('outlineOffset.0'),
       fontSize: theme('fontSize.inp'),
-      outline: theme('outline.none'),
+      outline: theme('outline.0'),
     },
   })
 })
