@@ -27,9 +27,9 @@ export type PolymorphProps<C extends ElementType, Props = {}> =
 export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref']
 
 const Polymorph = forwardRef(
-  <T extends ElementType = 'div'>(props: PolymorphProps<T>, ref: PolymorphicRef<T>) => {
+  <T extends ElementType>(props: PolymorphProps<T>, ref: PolymorphicRef<T>) => {
     const { as, children, ...otherProps } = props
-    const PolymorphElement = as as ElementType
+    const PolymorphElement = as || ('div' as ElementType)
 
     return (
       <PolymorphElement ref={ref} {...otherProps}>
