@@ -1,6 +1,6 @@
 import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
 import { toggleHandleVariants, toggleVariants } from './Toggle.styles'
-import useCheckbox from 'hooks/useCheckbox/useCheckbox'
+import useCheckbox from '../../hooks/useCheckbox/useCheckbox'
 import Box from 'ui/Box/Box'
 
 enum RoundedVariants {
@@ -10,7 +10,7 @@ enum RoundedVariants {
   lg,
 }
 
-interface ToggleProps {
+export interface ToggleProps {
   rounded?: keyof typeof RoundedVariants
   handleClassName?: string
   className?: string

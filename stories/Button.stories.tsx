@@ -1,6 +1,8 @@
+import Typography from 'ui/Typography/Typography'
 import { Meta, StoryObj } from '@storybook/react'
-import { Box, Button, Typography } from 'ui'
+import Button from 'ui/Button/Button'
 import { FC, ReactNode } from 'react'
+import Box from 'ui/Box/Box'
 
 type ButtonStory = StoryObj<typeof Button>
 

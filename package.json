@@ -1,5 +1,5 @@
 {
-  "name": "samplify-dev",
+  "name": "simplify-dev",
   "version": "0.0.1-a",
   "description": "",
   "type": "module",
@@ -11,7 +11,7 @@
   ],
   "author": "Michail Panfilov <mic.panfil0v@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/ultrasonicdevs/samplify-dev.git",
+  "repository": "https://github.com/ultrasonicdevs/simplify-dev.git",
   "keywords": [
     "react",
     "ui",
@@ -64,7 +64,6 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svg": "^2.0.0",
-    "rollup-plugin-tailwind": "^1.0.0",
     "storybook": "^7.0.24",
     "typescript": "^5.0.4",
     "vite": "^4.3.2",
