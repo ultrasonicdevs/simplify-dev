@@ -1,5 +1,5 @@
-import { CheckboxType } from 'hooks/useCheckbox/useCheckbox.types'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { CheckboxType } from './useCheckbox.types'
 
 const useCheckbox: CheckboxType = (disabled, ref) => {
   const targetRef = useRef<boolean>(false)
