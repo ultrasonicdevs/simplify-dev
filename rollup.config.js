@@ -9,6 +9,7 @@ import babel from '@rollup/plugin-babel'
 import tailwindcss from 'tailwindcss'
 import svg from 'rollup-plugin-svg'
 import dts from 'rollup-plugin-dts'
+import svgr from '@svgr/rollup'
 
 export default [
   {
@@ -39,6 +40,7 @@ export default [
       commonjs(),
       external(),
       resolve(),
+      svgr(),
       svg(),
     ],
     external: ['react', 'react-dom'],
