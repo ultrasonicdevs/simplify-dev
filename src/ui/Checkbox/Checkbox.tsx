@@ -1,6 +1,6 @@
 import { CheckboxToggleVariants, CheckboxVariants } from './Checkbox.styles'
 import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
-import useCheckbox from 'hooks/useCheckbox/useCheckbox'
+import useCheckbox from '../../hooks/useCheckbox/useCheckbox'
 import Box from 'ui/Box/Box'
 
 enum RoundedVariants {
@@ -10,7 +10,7 @@ enum RoundedVariants {
   lg,
 }
 
-interface CheckboxProps {
+export interface CheckboxProps {
   rounded?: keyof typeof RoundedVariants
   toggleClassName?: string
   className?: string
@@ -25,10 +25,12 @@ const Checkbox: CheckboxType = forwardRef(
 
     return (
       <Box
+        as="div"
         rounded={rounded || 'sm'}
         onClick={changeState}
         className={CheckboxVariants({ disabled, className })}>
         <Box
+          as="div"
           className={CheckboxToggleVariants({
             disabled,
             checked,

@@ -21,7 +21,7 @@ const Button: FC<ButtonProps> = ({
   children,
   variant,
   size,
-  as,
+  as = 'button',
   ...props
 }) => {
   return (

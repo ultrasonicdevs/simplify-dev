@@ -1,5 +1,5 @@
 import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph'
-import { ElementType, FC } from 'react'
+import { FC } from 'react'
 
 export enum TypographyAsVariants {
   h1,
@@ -13,11 +13,11 @@ export enum TypographyAsVariants {
   label,
 }
 
-type TypographyProps = PolymorphProps<keyof typeof TypographyAsVariants>
+export type TypographyProps = PolymorphProps<keyof typeof TypographyAsVariants>
 
-const Typography: FC<TypographyProps> = ({ as, children, ...props }) => {
+const Typography: FC<TypographyProps> = ({ as = 'p', children, ...props }) => {
   return (
-    <Polymorph as={as || ('p' as ElementType)} {...props}>
+    <Polymorph as={as} {...props}>
       {children}
     </Polymorph>
   )

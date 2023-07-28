@@ -6,8 +6,6 @@ import {
   PropsWithChildren,
 } from 'react'
 
-const defaultElement = 'div' as const
-
 type AsProp<C extends ElementType> = {
   as?: C
 }
@@ -29,8 +27,8 @@ export type PolymorphProps<C extends ElementType, Props = {}> =
 export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref']
 
 const Polymorph = forwardRef(
-  <T extends ElementType>(props: PolymorphProps<T>, ref: PolymorphicRef<T>) => {
-    const { as = defaultElement, children, ...otherProps } = props
+  <T extends ElementType = 'div'>(props: PolymorphProps<T>, ref: PolymorphicRef<T>) => {
+    const { as, children, ...otherProps } = props
     const PolymorphElement = as as ElementType
 
     return (
