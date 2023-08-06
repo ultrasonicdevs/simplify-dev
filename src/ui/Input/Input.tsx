@@ -1,4 +1,4 @@
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
+import { forwardRef } from 'react'
 
 import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph'
 
@@ -19,11 +19,10 @@ export type InputProps = PolymorphProps<'input'> & {
   children?: never
 }
 
-const Input: ForwardRefExoticComponent<Omit<InputProps, 'ref'> & RefAttributes<HTMLElement>> =
-  forwardRef((props, ref) => {
-    const { type = 'text', ...otherProps } = props
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { type = 'text', ...otherProps } = props
 
-    return <Polymorph ref={ref} as="input" type={type} {...otherProps} />
-  })
+  return <Polymorph ref={ref} as="input" type={type} {...otherProps} />
+})
 
 export default Input

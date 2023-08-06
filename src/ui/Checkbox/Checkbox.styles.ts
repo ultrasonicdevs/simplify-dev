@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 import { cn } from 'lib'
 
-export const CheckboxVariants = cva(
+export const checkboxVariants = cva(
   [
     'flex justify-center items-center',
     'cursor-pointer',
@@ -27,7 +27,7 @@ export const CheckboxVariants = cva(
   },
 )
 
-export const CheckboxToggleVariants = cva(['w-full h-full'], {
+export const checkboxToggleVariants = cva(['w-full h-full'], {
   variants: {
     disabled: {
       false: cn('grayscale-0'),

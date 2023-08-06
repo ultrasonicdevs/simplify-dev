@@ -1,7 +1,7 @@
-import { CheckboxToggleVariants, CheckboxVariants } from './Checkbox.styles'
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
+import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles'
 import useCheckbox from '../../hooks/useCheckbox/useCheckbox'
-import CheckedIcon from './assets/checked.svg'
+import defaultCheckedIcon from './assets/checked.svg'
+import { forwardRef } from 'react'
 import Box from 'ui/Box/Box'
 
 enum RoundedVariants {
@@ -19,9 +19,7 @@ export interface CheckboxProps {
   checkedIcon?: string
 }
 
-type CheckboxType = ForwardRefExoticComponent<Omit<CheckboxProps, 'ref'> & RefAttributes<boolean>>
-
-const Checkbox: CheckboxType = forwardRef(
+const Checkbox = forwardRef<boolean, CheckboxProps>(
   ({ disabled = false, className, checkedIcon, checkedClassName, rounded }, ref) => {
     const [checked, changeState] = useCheckbox(disabled, ref)
 
@@ -30,12 +28,12 @@ const Checkbox: CheckboxType = forwardRef(
         as="div"
         rounded={rounded || 'sm'}
         onClick={changeState}
-        className={CheckboxVariants({ disabled, className })}>
+        className={checkboxVariants({ disabled, className })}>
         {
           <img
-            src={checkedIcon || CheckedIcon}
+            src={checkedIcon || defaultCheckedIcon}
             alt=" "
-            className={CheckboxToggleVariants({ checked, disabled, className: checkedClassName })}
+            className={checkboxToggleVariants({ checked, disabled, className: checkedClassName })}
           />
         }
       </Box>

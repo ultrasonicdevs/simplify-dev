@@ -1,6 +1,6 @@
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
 import { toggleHandleVariants, toggleVariants } from './Toggle.styles'
 import useCheckbox from '../../hooks/useCheckbox/useCheckbox'
+import { forwardRef } from 'react'
 import Box from 'ui/Box/Box'
 
 enum RoundedVariants {
@@ -17,9 +17,7 @@ export interface ToggleProps {
   disabled?: boolean
 }
 
-type ToggleType = ForwardRefExoticComponent<Omit<ToggleProps, 'ref'> & RefAttributes<boolean>>
-
-const Toggle: ToggleType = forwardRef(
+const Toggle = forwardRef<boolean, ToggleProps>(
   ({ disabled = false, className, handleClassName, rounded }, ref) => {
     const [checked, changeState] = useCheckbox(disabled, ref)
 

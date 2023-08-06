@@ -1,16 +1,18 @@
-# Samplify-dev
+# Simplify-dev
 
 ---
 
 ## About package:
-Samplify-dev is React library with polymorphic ui components styled with tailwindcss.
+React library for speeding up creation of interfaces.
+
+It includes UI components stylized with [tailwindcss](https://tailwindcss.com/) and a set of some commonly used hooks. The main feature of the project is the changeability of library styles out of the box. Styles are applied to components directly in your project using preset and plugin with prepared default values and utilities that can be changed in tailwind configuration file.
 
 ---
 
 ## Quick start:
 
 ### 1. Init your project
-**Example:**
+*As example used vite react app*
 ```bash
 npm create vite@latest my-app --template react-ts
 ```
@@ -71,10 +73,10 @@ export default function App() {
     <Box as="section" className="flex flex-col items-center justify-center gap-5 min-h-screen">
       <Box className="flex justify-center">
         <Button as="a" buttonType="text" href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" width="120px" />
+          <img src={viteLogo} alt="Vite logo" width="120px" />
         </Button>
         <Button as="a" buttonType="text" href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" width="120px" />
+          <img src={reactLogo} alt="React logo" width="120px" />
         </Button>
       </Box>
       <Typography as="h1">Project with simplify-dev</Typography>
@@ -84,31 +86,13 @@ export default function App() {
         <Typography>
           Edit <code>src/App.tsx</code> and save to test HMR
         </Typography>
-      <Typography className="read-the-docs">
+      <Typography>
         Click on the Vite and React logos to learn more
       </Typography>
     </Box>
   )
 }
 ```
+
 **Result:**
 ![Alt text](image.png)
-
----
-
-## UI Components:
-1. Typography
-2. Box
-3. Button
-4. Input
-5. Checkbox
-6. Toggle
-
----
-
-## Hooks:
-1. useDebounce
-2. useFocus
-3. useForwardRef
-4. useValidate
-5. useWidth

@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 import { cn } from 'lib'
 
-export const BoxVariants = cva('', {
+export const boxVariants = cva('', {
   variants: {
     padding: {
       none: cn('p-0'),
