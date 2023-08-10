@@ -61,15 +61,15 @@ const TypographyVariantsPreview: FC<{ children: ReactNode }> = ({ children }) =>
     <Typography as="h5">{children}</Typography>
     <b>h6</b>
     <Typography as="h6">{children}</Typography>
-    <b>p</b>
+    <b>label</b>
     <br />
+    <Typography as="label">{children}</Typography>
+    <br />
+    <b>p</b>
     <Typography as="p">{children}</Typography>
     <b>span</b>
     <br />
     <Typography as="span">{children}</Typography>
     <br />
-    <b>label</b>
-    <br />
-    <Typography as="label">{children}</Typography>
   </>
 )

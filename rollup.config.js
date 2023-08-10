@@ -6,8 +6,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import babel from '@rollup/plugin-babel'
+import image from '@rollup/plugin-image'
 import tailwindcss from 'tailwindcss'
-import svg from 'rollup-plugin-svg'
 import dts from 'rollup-plugin-dts'
 
 export default [
@@ -39,7 +39,7 @@ export default [
       commonjs(),
       external(),
       resolve(),
-      svg(),
+      image(),
     ],
     external: ['react', 'react-dom'],
   },
