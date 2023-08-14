@@ -1,7 +1,7 @@
+import { FC, useCallback, useRef, useState } from 'react'
 import Typography from 'ui/Typography/Typography'
 import { Meta, StoryObj } from '@storybook/react'
 import Checkbox from 'ui/Checkbox/Checkbox'
-import { FC, useRef } from 'react'
 import Box from 'ui/Box/Box'
 
 type CheckboxStory = StoryObj<typeof Checkbox>
@@ -32,11 +32,14 @@ export const CheckboxDefault: CheckboxStory = {
     disabled: false,
   },
 }
-export const CheckboxVariants: CheckboxStory = {
-  render: () => <CheckboxPreviewVariants />,
+export const CheckboxRefVariants: CheckboxStory = {
+  render: () => <CheckboxRefPreviewVariants />,
+}
+export const CheckboxStateVariants: CheckboxStory = {
+  render: () => <CheckboxStatePreviewVariants />,
 }
 
-const CheckboxPreviewVariants: FC = () => {
+const CheckboxRefPreviewVariants: FC = () => {
   const checkedRef = useRef(true)
   const unCheckedRef = useRef(false)
 
@@ -52,6 +55,29 @@ const CheckboxPreviewVariants: FC = () => {
       <Box className="flex gap-[10px]">
         <Checkbox ref={unCheckedRef} />
         <Checkbox disabled ref={unCheckedRef} />
+      </Box>
+    </>
+  )
+}
+
+const CheckboxStatePreviewVariants: FC = () => {
+  const [unChecked, setChecked] = useState(true)
+  const [checked, setUnChecked] = useState(true)
+  const changeUnCheckedState = useCallback(() => setChecked((prev: boolean) => !prev), [])
+  const changeCheckedState = useCallback(() => setUnChecked((prev: boolean) => !prev), [])
+
+  return (
+    <>
+      <Typography>Checked</Typography>
+      <Box className="flex gap-[10px]">
+        <Checkbox state={checked} onClick={changeCheckedState} />
+        <Checkbox disabled state={checked} onClick={changeCheckedState} />
+      </Box>
+
+      <Typography>Unchecked</Typography>
+      <Box className="flex gap-[10px]">
+        <Checkbox state={unChecked} onClick={changeUnCheckedState} />
+        <Checkbox disabled state={unChecked} onClick={changeUnCheckedState} />
       </Box>
     </>
   )
