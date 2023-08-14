@@ -1,7 +1,7 @@
 import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles'
 import useCheckbox from '../../hooks/useCheckbox/useCheckbox'
+import React, { forwardRef, MouseEventHandler } from 'react'
 import defaultCheckedIcon from './assets/checked.svg'
-import { forwardRef } from 'react'
 import Box from 'ui/Box/Box'
 
 enum RoundedVariants {
@@ -17,23 +17,32 @@ export interface CheckboxProps {
   className?: string
   disabled?: boolean
   checkedIcon?: string
+  state?: boolean
+  onClick?: MouseEventHandler
 }
 
 const Checkbox = forwardRef<boolean, CheckboxProps>(
-  ({ disabled = false, className, checkedIcon, checkedClassName, rounded }, ref) => {
+  (
+    { disabled = false, className, state, onClick, checkedIcon, checkedClassName, rounded },
+    ref,
+  ) => {
     const [checked, changeState] = useCheckbox(disabled, ref)
 
     return (
       <Box
         as="div"
         rounded={rounded || 'sm'}
-        onClick={changeState}
+        onClick={onClick || changeState}
         className={checkboxVariants({ disabled, className })}>
         {
           <img
             src={checkedIcon || defaultCheckedIcon}
             alt=" "
-            className={checkboxToggleVariants({ checked, disabled, className: checkedClassName })}
+            className={checkboxToggleVariants({
+              checked: state || checked,
+              disabled,
+              className: checkedClassName,
+            })}
           />
         }
       </Box>

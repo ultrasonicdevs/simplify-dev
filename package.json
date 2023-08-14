@@ -12,6 +12,7 @@
   "author": "Michail Panfilov <mic.panfil0v@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/ultrasonicdevs/simplify-dev.git",
+  "homepage": "https://github.com/ultrasonicdevs/simplify-dev/wiki",
   "keywords": [
     "react",
     "tailwindcss",

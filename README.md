@@ -9,6 +9,8 @@ It includes UI components stylized with [tailwindcss](https://tailwindcss.com/) 
 
 ---
 
+## [Read documentation](https://github.com/ultrasonicdevs/simplify-dev/wiki)
+
 ## Quick start:
 
 ### 1. Init your project
@@ -64,7 +66,7 @@ npm run dev
 ```
 
 ### 6. Start using simplify-dev in your project
-**Eexample:**
+**Example:**
 ```js
 export default function App() {
   const [count, setCount] = useState(0)
@@ -93,6 +95,3 @@ export default function App() {
   )
 }
 ```
-
-**Result:**
-![Alt text](image.png)
