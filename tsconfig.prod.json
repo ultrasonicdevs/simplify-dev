@@ -29,5 +29,5 @@
     "baseUrl": "./src"
   },
   "include": ["src/**/*"],
-  "exclude": [ ".storybook/**/*", "stories/**/*"]
+  "exclude": [ ".storybook/**/*", "stories/**/*", "test/**/*"]
 }
