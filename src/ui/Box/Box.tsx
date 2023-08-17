@@ -1,6 +1,6 @@
-import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph'
-import { boxVariants } from 'ui/Box/Box.styles'
-import { forwardRef } from 'react'
+import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph';
+import { boxVariants } from 'ui/Box/Box.styles';
+import { forwardRef } from 'react';
 
 enum BoxAsVariants {
   article,
@@ -10,13 +10,13 @@ enum BoxAsVariants {
   main,
   div,
   ul,
-  ol,
+  ol
 }
 
 export type BoxProps = PolymorphProps<keyof typeof BoxAsVariants> & {
-  padding?: 'none' | 'sm' | 'md' | 'lg'
-  rounded?: 'none' | 'sm' | 'md' | 'lg'
-}
+  padding?: 'none' | 'sm' | 'md' | 'lg';
+  rounded?: 'none' | 'sm' | 'md' | 'lg';
+};
 
 const Box = forwardRef<HTMLElement | HTMLDivElement, BoxProps>(
   ({ rounded, padding, className, children, as, ...props }, ref) => {
@@ -28,7 +28,7 @@ const Box = forwardRef<HTMLElement | HTMLDivElement, BoxProps>(
         as={as}>
         {children}
       </Polymorph>
-    )
-  },
-)
-export default Box
+    );
+  }
+);
+export default Box;

@@ -1,2 +1,2 @@
-declare module '*.svg'
-declare module '*.cjs'
+declare module '*.svg';
+declare module '*.cjs';

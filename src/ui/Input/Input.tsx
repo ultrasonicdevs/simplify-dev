@@ -1,6 +1,6 @@
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 
-import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph'
+import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph';
 
 export enum InputTypeVariants {
   'datetime-local',
@@ -11,18 +11,18 @@ export enum InputTypeVariants {
   week,
   date,
   text,
-  time,
+  time
 }
 
 export type InputProps = PolymorphProps<'input'> & {
-  type?: keyof typeof InputTypeVariants
-  children?: never
-}
+  type?: keyof typeof InputTypeVariants;
+  children?: never;
+};
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { type = 'text', ...otherProps } = props
+  const { type = 'text', ...otherProps } = props;
 
-  return <Polymorph ref={ref} as="input" type={type} {...otherProps} />
-})
+  return <Polymorph ref={ref} as='input' type={type} {...otherProps} />;
+});
 
-export default Input
+export default Input;

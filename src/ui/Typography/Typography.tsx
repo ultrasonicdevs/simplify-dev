@@ -1,5 +1,5 @@
-import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph'
-import { forwardRef } from 'react'
+import Polymorph, { PolymorphProps } from '../Polymorph/Polymorph';
+import { forwardRef } from 'react';
 
 export enum TypographyAsVariants {
   h1,
@@ -10,10 +10,10 @@ export enum TypographyAsVariants {
   h6,
   p,
   span,
-  label,
+  label
 }
 
-export type TypographyProps = PolymorphProps<keyof typeof TypographyAsVariants>
+export type TypographyProps = PolymorphProps<keyof typeof TypographyAsVariants>;
 
 const Typography = forwardRef<HTMLElement, TypographyProps>(
   ({ as = 'p', children, ...props }, ref) => {
@@ -21,8 +21,8 @@ const Typography = forwardRef<HTMLElement, TypographyProps>(
       <Polymorph as={as} ref={ref} {...props}>
         {children}
       </Polymorph>
-    )
-  },
-)
+    );
+  }
+);
 
-export default Typography
+export default Typography;

@@ -1,1 +1,1 @@
-export type IsValid = (regexp: string, value: string) => boolean
+export type IsValid = (regexp: string, value: string) => boolean;

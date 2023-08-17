@@ -1,25 +1,25 @@
-import { toggleHandleVariants, toggleVariants } from './Toggle.styles'
-import useCheckbox from '../../hooks/useCheckbox/useCheckbox'
-import { forwardRef } from 'react'
-import Box from 'ui/Box/Box'
+import { toggleHandleVariants, toggleVariants } from './Toggle.styles';
+import useCheckbox from '../../hooks/useCheckbox/useCheckbox';
+import { forwardRef } from 'react';
+import Box from 'ui/Box/Box';
 
 enum RoundedVariants {
   none,
   sm,
   md,
-  lg,
+  lg
 }
 
 export interface ToggleProps {
-  rounded?: keyof typeof RoundedVariants
-  handleClassName?: string
-  className?: string
-  disabled?: boolean
+  rounded?: keyof typeof RoundedVariants;
+  handleClassName?: string;
+  className?: string;
+  disabled?: boolean;
 }
 
 const Toggle = forwardRef<boolean, ToggleProps>(
   ({ disabled = false, className, handleClassName, rounded }, ref) => {
-    const [checked, changeState] = useCheckbox(disabled, ref)
+    const [checked, changeState] = useCheckbox(disabled, ref);
 
     return (
       <Box
@@ -31,8 +31,8 @@ const Toggle = forwardRef<boolean, ToggleProps>(
           className={toggleHandleVariants(disabled)({ checked, className: handleClassName })}
         />
       </Box>
-    )
-  },
-)
+    );
+  }
+);
 
-export default Toggle
+export default Toggle;

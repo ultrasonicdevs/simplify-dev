@@ -2,18 +2,18 @@ import {
   TypographyColors,
   TypographyFontSize,
   TypographyLineHeight,
-  TypographyFontWeight,
-} from './config/Typography.config'
+  TypographyFontWeight
+} from './config/Typography.config';
 import {
   TextButtonBackgroundColors,
   ButtonBackgroundColors,
   TextButtonColors,
-  ButtonColors,
-} from './config/Button.config'
-import { ToggleWidth, ToggleHeight, ToggleColors, ToggleMargin } from './config/Toggle.config'
-import { CheckboxWidth, CheckboxHeight, CheckboxColors } from './config/Checkbox.config'
-import { InputFontSize, InputMargin } from './config/Input.config'
-import { BoxRadius, BoxPadding } from './config/Box.config'
+  ButtonColors
+} from './config/Button.config';
+import { ToggleWidth, ToggleHeight, ToggleColors, ToggleMargin } from './config/Toggle.config';
+import { CheckboxWidth, CheckboxHeight, CheckboxColors } from './config/Checkbox.config';
+import { InputFontSize, InputMargin } from './config/Input.config';
+import { BoxRadius, BoxPadding } from './config/Box.config';
 /** @type {import('tailwindcss').Config} */
 
 export default {
@@ -29,29 +29,29 @@ export default {
         ...ToggleColors,
         ...ButtonColors,
         ...ToggleColors,
-        transparent: '#00000000',
+        transparent: '#00000000'
       },
       fontFamily: {
-        serif: '"Inter", sans-serif',
+        serif: '"Inter", sans-serif'
       },
       width: { ...CheckboxWidth, ...ToggleWidth },
       height: { ...CheckboxHeight, ...ToggleHeight },
       fontSize: {
         ...TypographyFontSize,
-        ...InputFontSize,
+        ...InputFontSize
       },
       lineHeight: {
-        ...TypographyLineHeight,
+        ...TypographyLineHeight
       },
       fontWeight: {
-        ...TypographyFontWeight,
+        ...TypographyFontWeight
       },
       margin: { ...InputMargin, ...ToggleMargin },
       borderRadius: { ...BoxRadius },
       padding: { ...BoxPadding },
       outline: {
-        '0': '0px',
-      },
-    },
-  },
-}
+        '0': '0px'
+      }
+    }
+  }
+};

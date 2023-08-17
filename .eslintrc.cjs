@@ -39,7 +39,6 @@ module.exports = {
         ignoreComments: false,
       },
     ],
-    semi: [2, 'never'],
     'semi-spacing': [
       2,
       {
@@ -114,7 +113,6 @@ module.exports = {
         properties: 'never',
       },
     ],
-    'comma-dangle': ['warn', 'always-multiline'],
     'comma-spacing': [
       2,
       {
@@ -217,7 +215,7 @@ module.exports = {
 
     // React
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'jsx-quotes': [2, 'prefer-double'],
+    'jsx-quotes': [2, 'prefer-single'],
     'react/jsx-boolean-value': 2,
     // "react/destructuring-assignment": 2,
     'react/display-name': 0,
@@ -258,5 +256,5 @@ module.exports = {
     'react-hooks/exhaustive-deps': 1,
     'newline-before-return': 1,
   },
-  ignorePatterns: ['/**/node_modules/*', 'node_modules/'],
+  ignorePatterns: ['node_modules/', 'dist/'],
 }

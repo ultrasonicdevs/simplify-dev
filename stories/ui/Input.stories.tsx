@@ -1,17 +1,17 @@
-import Input, { InputTypeVariants } from 'ui/Input/Input'
-import { Meta, StoryObj } from '@storybook/react'
-import { useRef, FC, useCallback } from 'react'
+import Input, { InputTypeVariants } from 'ui/Input/Input';
+import { Meta, StoryObj } from '@storybook/react';
+import { useRef, FC, useCallback } from 'react';
 
-type InputStory = StoryObj<typeof Input>
+type InputStory = StoryObj<typeof Input>;
 
-type TestInputRefProps = { type?: keyof typeof InputTypeVariants; placeholder?: string }
+type TestInputRefProps = { type?: keyof typeof InputTypeVariants; placeholder?: string };
 
 const meta: Meta<typeof Input> = {
   component: Input,
   tags: ['autodocs'],
   parameters: {
     componentSubtitle:
-      'Simple input field without styles and functional abilities (has ref property)',
+      'Simple input field without styles and functional abilities (has ref property)'
   },
   argTypes: {
     type: {
@@ -27,41 +27,41 @@ const meta: Meta<typeof Input> = {
         'week',
         'date',
         'text',
-        'time',
+        'time'
       ],
-      type: 'string',
+      type: 'string'
     },
     placeholder: {
       description: '**default html placeholder prop**',
       defaultValue: { summary: '' },
       control: { type: 'text' },
-      type: 'string',
-    },
-  },
-}
+      type: 'string'
+    }
+  }
+};
 
-export default meta
+export default meta;
 
 export const InputWithOutRef: InputStory = {
   args: {
     type: 'text',
-    placeholder: 'write something . . .',
-  },
-}
+    placeholder: 'write something . . .'
+  }
+};
 
 export const InputWithRef: InputStory = {
   args: {
     type: 'password',
-    placeholder: 'write something . . .',
+    placeholder: 'write something . . .'
   },
-  render: (args) => <TestInputRef type={args.type} placeholder={args.placeholder} />,
-}
+  render: (args) => <TestInputRef type={args.type} placeholder={args.placeholder} />
+};
 
 const TestInputRef: FC<TestInputRefProps> = ({ type = 'text', placeholder }) => {
-  const testRef = useRef<HTMLInputElement>(null)
+  const testRef = useRef<HTMLInputElement>(null);
 
-  const focus = useCallback(() => testRef.current?.focus(), [])
-  const showRefValue = useCallback(() => alert(testRef.current?.value), [])
+  const focus = useCallback(() => testRef.current?.focus(), []);
+  const showRefValue = useCallback(() => alert(testRef.current?.value), []);
 
   return (
     <>
@@ -71,5 +71,5 @@ const TestInputRef: FC<TestInputRefProps> = ({ type = 'text', placeholder }) => 
       <br />
       <button onClick={showRefValue}>show ref value</button>
     </>
-  )
-}
+  );
+};

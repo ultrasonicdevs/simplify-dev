@@ -1,3 +1,3 @@
-import { ForwardedRef } from 'react'
+import { ForwardedRef } from 'react';
 
-export type CheckboxType = (disabled: boolean, ref: ForwardedRef<boolean>) => [boolean, () => void]
+export type CheckboxType = (disabled: boolean, ref: ForwardedRef<boolean>) => [boolean, () => void];

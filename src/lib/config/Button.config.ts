@@ -7,8 +7,8 @@ export const ButtonColors = {
   'btn-col-tertiary': '#303030',
   'btn-col-tertiary-hover': '#303030',
   'btn-col-reject': '#ffffff',
-  'btn-col-reject-hover': '#ffffff',
-}
+  'btn-col-reject-hover': '#ffffff'
+};
 
 export const ButtonBackgroundColors = {
   'btn-bg-col-primary': '#5585ff',
@@ -19,8 +19,8 @@ export const ButtonBackgroundColors = {
   'btn-bg-col-tertiary': '#ffffff',
   'btn-bg-col-tertiary-hover': '#ffffff',
   'btn-bg-col-reject': '#ff5555',
-  'btn-bg-col-reject-hover': '#cc4444',
-}
+  'btn-bg-col-reject-hover': '#cc4444'
+};
 
 export const TextButtonColors = {
   'btn-text-col-primary': '#5585FF',
@@ -30,9 +30,9 @@ export const TextButtonColors = {
   'btn-text-col-tertiary': '#303030',
   'btn-text-col-tertiary-hover': '#303030',
   'btn-text-col-reject': '#ff5555',
-  'btn-text-col-reject-hover': '#cc4444',
-}
+  'btn-text-col-reject-hover': '#cc4444'
+};
 
 export const TextButtonBackgroundColors = {
-  'btn-text-bg-col-secondary': '#E0E0E0',
-}
+  'btn-text-bg-col-secondary': '#E0E0E0'
+};
