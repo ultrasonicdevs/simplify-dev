@@ -3,11 +3,8 @@ import external from 'rollup-plugin-peer-deps-external';
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import postcss from 'rollup-plugin-postcss';
-import postcssImport from 'postcss-import';
 import babel from '@rollup/plugin-babel';
 import image from '@rollup/plugin-image';
-import tailwindcss from 'tailwindcss';
 import dts from 'rollup-plugin-dts';
 
 export default [
@@ -27,11 +24,6 @@ export default [
     ],
     plugins: [
       typescript({ tsconfig: 'tsconfig.prod.json' }),
-      postcss({
-        plugins: [postcssImport(), tailwindcss()],
-        extensions: ['.css'],
-        minimize: true
-      }),
       babel({
         babelHelpers: 'bundled',
         exclude: 'node_modules/**'
