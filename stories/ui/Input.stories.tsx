@@ -1,6 +1,7 @@
-import Input, { InputTypeVariants } from 'ui/Input/Input';
+import { InputTypeVariants } from '../../src/ui/Input/Input.types';
 import { Meta, StoryObj } from '@storybook/react';
 import { useRef, FC, useCallback } from 'react';
+import Input from 'ui/Input/Input';
 
 type InputStory = StoryObj<typeof Input>;
 
@@ -27,7 +28,8 @@ const meta: Meta<typeof Input> = {
         'week',
         'date',
         'text',
-        'time'
+        'time',
+        'tel'
       ],
       type: 'string'
     },
