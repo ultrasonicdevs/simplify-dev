@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority';
-import { cn } from 'lib';
+import { cn } from '../../lib';
 
 export const boxVariants = cva('', {
   variants: {
