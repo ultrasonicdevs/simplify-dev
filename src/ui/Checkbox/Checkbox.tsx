@@ -1,25 +1,9 @@
 import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles';
 import useCheckbox from '../../hooks/useCheckbox/useCheckbox';
-import React, { forwardRef, MouseEventHandler } from 'react';
 import defaultCheckedIcon from './assets/checked.svg';
+import { CheckboxProps } from './Checkbox.types';
+import React, { forwardRef } from 'react';
 import Box from 'ui/Box/Box';
-
-enum RoundedVariants {
-  none,
-  sm,
-  md,
-  lg
-}
-
-export interface CheckboxProps {
-  rounded?: keyof typeof RoundedVariants;
-  checkedClassName?: string;
-  className?: string;
-  disabled?: boolean;
-  checkedIcon?: string;
-  state?: boolean;
-  onClick?: MouseEventHandler;
-}
 
 const Checkbox = forwardRef<boolean, CheckboxProps>(
   (

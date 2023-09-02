@@ -8,11 +8,12 @@
       "esnext"
     ],
     /* Language and Environment */
-    "target": "es5" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "jsx": "react-jsx" /* Specify what JSX code is generated. */,
 
+    "jsx": "react-jsx" /* Specify what JSX code is generated. */,
+    "types": ["node", "jsdom"],
     /* Modules */
-    "module": "esnext" /* Specify what module code is generated. */,
+    "module": "esnext"  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+     /* Specify what module code is generated. */
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     /* Emit */
@@ -29,5 +30,5 @@
 
     "baseUrl": "./src"
   },
-  "include": ["src/**/*", ".storybook/**/*", "stories/**/*"]
+  "include": ["src/**/*", ".storybook/**/*", "stories/**/*", "test/**/*"]
 }

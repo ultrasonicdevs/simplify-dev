@@ -31,11 +31,6 @@ const meta: Meta<typeof Button> = {
     buttonType: {
       defaultValue: { summary: 'button' },
       options: ['button', 'text']
-    },
-    invertedOnHover: {
-      description: '**Button HTML hover animation**',
-      defaultValue: { summary: false },
-      control: 'boolean'
     }
   }
 };
@@ -108,15 +103,6 @@ const ButtonVariants: FC<ButtonVariantsProps> = ({
       <Button as={as} variant='primary' size='md' buttonType={buttonType}>
         {children}
       </Button>
-      <Button as={as} invertedOnHover variant='primary' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='primary' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='primary' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
     </Box>
 
     <Typography>Secondary</Typography>
@@ -128,15 +114,6 @@ const ButtonVariants: FC<ButtonVariantsProps> = ({
         {children}
       </Button>
       <Button as={as} variant='secondary' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='secondary' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='secondary' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='secondary' size='md' buttonType={buttonType}>
         {children}
       </Button>
     </Box>
@@ -152,15 +129,6 @@ const ButtonVariants: FC<ButtonVariantsProps> = ({
       <Button as={as} variant='tertiary' size='md' buttonType={buttonType}>
         {children}
       </Button>
-      <Button as={as} invertedOnHover variant='tertiary' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='tertiary' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='tertiary' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
     </Box>
 
     <Typography>Reject</Typography>
@@ -172,15 +140,6 @@ const ButtonVariants: FC<ButtonVariantsProps> = ({
         {children}
       </Button>
       <Button as={as} variant='reject' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='reject' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='reject' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} invertedOnHover variant='reject' size='md' buttonType={buttonType}>
         {children}
       </Button>
     </Box>

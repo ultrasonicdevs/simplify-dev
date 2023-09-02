@@ -17,7 +17,7 @@ export const ButtonBackgroundColors = {
   'btn-bg-col-secondary': '#666666',
   'btn-bg-col-secondary-hover': '#525252',
   'btn-bg-col-tertiary': '#ffffff',
-  'btn-bg-col-tertiary-hover': '#ffffff',
+  'btn-bg-col-tertiary-hover': '#f1f1f1',
   'btn-bg-col-reject': '#ff5555',
   'btn-bg-col-reject-hover': '#cc4444'
 };
