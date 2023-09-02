@@ -1,3 +1,4 @@
+export { default as useListItemFocus } from './useListItemFocus/useListItemFocus';
 export { default as useForwardRef } from './useForwardRef/useForwardRef';
 export { default as useDebounce } from './useDebounce/useDebounce';
 export { default as useCheckbox } from './useCheckbox/useCheckbox';

@@ -1,6 +1,6 @@
 {
   "name": "simplify-dev",
-  "version": "0.1.17-a",
+  "version": "0.2.0-a",
   "description": "React library for speeding up creation of interfaces. It includes UI components stylized with tailwindcss and a set of some commonly used hooks. The main feature of the project is the changeability of library styles out of the box. Styles are applied to components directly in your project using preset and plugin with prepared default values and utilities that can be changed in tailwind configuration file.",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -49,12 +49,10 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/jest": "^29.5.4",
     "@types/node": "^20.3.3",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "@vitejs/plugin-react": "^4.0.0",
-    "class-variance-authority": "^0.6.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -65,13 +63,12 @@
     "prettier": "^2.8.8",
     "prettier-plugin-organize-imports": "^3.2.2",
     "prettier-plugin-sort-imports": "^1.7.2",
-    "prettier-plugin-tailwindcss": "^0.3.0",
     "prop-types": "^15.8.1",
     "rollup": "^3.26.3",
     "rollup-plugin-dts": "^6.0.1",
+    "rollup-plugin-minify": "^1.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^7.0.24",
-    "tailwind-merge": "^1.13.2",
     "typescript": "^5.0.4",
     "vite": "^4.3.2",
     "vite-tsconfig-paths": "^4.2.0",
@@ -83,7 +80,9 @@
     "tailwindcss": "^3.3.2"
   },
   "peerDependencies": {
+    "class-variance-authority": "^0.6.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^1.13.2"
   }
 }
