@@ -3,6 +3,8 @@ import { PolymorphProps } from '../Polymorph/Polymorph.types';
 enum BoxAsVariants {
   article,
   section,
+  header,
+  footer,
   aside,
   form,
   main,
