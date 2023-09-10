@@ -1,10 +1,10 @@
 {
   "name": "simplify-dev",
-  "version": "0.2.0-a",
+  "version": "0.2.10-a",
   "description": "React library for speeding up creation of interfaces. It includes UI components stylized with tailwindcss and a set of some commonly used hooks. The main feature of the project is the changeability of library styles out of the box. Styles are applied to components directly in your project using preset and plugin with prepared default values and utilities that can be changed in tailwind configuration file.",
   "type": "module",
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -58,6 +58,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "glob": "^10.3.4",
     "jsdom": "^22.1.0",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.8",
@@ -65,8 +66,8 @@
     "prettier-plugin-sort-imports": "^1.7.2",
     "prop-types": "^15.8.1",
     "rollup": "^3.26.3",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^6.0.1",
-    "rollup-plugin-minify": "^1.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^7.0.24",
     "typescript": "^5.0.4",

@@ -1,5 +1,5 @@
 import { TabContentProps } from './Tabs.types';
-import { TabListContext } from './Provider';
+import { TabListContext } from './Context';
 import { FC, useContext } from 'react';
 import Box from '../Box/Box';
 

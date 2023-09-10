@@ -5,8 +5,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import image from '@rollup/plugin-image';
+import del from 'rollup-plugin-delete';
 import dts from 'rollup-plugin-dts';
-
 export default [
   {
     input: 'src/index.ts',
@@ -31,14 +31,15 @@ export default [
       commonjs(),
       external(),
       resolve(),
-      image()
+      image(),
+      del({ targets: 'dist/*' })
     ],
     external: ['react', 'react-dom']
   },
   {
-    input: 'dist/esm/types/index.d.ts',
+    input: 'dist/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     external: ['react', 'react-dom'],
-    plugins: [dts()]
+    plugins: [dts(), del({ targets:'dist/types', hook: 'buildEnd'})]
   }
 ];

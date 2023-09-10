@@ -8,7 +8,6 @@ export { default as Input } from './Input/Input';
 export { default as Box } from './Box/Box';
 export { default as TabContent } from './Tabs/Content';
 export { default as TabList } from './Tabs/TabList';
-export { default as TabListProvider } from './Tabs/Provider';
 
 export { PolymorphProps, PolymorphicRef } from './Polymorph/Polymorph.types';
 export { CheckboxProps } from './Checkbox/Checkbox.types';

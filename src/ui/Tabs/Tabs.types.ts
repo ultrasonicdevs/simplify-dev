@@ -7,8 +7,6 @@ export type TabsContext = {
   tabsPrefix: string;
 };
 
-export type TabProps = { tab: string; children: ReactNode };
-
 export type TabListProps = {
   'aria-label': string;
   selectedVariant?: string;
