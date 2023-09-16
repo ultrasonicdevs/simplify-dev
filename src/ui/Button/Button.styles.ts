@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority';
-import { cn } from 'lib';
+import { cn } from 'utils';
 
 export const buttonVariants = cva(
   [
@@ -16,23 +16,27 @@ export const buttonVariants = cva(
         primary: cn(
           'bg-btn-bg-col-primary text-btn-col-primary',
           'hover:bg-btn-bg-col-primary-hover hover:text-btn-col-primary-hover',
-          'focus:bg-btn-bg-col-primary-hover focus:text-btn-col-primary-hover',
-          'disabled:bg-btn-bg-col-primary-disabled disabled:text-btn-col-primary-disabled disabled:pointer-events-none'
+          'active:bg-btn-bg-col-primary-active active:text-btn-col-primary-active',
+          'focus:bg-btn-bg-col-primary-focus focus:text-btn-col-primary-focus focus:outline outline-offset-2 outline-3 focus:outline-btn-bg-col-primary-focus',
+          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
         ),
         secondary: cn(
           'bg-btn-bg-col-secondary text-btn-col-secondary',
           'hover:bg-btn-bg-col-secondary-hover hover:text-btn-col-secondary-hover',
-          'focus:bg-btn-bg-col-secondary-hover focus:text-btn-col-secondary-hover'
+          'focus:bg-btn-bg-col-secondary-hover focus:text-btn-col-secondary-hover',
+          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
         ),
         tertiary: cn(
           'bg-btn-bg-col-tertiary text-btn-col-tertiary',
           'hover:bg-btn-bg-col-tertiary-hover hover:text-btn-col-tertiary-hover',
-          'focus:bg-btn-bg-col-tertiary-hover focus:text-btn-col-tertiary-hover'
+          'focus:bg-btn-bg-col-tertiary-hover focus:text-btn-col-tertiary-hover',
+          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
         ),
         reject: cn(
           'bg-btn-bg-col-reject text-btn-col-reject',
           'hover:bg-btn-bg-col-reject-hover hover:text-btn-col-reject-hover',
-          'focus:bg-btn-bg-col-reject-hover focus:text-btn-col-reject-hover'
+          'focus:bg-btn-bg-col-reject-hover focus:text-btn-col-reject-hover',
+          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
         )
       },
       size: {

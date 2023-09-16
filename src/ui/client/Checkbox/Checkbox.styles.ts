@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority';
-import { cn } from 'lib';
+import { cn } from 'utils';
 
 export const checkboxVariants = cva(
   [

@@ -8,7 +8,14 @@ const config: StorybookConfig = {
   stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-styling',
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        postCss: {
+          implementation: require.resolve('postcss')
+        }
+      }
+    },
     '@storybook/addon-essentials',
     '@storybook/addon-interactions'
   ],

@@ -14,7 +14,7 @@ import { ToggleWidth, ToggleHeight, ToggleColors, ToggleMargin } from './config/
 import { CheckboxWidth, CheckboxHeight, CheckboxColors } from './config/Checkbox.config';
 import { InputFontSize, InputMargin } from './config/Input.config';
 import { BoxRadius, BoxPadding } from './config/Box.config';
-import { Config } from 'tailwindcss/types/config';
+import { Config } from 'tailwindcss';
 
 const preset: Partial<Config> = {
   theme: {
@@ -27,7 +27,6 @@ const preset: Partial<Config> = {
         ...CheckboxColors,
         ...ButtonColors,
         ...ToggleColors,
-        ...ButtonColors,
         ...ToggleColors,
         transparent: '#00000000'
       },
@@ -48,12 +47,9 @@ const preset: Partial<Config> = {
       },
       margin: { ...InputMargin, ...ToggleMargin },
       borderRadius: { ...BoxRadius },
-      padding: { ...BoxPadding },
-      outline: {
-        '0': '0px'
-      }
+      padding: { ...BoxPadding }
     }
   }
 };
 
-export default preset;
+export default preset as Config;

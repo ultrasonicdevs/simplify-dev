@@ -1,7 +1,7 @@
+import { TabListContext } from '../../../lib/tabCcontext';
 import { TabContentProps } from './Tabs.types';
-import { TabListContext } from './Context';
 import { FC, useContext } from 'react';
-import Box from '../Box/Box';
+import Box from '../../Box/Box';
 
 export const TabContent: FC<TabContentProps> = ({ children, tab, ...props }) => {
   const { selectedTab, tabsPrefix } = useContext(TabListContext);
