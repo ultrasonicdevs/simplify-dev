@@ -1,1 +1,1 @@
-export type Debounce = <T>(value: T, delay?: number) => T
+export type Debounce = <T>(value: T, delay?: number) => T;

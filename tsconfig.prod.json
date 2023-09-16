@@ -13,9 +13,9 @@
     "emitDeclarationOnly": true,
 
     /* Emit */
-    "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
+//    "declaration": true,
+//    "declarationDir": "types",
+//    "sourceMap": true,
     "outDir": "dist",
 
     /* Interop Constraints */
@@ -29,5 +29,5 @@
     "baseUrl": "./src"
   },
   "include": ["src/**/*"],
-  "exclude": [ ".storybook/**/*", "stories/**/*"]
+  "exclude": [ ".storybook/**/*", "stories/**/*", "test/**/*"]
 }

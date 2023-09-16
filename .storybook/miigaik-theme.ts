@@ -1,5 +1,5 @@
-import { create } from '@storybook/theming/create'
-import icon from './miigaik-ui-ico.svg'
+import { create } from '@storybook/theming/create';
+import icon from './miigaik-ui-ico.svg';
 
 export default create({
   brandTitle: 'miigaik-ui',
@@ -34,5 +34,5 @@ export default create({
   inputTextColor: '#666666',
   inputBorder: '#BBBBBB',
   inputBorderRadius: 2,
-  inputBg: '#E0E0E0',
-})
+  inputBg: '#E0E0E0'
+});

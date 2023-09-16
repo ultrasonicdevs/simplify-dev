@@ -1,1 +1,1 @@
-export type Width = () => number
+export type Width = () => number;

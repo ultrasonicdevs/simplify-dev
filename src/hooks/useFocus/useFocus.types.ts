@@ -1,3 +1,3 @@
-import { RefObject } from 'react'
+import { RefObject } from 'react';
 
-export type Focus = () => [boolean, RefObject<HTMLElement>, () => void, () => void]
+export type Focus = () => [boolean, RefObject<HTMLElement>, () => void, () => void];
