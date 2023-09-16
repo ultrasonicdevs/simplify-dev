@@ -2,7 +2,7 @@ import { buttonVariants, textButtonVariants } from './Button.styles';
 import Polymorph from '../Polymorph/Polymorph';
 import { ButtonProps } from './Button.types';
 import { FC } from 'react';
-import { cn } from 'lib';
+import { cn } from 'utils';
 
 const Button: FC<ButtonProps> = ({
   buttonType = 'button',

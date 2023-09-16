@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority';
-import { cn } from 'lib';
+import { cn } from 'utils';
 
 export const toggleVariants = (disabled: boolean) =>
   cva(['cursor-pointer', 'w-toggle h-toggle', 'border-2', 'duration-300', 'relative'], {

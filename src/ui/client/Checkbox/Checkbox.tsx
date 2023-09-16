@@ -1,5 +1,5 @@
 import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles';
-import useCheckbox from '../../hooks/useCheckbox/useCheckbox';
+import useCheckbox from '../../../hooks/useCheckbox/useCheckbox';
 import defaultCheckedIcon from './assets/checked.svg';
 import { CheckboxProps } from './Checkbox.types';
 import React, { forwardRef } from 'react';

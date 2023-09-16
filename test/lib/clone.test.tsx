@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react/pure';
 import { it, expect, describe } from 'vitest';
-import clone from '../../src/lib/clone';
+import clone from '../../src/utils/clone';
 import '@testing-library/jest-dom';
 describe('clone', () => {
   it('should clone an element with new props', () => {

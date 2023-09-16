@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Box from 'ui/Box/Box';
-import 'tailwind.css';
 
 type BoxStory = StoryObj<typeof Box>;
 
