@@ -26,8 +26,14 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
-    "baseUrl": "./src"
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+      "@ui/*": ["src/ui/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
+    },
   },
   "include": ["src/**/*"],
-  "exclude": [ ".storybook/**/*", "stories/**/*", "test/**/*"]
+  "exclude": [ "/**/*.stories.ts", "/**/*.stories.tsx", "test/**/*"]
 }

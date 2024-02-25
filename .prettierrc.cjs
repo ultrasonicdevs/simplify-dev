@@ -1,29 +1,25 @@
-module.exports = {
+export default {
   bracketSameLine: true,
   parser: 'typescript',
   printWidth: 100,
   endOfLine: 'lf',
-  trailingComma: "none",
+  trailingComma: 'none',
   tabWidth: 2,
-  arrowParens: "always",
+  arrowParens: 'always',
   singleQuote: true,
   jsxSingleQuote: true,
   bracketSpacing: true,
-  plugins: [
-  "@trivago/prettier-plugin-sort-imports",
-  "prettier-plugin-organize-imports",
-],
+  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-organize-imports'],
   importOrder: [
-  "^@/shared/(.*)$",
-  "^@/entities/(.*)$",
-  "^@/features/(.*)$",
-  "^@/widgets/(.*)$",
-  "^@/pages/(.*)$",
-  "^@/(.*)$",
-  "^[./]",
-],
+    '^@/ui/(.*)$',
+    '^@/hooks/(.*)$',
+    '^@/utils/(.*)$',
+    '^@/lib/(.*)$',
+    '^@/(.*)$',
+    '^[./]'
+  ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   importOrderCaseInsensitive: true,
   organizeImportsSkipDestructiveCodeActions: false
-}
+};

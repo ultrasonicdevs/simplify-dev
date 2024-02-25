@@ -1,10 +1,10 @@
-import { buttonVariants, textButtonVariants } from './Button.styles';
-import Polymorph from '../Polymorph/Polymorph';
-import { ButtonProps } from './Button.types';
+import { Polymorph } from '@ui/Polymorph';
+import { cn } from '@utils';
 import { FC } from 'react';
-import { cn } from 'utils';
+import { buttonVariants, textButtonVariants } from './Button.styles';
+import { ButtonProps } from './Button.types';
 
-const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   buttonType = 'button',
   className,
   children,
@@ -28,5 +28,3 @@ const Button: FC<ButtonProps> = ({
     </Polymorph>
   );
 };
-
-export default Button;

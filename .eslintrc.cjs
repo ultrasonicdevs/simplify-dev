@@ -1,16 +1,16 @@
-module.exports = {
+export default {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
   env: {
     browser: true,
     es6: true,
-    node: true,
+    node: true
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  extends: ['prettier'],
+  extends: ['prettier', 'plugin:storybook/recommended'],
   rules: {
     // see https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/style.js#L122
     'prettier/prettier': 'error',
@@ -23,28 +23,28 @@ module.exports = {
         outerIIFEBody: 1,
         FunctionDeclaration: {
           parameters: 1,
-          body: 1,
+          body: 1
         },
         FunctionExpression: {
           parameters: 1,
-          body: 1,
+          body: 1
         },
         CallExpression: {
-          arguments: 1,
+          arguments: 1
         },
         ArrayExpression: 1,
         ObjectExpression: 1,
         ImportDeclaration: 1,
         flatTernaryExpressions: false,
-        ignoreComments: false,
-      },
+        ignoreComments: false
+      }
     ],
     'semi-spacing': [
       2,
       {
         before: false,
-        after: true,
-      },
+        after: true
+      }
     ],
     'wrap-iife': [2, 'inside'],
     'no-caller': 2,
@@ -57,8 +57,8 @@ module.exports = {
     'no-empty': [
       2,
       {
-        allowEmptyCatch: true,
-      },
+        allowEmptyCatch: true
+      }
     ],
     'no-extra-boolean-cast': 2,
     'no-extra-semi': 2,
@@ -84,8 +84,8 @@ module.exports = {
       2,
       'always',
       {
-        null: 'ignore',
-      },
+        null: 'ignore'
+      }
     ],
     'no-else-return': 2,
     'no-extra-bind': 2,
@@ -104,21 +104,21 @@ module.exports = {
       2,
       '1tbs',
       {
-        allowSingleLine: true,
-      },
+        allowSingleLine: true
+      }
     ],
     camelcase: [
       2,
       {
-        properties: 'never',
-      },
+        properties: 'never'
+      }
     ],
     'comma-spacing': [
       2,
       {
         before: false,
-        after: true,
-      },
+        after: true
+      }
     ],
     'eol-last': 2,
     'func-call-spacing': [2, 'never'],
@@ -127,8 +127,8 @@ module.exports = {
       2,
       {
         before: true,
-        after: true,
-      },
+        after: true
+      }
     ],
     'max-len': [
       2,
@@ -138,9 +138,8 @@ module.exports = {
         ignoreComments: false,
         ignoreRegExpLiterals: true,
         ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-        ignorePattern: 'require',
-      },
+        ignoreTemplateLiterals: true
+      }
     ],
     'no-lonely-if': 2,
     'no-mixed-spaces-and-tabs': 2,
@@ -150,8 +149,8 @@ module.exports = {
       {
         max: 1,
         maxBOF: 0,
-        maxEOF: 0,
-      },
+        maxEOF: 0
+      }
     ],
     'no-trailing-spaces': 2,
     'no-unneeded-ternary': 2,
@@ -162,23 +161,23 @@ module.exports = {
       2,
       {
         let: 'never',
-        const: 'never',
-      },
+        const: 'never'
+      }
     ],
     'padded-blocks': [2, 'never'],
     'quote-props': [
       2,
       'as-needed',
       {
-        numbers: true,
-      },
+        numbers: true
+      }
     ],
     quotes: [
       2,
       'single',
       {
-        avoidEscape: true,
-      },
+        avoidEscape: true
+      }
     ],
     'space-before-blocks': [2, 'always'],
     'space-before-function-paren': [
@@ -186,8 +185,8 @@ module.exports = {
       {
         asyncArrow: 'always',
         anonymous: 'never',
-        named: 'never',
-      },
+        named: 'never'
+      }
     ],
     'space-in-parens': 2,
     'key-spacing': [
@@ -195,8 +194,8 @@ module.exports = {
       {
         beforeColon: false,
         afterColon: true,
-        mode: 'strict',
-      },
+        mode: 'strict'
+      }
     ],
     'space-infix-ops': 2,
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
@@ -209,8 +208,8 @@ module.exports = {
         argsIgnorePattern: '^_',
         ignoreRestSiblings: true,
         vars: 'all',
-        varsIgnorePattern: '^_',
-      },
+        varsIgnorePattern: '^_'
+      }
     ],
 
     // React
@@ -225,8 +224,8 @@ module.exports = {
       {
         forbid: ['any', 'array', 'object'],
         checkContextTypes: true,
-        checkChildContextTypes: true,
-      },
+        checkChildContextTypes: true
+      }
     ],
     'react/jsx-closing-tag-location': 2,
     'react/jsx-equals-spacing': 2,
@@ -247,14 +246,13 @@ module.exports = {
     'react/no-multi-comp': 0,
     'react/no-set-state': 0,
     'react/react-in-jsx-scope': 0,
-    'react/require-optimization': 0,
     'react/self-closing-comp': 2,
     'react/style-prop-object': 2,
     'react/void-dom-elements-no-children': 2,
 
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
-    'newline-before-return': 1,
+    'newline-before-return': 1
   },
-  ignorePatterns: ['node_modules/', 'dist/'],
-}
+  ignorePatterns: ['node_modules/', 'dist/']
+};

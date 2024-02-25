@@ -10,7 +10,7 @@
     /* Language and Environment */
 
     "jsx": "react-jsx" /* Specify what JSX code is generated. */,
-    "types": ["node", "jsdom"],
+    "types": ["node"],
     /* Modules */
     "module": "esnext"  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
      /* Specify what module code is generated. */
@@ -28,7 +28,14 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
-    "baseUrl": "./src"
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+      "@ui/*": ["src/ui/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
+      "@lib/*": ["src/ui/TabList/lib/*"],
+    },
   },
-  "include": ["src/**/*", ".storybook/**/*", "stories/**/*", "test/**/*"]
+  "include": ["src/**/*", ".storybook/**/*", "test/**/*"]
 }
