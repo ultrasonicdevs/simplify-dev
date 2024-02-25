@@ -31,22 +31,22 @@ npx tailwindcss init -p
 #### Configure your tailwind.config.js:
 Add the paths to all of your template files in your tailwind.config.js file.
 ```js
-import {tailwindSimplifyPlugin, tailwindSimplifyPreset} from "simplify-dev";
+import {simplifyDefaultsPlugin, simplifyUtilitiesPreset} from "simplify-dev";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/simplify-dev/**/*.{js,ts}" // styling simplify-dev components 
+    "./node_modules/simplify-dev/*" // styling simplify-dev components 
   ],
   theme: {
     extend: {
         // your configuration
     },
   },
-  plugins: [tailwindSimplifyPlugin],
-  presets: [tailwindSimplifyPreset]
+  plugins: [simplifyDefaultsPlugin],
+  presets: [simplifyUtilitiesPreset]
 }
 ```
 You can see that we add simplify-dev files to tailwindcss content. This is done to simplify the customization of components via tailwind.config.js

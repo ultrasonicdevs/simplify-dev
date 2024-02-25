@@ -1,14 +1,12 @@
-import generatePackageJson from 'rollup-plugin-generate-package-json';
-import packageJson from './package.json' assert { type: 'json' };
-import external from 'rollup-plugin-peer-deps-external';
-import typescript from '@rollup/plugin-typescript';
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
-import babel from '@rollup/plugin-babel';
-import image from '@rollup/plugin-image';
+// import image from '@rollup/plugin-image';
+import resolve from '@rollup/plugin-node-resolve';
+// import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import del from 'rollup-plugin-delete';
 import dts from 'rollup-plugin-dts';
+import external from 'rollup-plugin-peer-deps-external';
+import packageJson from './package.json' assert { type: 'json' };
 
 export default [
   // root && ui
@@ -27,177 +25,88 @@ export default [
       }
     ],
     plugins: [
-      typescript({ tsconfig: 'tsconfig.prod.json' }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**'
+      typescript({ 
+        tsconfig: 'tsconfig.prod.json',
+        declaration: true,
+        declarationDir: 'types'
       }),
+      del({ targets: 'dist' }),
       commonjs(),
       external(),
-      resolve(),
-      image(),
-      del({ targets: 'dist/*' })
+      resolve()
     ],
-    external: ['react', 'react-dom', './hooks', './utils', '*.css']
+    external: ['react', 'react-dom', '@hooks/**', '@utils/**', '*.stories.*', '*.mdx']
   },
-
   // hooks
   {
     input: 'src/hooks/index.ts',
     output: [
       {
         file: 'dist/hooks/index.cjs',
-        format: 'cjs',
-        plugins: [terser()]
+        format: 'cjs'
+        // plugins: [terser()]
       },
       {
         file: 'dist/hooks/index.js',
-        format: 'esm',
-        plugins: [terser()]
-      }
-    ],
-    plugins: [
-      generatePackageJson({
-        baseContents: {
-          main: './index.cjs',
-          module: './index.js',
-          types: './index.d.ts',
-          files: ['./']
-        }
-      }),
-      typescript({ tsconfig: 'tsconfig.prod.json' }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**'
-      }),
-      commonjs(),
-      external(),
-      resolve(),
-      image()
-    ],
-    external: ['react', 'react-dom', '*.css']
-  },
-  // client
-  {
-    input: 'src/ui/client/index.ts',
-    output: [
-      {
-        file: 'dist/client-ui/index.cjs',
-        format: 'cjs',
-        plugins: [terser()]
-      },
-      {
-        file: 'dist/client-ui/index.js',
-        format: 'esm',
-        plugins: [terser()]
-      }
-    ],
-    plugins: [
-      generatePackageJson({
-        baseContents: {
-          main: './index.cjs',
-          module: './index.js',
-          types: './index.d.ts',
-          files: ['./']
-        }
-      }),
-      typescript({ tsconfig: 'tsconfig.prod.json' }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**'
-      }),
-      commonjs(),
-      external(),
-      resolve(),
-      image()
-    ],
-    external: ['react', 'react-dom', '*.css']
-  },
-
-  // utils
-  {
-    input: 'src/utils/index.ts',
-    output: [
-      {
-        file: 'dist/utils/index.cjs',
-        format: 'cjs',
-        plugins: [terser()]
-      }
-    ],
-    plugins: [
-      generatePackageJson({
-        baseContents: {
-          main: './index.cjs',
-          module: './index.js',
-          types: './index.d.ts',
-          files: ['./']
-        }
-      }),
-      typescript({
-        tsconfig: 'tsconfig.prod.json'
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**'
-      }),
-      commonjs(),
-      external(),
-      resolve(),
-      image()
-    ],
-    external: ['react', 'react-dom', '*.css']
-  },
-  {
-    input: 'src/utils/index.ts',
-    output: [
-      {
-        file: 'dist/utils/index.js',
-        format: 'esm',
-        plugins: [terser()]
+        format: 'esm'
+        // plugins: [terser()]
       }
     ],
     plugins: [
       typescript({
         tsconfig: 'tsconfig.prod.json',
-        compilerOptions: {
-          declaration: true,
-          declarationDir: 'types'
-        }
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**'
       }),
       commonjs(),
       external(),
-      resolve(),
-      image()
+      resolve()
     ],
-    external: ['react', 'react-dom', '*.css']
+    external: ['react', 'react-dom']
   },
-  //types
+  
+  // utils
   {
-    input: 'dist/utils/types/hooks/index.d.ts',
+    input: 'src/utils/index.ts',
+    output: [
+      {
+        file: 'dist/utils/index.js',
+        format: 'esm'
+        // plugins: [terser()]
+      },
+      {
+        file: 'dist/utils/index.cjs',
+        format: 'cjs'
+        // plugins: [terser()]
+      }
+    ],
+    plugins: [
+      typescript({
+        tsconfig: 'tsconfig.prod.json',
+      }),
+      commonjs(),
+      external(),
+      resolve()
+    ],
+    external: ['react', 'react-dom', 'tailwindcss']
+  },
+  // ui types
+  {
+    input: 'dist/types/ui/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    external: ['react', 'react-dom'],
+    plugins: [dts()]
+  },
+  // hooks types
+  {
+    input: 'dist/types/hooks/index.d.ts',
     output: [{ file: 'dist/hooks/index.d.ts', format: 'esm' }],
-    external: ['react', 'react-dom', '*.css'],
+    external: ['react', 'react-dom'],
     plugins: [dts()]
   },
+  // utils types
   {
-    input: 'dist/utils/types/ui/client/index.d.ts',
-    output: [{ file: 'dist/client-ui/index.d.ts', format: 'esm' }],
-    external: ['react', 'react-dom', '*.css'],
-    plugins: [dts()]
-  },
-  {
-    input: 'dist/utils/types/utils/index.d.ts',
+    input: 'dist/types/utils/index.d.ts',
     output: [{ file: 'dist/utils/index.d.ts', format: 'esm' }],
-    external: ['react', 'react-dom', '*.css'],
-    plugins: [dts()]
-  },
-  {
-    input: 'dist/utils/types/index.d.ts',
-    output: [{ file: packageJson.types, format: 'esm' }],
-    external: ['react', 'react-dom', './hooks', './utils', '*.css'],
-    plugins: [dts(), del({ targets: 'dist/utils/types', hook: 'buildEnd' })]
+    external: ['react', 'react-dom'],
+    plugins: [dts(), del({ hook: "buildEnd", targets: 'dist/types' })]
   }
 ];

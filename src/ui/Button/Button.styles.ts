@@ -1,42 +1,44 @@
+import { cn } from '@utils';
 import { cva } from 'class-variance-authority';
-import { cn } from 'utils';
 
 export const buttonVariants = cva(
   [
     'flex items-center justify-center',
     'text-base font-semibold select-none',
     'transition-all duration-300',
-    'w-full',
     'outline-none',
-    'cursor-pointer'
+    'w-full',
+    'cursor-pointer disabled:pointer-events-none'
   ],
   {
     variants: {
       variant: {
         primary: cn(
-          'bg-btn-bg-col-primary text-btn-col-primary',
-          'hover:bg-btn-bg-col-primary-hover hover:text-btn-col-primary-hover',
-          'active:bg-btn-bg-col-primary-active active:text-btn-col-primary-active',
-          'focus:bg-btn-bg-col-primary-focus focus:text-btn-col-primary-focus focus:outline outline-offset-2 outline-3 focus:outline-btn-bg-col-primary-focus',
-          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
+          'bg-btn-primary text-btn-primary',
+          'hover:bg-btn-primary-hover hover:text-btn-primary-hover',
+          'active:bg-btn-primary-active active:text-btn-primary-active',
+          'focus:bg-btn-primary-focus focus:text-btn-primary-focus focus:outline outline-offset-2 outline-3 focus:outline-btn-primary-focus',
+          'disabled:bg-btn-primary-disabled disabled:text-btn-primary-disabled '
         ),
         secondary: cn(
-          'bg-btn-bg-col-secondary text-btn-col-secondary',
-          'hover:bg-btn-bg-col-secondary-hover hover:text-btn-col-secondary-hover',
-          'focus:bg-btn-bg-col-secondary-hover focus:text-btn-col-secondary-hover',
-          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
+          'bg-btn-secondary text-btn-secondary',
+          'hover:bg-btn-secondary-hover hover:text-btn-secondary-hover',
+          'active:bg-btn-secondary-active active:text-btn-secondary-active',
+          'focus:bg-btn-secondary-focus focus:text-btn-secondary-focus focus:outline outline-offset-2 outline-3 focus:outline-btn-secondary-focus',
+          'disabled:bg-btn-secondary-disabled disabled:text-btn-secondary-disabled '
         ),
         tertiary: cn(
-          'bg-btn-bg-col-tertiary text-btn-col-tertiary',
-          'hover:bg-btn-bg-col-tertiary-hover hover:text-btn-col-tertiary-hover',
-          'focus:bg-btn-bg-col-tertiary-hover focus:text-btn-col-tertiary-hover',
-          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
+          'bg-btn-bg-tertiary text-btn-tertiary',
+          'hover:bg-btn-bg-tertiary-hover hover:text-btn-tertiary-hover',
+          'focus:bg-btn-bg-tertiary-hover focus:text-btn-tertiary-hover',
+          'disabled:bg-btn-secondary-disabled disabled:text-btn-secondary-disabled '
         ),
         reject: cn(
-          'bg-btn-bg-col-reject text-btn-col-reject',
-          'hover:bg-btn-bg-col-reject-hover hover:text-btn-col-reject-hover',
-          'focus:bg-btn-bg-col-reject-hover focus:text-btn-col-reject-hover',
-          'disabled:bg-btn-bg-col-disabled disabled:text-btn-col-disabled disabled:pointer-events-none'
+          'bg-btn-reject text-btn-reject',
+          'hover:bg-btn-reject-hover hover:text-btn-reject-hover',
+          'active:bg-btn-reject-active active:text-btn-reject-active',
+          'focus:bg-btn-reject-focus focus:text-btn-reject-focus focus:outline outline-offset-2 outline-3 focus:outline-btn-reject-focus',
+          'disabled:bg-btn-reject-disabled disabled:text-btn-reject-disabled '
         )
       },
       size: {
@@ -53,30 +55,30 @@ export const buttonVariants = cva(
 );
 
 export const textButtonVariants = cva(
-  ['flex items-center gap-2 rounded-md px-2', 'font-medium', 'cursor-pointer'],
+  [
+    'flex items-center gap-2 rounded-md px-2',
+    'font-medium',
+    'cursor-pointer disabled:pointer-events-none'
+  ],
   {
     variants: {
       variant: {
         primary: [
-          'text-btn-text-col-primary',
-          'hover:text-btn-text-col-primary-hover',
-          'disabled:opacity-50 disabled:pointer-events-none'
+          'text-btn-text-primary',
+          'hover:text-btn-text-primary-hover',
+          'disabled:opacity-50'
         ],
         secondary: [
-          'text-btn-text-col-secondary',
-          'hover:text-btn-text-col-secondary-hover hover:bg-btn-text-bg-col-secondary',
-          'disabled:opacity-50 disabled:pointer-events-none'
+          'text-btn-text-secondary',
+          'hover:text-btn-text-secondary-hover hover:bg-btn-text-bg-secondary',
+          'disabled:opacity-50'
         ],
         tertiary: [
-          'text-btn-text-col-tertiary',
-          'hover:text-btn-text-col-tertiary-hover',
-          'disabled:opacity-50 disabled:pointer-events-none'
+          'text-btn-text-tertiary',
+          'hover:text-btn-text-tertiary-hover',
+          'disabled:opacity-50'
         ],
-        reject: [
-          'text-btn-text-col-reject',
-          'hover:text-btn-text-col-reject-hover',
-          'disabled:opacity-50 disabled:pointer-events-none'
-        ]
+        reject: ['text-btn-text-reject', 'hover:text-btn-text-reject-hover', 'disabled:opacity-50']
       },
       size: {
         xs: 'text-xs',

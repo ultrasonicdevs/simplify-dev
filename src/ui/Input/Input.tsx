@@ -1,20 +1,19 @@
 import { forwardRef } from 'react';
 
-import Polymorph from '../Polymorph/Polymorph';
+import { Polymorph } from '@ui/Polymorph';
+import { cn } from '@utils';
 import { InputProps } from './Input.types';
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ type = 'text', className, ...props }, ref) => {
     return (
       <Polymorph
         ref={ref}
         as='input'
-        className={className ? 'outline-0 ' + className : className}
+        className={cn('outline-none', className)}
         type={type}
         {...props}
       />
     );
   }
 );
-
-export default Input;

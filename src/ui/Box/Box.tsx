@@ -1,19 +1,13 @@
-import Polymorph from '../Polymorph/Polymorph';
-import { boxVariants } from './Box.styles';
-import { BoxProps } from './Box.types';
+import { Polymorph } from '@ui/Polymorph';
 import { forwardRef } from 'react';
+import { BoxProps } from './Box.types';
 
-const Box = forwardRef<HTMLElement | HTMLDivElement, BoxProps>(
-  ({ rounded, padding, className, children, as, ...props }, ref) => {
+export const Box = forwardRef<HTMLElement | HTMLDivElement, BoxProps>(
+  ({ className, children, as, ...props }, ref) => {
     return (
-      <Polymorph
-        className={boxVariants({ padding, rounded, className })}
-        ref={ref}
-        {...props}
-        as={as}>
+      <Polymorph className={className} ref={ref} {...props} as={as}>
         {children}
       </Polymorph>
     );
   }
 );
-export default Box;

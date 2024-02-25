@@ -15,7 +15,4 @@ enum BoxAsVariants {
   li
 }
 
-export type BoxProps = PolymorphProps<keyof typeof BoxAsVariants> & {
-  padding?: 'none' | 'sm' | 'md' | 'lg';
-  rounded?: 'none' | 'sm' | 'md' | 'lg';
-};
+export type BoxProps = PolymorphProps<keyof typeof BoxAsVariants>;

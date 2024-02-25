@@ -1,6 +1,7 @@
-import { PolymorphicRef, PolymorphProps } from './Polymorph.types';
 import { ElementType, forwardRef } from 'react';
-const Polymorph = forwardRef(
+import { PolymorphProps, PolymorphicRef } from './Polymorph.types';
+
+export const Polymorph = forwardRef(
   <T extends ElementType>(props: PolymorphProps<T>, ref: PolymorphicRef<T>) => {
     const { as, children, ...otherProps } = props;
     const PolymorphElement = as || ('div' as ElementType);
@@ -12,5 +13,3 @@ const Polymorph = forwardRef(
     );
   }
 );
-
-export default Polymorph;
