@@ -34,10 +34,10 @@ export const TabList: FC<TabListProps> = ({
       {childrenList?.map((child, index) => {
         const key = child.props?.id || `${id}-${index}`;
         const props: ComponentProps<any> = {
-          onClick: () => typeof child.props?.onClick === 'function'
-            ? child.props?.onClick()
-            : select(key)
-          ,
+          onClick: () => {
+            child.props?.onClick?.();
+            select(key);
+          },
           role: 'tab',
           key: key,
           'aria-selected': selectedTab === key,
