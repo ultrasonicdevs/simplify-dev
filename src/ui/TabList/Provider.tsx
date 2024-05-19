@@ -1,13 +1,13 @@
 import { FC, useState, useId, useMemo, PropsWithChildren } from 'react';
 import { TabListContext } from './lib/tabContext';
 
-export type ProviderProps = PropsWithChildren & { defaultIndex: string } 
+export type ProviderProps = PropsWithChildren & { defaultSelectedId: string } 
 
 export const TabListProvider: FC<ProviderProps> = ({
     children,
-    defaultIndex
+    defaultSelectedId
   }) => {
-    const [selectedTab, selectTab] = useState(defaultIndex);
+    const [selectedTab, selectTab] = useState(defaultSelectedId);
     const prefix = useId();
   
     const contextValue = useMemo(

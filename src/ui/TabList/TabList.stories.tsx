@@ -17,7 +17,7 @@ export default meta;
 export const Example: StoryObj<typeof TabList> = {
   render: () => (
     <>
-      <TabListProvider defaultIndex='tab-2'>
+      <TabListProvider defaultSelectedId='tab-2'>
         <TabList selectedVariant='secondary' className='bg-blue-100 flex gap-3 p-3 rounded-xl'>
           <Button id='tab-1' variant='reject'>
             12345
