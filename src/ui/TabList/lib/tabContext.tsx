@@ -9,7 +9,7 @@ type TabsContext = {
 export const TabListContext = createContext<TabsContext>({
   selectedTab: null,
   selectTab: (tab: string) => {
-    console.log(`"${tab}" should not be used without TabsContext.Provider`);
+    console.warn(`"${tab}" should not be used without TabsContext.Provider`);
   },
   tabsPrefix: ''
 });
