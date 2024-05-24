@@ -1,6 +1,6 @@
+import { useToggle } from '@hooks';
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Toggle, Typography } from '@ui';
-import { FC } from 'react';
 
 type ToggleStory = StoryObj<typeof Toggle>;
 
@@ -12,39 +12,51 @@ const meta: Meta<typeof Toggle> = {
       defaultValue: { summary: false },
       type: 'boolean'
     },
-    className: {
-      defaultValue: { summary: 'undefined' }
+    toggle: {
+      defaultValue: { summary: false },
+      type: 'boolean'
     },
-    handleClassName: {
-      defaultValue: { summary: 'undefined' }
+    className: {
+      defaultValue: { summary: '' },
+      type: 'string'
     }
   }
 };
 
 export default meta;
-export const CheckboxDefault: ToggleStory = {
+
+export const ToggleDefault: ToggleStory = {
   args: {
-    disabled: false
+    disabled: false,
+    toggle: false
   }
 };
-export const CheckboxVariants: ToggleStory = {
-  render: () => <TogglePreviewVariants />
+
+export const ToggleDefaultUsage: ToggleStory = {
+  render: () => {
+    const t = useToggle(false);
+
+    return <Toggle {...t} />;
+  }
 };
 
-const TogglePreviewVariants: FC = () => {
-  return (
-    <>
-      <Typography>Checked</Typography>
-      <Box className='flex gap-[10px]'>
-        <Toggle state={true} setState={(state) => console.log("Get toggle state", state)} />
-        <Toggle disabled state={true} />
+export const ToggleVariants: ToggleStory = {
+  render: () => (
+    <Box className='space-y-3'>
+      <Box>
+        <Typography>Checked</Typography>
+        <Box className='flex gap-3'>
+          <Toggle toggle />
+          <Toggle disabled toggle />
+        </Box>
       </Box>
-
-      <Typography>Unchecked</Typography>
-      <Box className='flex gap-[10px]'>
-        <Toggle state={false} />
-        <Toggle disabled state={false} />
+      <Box>
+        <Typography>Unchecked</Typography>
+        <Box className='flex gap-3'>
+          <Toggle toggle={false} />
+          <Toggle disabled toggle={false} />
+        </Box>
       </Box>
-    </>
-  );
+    </Box>
+  )
 };
