@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '..';
 import { TabContent } from './Content';
-import { TabList } from './TabList';
 import { TabListProvider } from './Provider';
+import { TabList } from './TabList';
 
 const meta: Meta<typeof TabList> = {
   component: TabList,

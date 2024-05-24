@@ -1,15 +1,8 @@
 import { useListItemFocus } from '@hooks/useListItemFocus';
+import { ComponentProps, FC, ReactElement, useCallback, useContext, useId } from 'react';
+import { Box, BoxProps } from '../Box';
 import clone from './lib/clone';
 import { TabListContext } from './lib/tabContext';
-import { Box, BoxProps } from '../Box';
-import {
-  ComponentProps,
-  FC,
-  ReactElement,
-  useCallback,
-  useContext,
-  useId,
-} from 'react';
 
 export type TabListProps = {
   selectedVariant?: string;

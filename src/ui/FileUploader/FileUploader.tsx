@@ -1,6 +1,6 @@
 import { Box } from '@ui/Box';
-import { Typography } from '@ui/Typography';
 import { Polymorph } from '@ui/Polymorph';
+import { Typography } from '@ui/Typography';
 import { cn } from '@utils';
 import { cx } from 'class-variance-authority';
 import { ChangeEvent, FC, MouseEvent, useCallback, useRef } from 'react';

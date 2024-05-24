@@ -1,7 +1,7 @@
-import { Box, Button, Typography } from '../..';
 import { cn } from '@utils';
 import { MouseEvent } from 'react';
 import { RxCross2 } from 'react-icons/rx';
+import { Box, Button, Typography } from '../..';
 import { formatBytes, formatFileName, formatFileType } from '../FileUplader';
 
 type UploadedFilePreviewProps = {
