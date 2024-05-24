@@ -10,7 +10,7 @@
     /* Language and Environment */
 
     "jsx": "react-jsx" /* Specify what JSX code is generated. */,
-    "types": ["node"],
+    "types": ["node", "vitest/globals", "@testing-library/jest-dom"],
     /* Modules */
     "module": "esnext"  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
      /* Specify what module code is generated. */
@@ -37,5 +37,5 @@
       "@lib/*": ["src/ui/TabList/lib/*"],
     },
   },
-  "include": ["src/**/*", ".storybook/**/*", "test/**/*"]
+  "include": ["src/**/*", ".storybook/**/*"]
 }

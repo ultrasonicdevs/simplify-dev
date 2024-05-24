@@ -1,5 +1,4 @@
-import { LegacyRef, useEffect, useRef, useState } from 'react';
-import { RefObject } from 'react';
+import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
 
 export type Focus = () => [boolean, RefObject<HTMLElement>, () => void, () => void];
 
