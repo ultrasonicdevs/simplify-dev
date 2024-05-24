@@ -20,8 +20,12 @@ export const Toggle: FC<ToggleProps> = ({
   const onClick = () => !disabled && changeState?.();
 
   return (
-    <Box role='toggle' className={toggleVariants(disabled)({ checked: toggle, className })} onClick={onClick}>
-      <Box role='toggle-checker'
+    <Box
+      role='toggle'
+      className={toggleVariants(disabled)({ checked: toggle, className })}
+      onClick={onClick}>
+      <Box
+        role='toggle-checker'
         className={toggleHandleVariants(disabled)({ checked: toggle, className: handleClassName })}
       />
     </Box>

@@ -1,5 +1,4 @@
 import { fireEvent, render } from '@testing-library/react';
-
 import { describe, expect, it, vi } from 'vitest';
 import { Toggle } from './Toggle';
 
@@ -17,6 +16,7 @@ describe('Toggle', () => {
     const { getByRole } = render(<Toggle toggle />);
     const checkmarkElement = getByRole('toggle-checker');
 
+    expect(checkmarkElement).toBeInTheDocument();
     expect(checkmarkElement).toHaveClass('bg-toggle-bg-checked');
   });
 
