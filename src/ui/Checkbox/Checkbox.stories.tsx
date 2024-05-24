@@ -1,6 +1,6 @@
+import { useToggle } from '@hooks';
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Typography } from '@ui';
-import { FC, useRef } from 'react';
 import { Checkbox } from './Checkbox';
 
 type CheckboxStory = StoryObj<typeof Checkbox>;
@@ -13,8 +13,13 @@ const meta: Meta<typeof Checkbox> = {
       defaultValue: { summary: false },
       type: 'boolean'
     },
+    toggle: {
+      defaultValue: { summary: false },
+      type: 'boolean'
+    },
     className: {
-      defaultValue: { summary: 'undefined' }
+      defaultValue: { summary: '' },
+      type: 'string'
     }
   }
 };
@@ -22,27 +27,36 @@ const meta: Meta<typeof Checkbox> = {
 export default meta;
 export const CheckboxDefault: CheckboxStory = {
   args: {
-    disabled: false
+    disabled: false,
+    toggle: false
   }
 };
-export const CheckboxRefVariants: CheckboxStory = {
-  render: () => <CheckboxRefPreviewVariants />
+
+export const CheckboxDefaultUsage: CheckboxStory = {
+  render: () => {
+    const t = useToggle(false);
+
+    return <Checkbox {...t} />;
+  }
 };
 
-const CheckboxRefPreviewVariants: FC = () => {
-  return (
-    <>
-      <Typography>Checked</Typography>
-      <Box className='flex gap-[10px]'>
-        <Checkbox state={true} setState={(state) => console.log("Get checkbox state", state)} />
-        <Checkbox disabled state={true} />
+export const CheckboxVariants: CheckboxStory = {
+  render: () => (
+    <Box className='space-y-3'>
+      <Box>
+        <Typography>Checked</Typography>
+        <Box className='flex gap-3'>
+          <Checkbox toggle />
+          <Checkbox disabled toggle />
+        </Box>
       </Box>
-
-      <Typography>Unchecked</Typography>
-      <Box className='flex gap-[10px]'>
-        <Checkbox state={false} />
-        <Checkbox disabled state={false} />
+      <Box>
+        <Typography>Unchecked</Typography>
+        <Box className='flex gap-3'>
+          <Checkbox toggle={false} />
+          <Checkbox disabled toggle={false} />
+        </Box>
       </Box>
-    </>
-  );
+    </Box>
+  )
 };

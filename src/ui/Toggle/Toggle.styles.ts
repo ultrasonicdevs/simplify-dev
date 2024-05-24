@@ -15,7 +15,8 @@ export const toggleVariants = (disabled: boolean) =>
       variants: {
         checked: {
           true: cn('border-toggle-border-checked', 'bg-toggle-bg-checked', 'justify-end', {
-            'border-toggle-border-checked-disabled  bg-toggle-bg-checked-disabled pointer-events-none': disabled
+            'border-toggle-border-checked-disabled  bg-toggle-bg-checked-disabled pointer-events-none':
+              disabled
           }),
           false: cn('border-toggle-border', 'bg-toggle-bg', 'justify-start', {
             'border-toggle-border-disabled  bg-toggle-bg-disabled pointer-events-none': disabled
