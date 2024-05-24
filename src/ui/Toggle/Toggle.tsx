@@ -1,22 +1,33 @@
-import { useToggle } from '@hooks/useToggle';
 import { Box } from '@ui/Box';
-import { forwardRef } from 'react';
-import { toggleHandleVariants, toggleVariants } from './styles';
+import { FC } from 'react';
+import { toggleHandleVariants, toggleVariants } from './Toggle.styles';
 
 export type ToggleProps = {
+  toggle: boolean;
+  changeState?: () => void;
   handleClassName?: string;
   className?: string;
   disabled?: boolean;
 };
 
-export const Toggle = forwardRef<boolean, ToggleProps>(
-  ({ disabled = false, className, handleClassName }, ref) => {
-    const [checked, changeState] = useToggle(disabled, ref);
+export const Toggle: FC<ToggleProps> = ({
+  toggle = false,
+  changeState,
+  disabled = false,
+  className,
+  handleClassName
+}) => {
+  const onClick = () => !disabled && changeState?.();
 
-    return (
-      <Box className={toggleVariants(disabled)({ checked, className })} onClick={changeState}>
-        <Box className={toggleHandleVariants(disabled)({ checked, className: handleClassName })} />
-      </Box>
-    );
-  }
-);
+  return (
+    <Box
+      role='toggle'
+      className={toggleVariants(disabled)({ checked: toggle, className })}
+      onClick={onClick}>
+      <Box
+        role='toggle-checker'
+        className={toggleHandleVariants(disabled)({ checked: toggle, className: handleClassName })}
+      />
+    </Box>
+  );
+};
