@@ -30,21 +30,18 @@ export const CheckboxRefVariants: CheckboxStory = {
 };
 
 const CheckboxRefPreviewVariants: FC = () => {
-  const checkedRef = useRef(true);
-  const unCheckedRef = useRef(false);
-
   return (
     <>
       <Typography>Checked</Typography>
       <Box className='flex gap-[10px]'>
-        <Checkbox ref={checkedRef} />
-        <Checkbox disabled ref={checkedRef} />
+        <Checkbox state={true} setState={(state) => console.log("Get checkbox state", state)} />
+        <Checkbox disabled state={true} />
       </Box>
 
       <Typography>Unchecked</Typography>
       <Box className='flex gap-[10px]'>
-        <Checkbox ref={unCheckedRef} />
-        <Checkbox disabled ref={unCheckedRef} />
+        <Checkbox state={false} />
+        <Checkbox disabled state={false} />
       </Box>
     </>
   );

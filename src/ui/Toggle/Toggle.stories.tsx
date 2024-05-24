@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Toggle, Typography } from '@ui';
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 
 type ToggleStory = StoryObj<typeof Toggle>;
 
@@ -32,21 +32,18 @@ export const CheckboxVariants: ToggleStory = {
 };
 
 const TogglePreviewVariants: FC = () => {
-  const checkedRef = useRef(true);
-  const unCheckedRef = useRef(false);
-
   return (
     <>
       <Typography>Checked</Typography>
       <Box className='flex gap-[10px]'>
-        <Toggle ref={checkedRef} />
-        <Toggle disabled ref={checkedRef} />
+        <Toggle state={true} setState={(state) => console.log("Get toggle state", state)} />
+        <Toggle disabled state={true} />
       </Box>
 
       <Typography>Unchecked</Typography>
       <Box className='flex gap-[10px]'>
-        <Toggle ref={unCheckedRef} />
-        <Toggle disabled ref={unCheckedRef} />
+        <Toggle state={false} />
+        <Toggle disabled state={false} />
       </Box>
     </>
   );
