@@ -1,8 +1,10 @@
+import { Box } from '@ui/Box';
+import { Button } from '@ui/Button';
+import { Typography } from '@ui/Typography';
 import { cn } from '@utils';
 import { MouseEvent } from 'react';
 import { RxCross2 } from 'react-icons/rx';
-import { Box, Button, Typography } from '../..';
-import { formatBytes, formatFileName, formatFileType } from '../FileUplader';
+import { formatBytes, formatFileName, formatFileType } from '../utils';
 
 type UploadedFilePreviewProps = {
   file: File;

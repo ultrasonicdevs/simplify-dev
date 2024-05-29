@@ -6,7 +6,7 @@ export type FileUploaderError = {
 };
 
 export type FileUploaderProps = {
-  title: string;
+  title?: string;
   description?: string;
   disabled?: boolean;
   acceptedFileTypes: string[];

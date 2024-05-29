@@ -21,16 +21,14 @@ export const FileUploaderDefault: FileUploaderStory = {
     disabled: false,
     acceptedFileTypes: ['image/jpeg', 'image/jpg', 'application/pdf']
   },
-  render: (args) => <FileUploaderExample {...args} />
-};
-
-const FileUploaderExample = (props: {
-  title: string;
-  description?: string;
-  disabled?: boolean;
-  acceptedFileTypes: string[];
-}) => {
-  const [file, setFiles] = useState<File[]>([]);
-
-  return <FileUploader {...props} files={file} setFiles={setFiles} />;
+  render: (props: {
+    title?: string;
+    description?: string;
+    disabled?: boolean;
+    acceptedFileTypes: string[];
+  }) => {
+    const [file, setFiles] = useState<File[]>([]);
+  
+    return <FileUploader {...props} files={file} setFiles={setFiles} />;
+  }
 };

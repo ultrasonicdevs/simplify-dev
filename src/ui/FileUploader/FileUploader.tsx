@@ -6,9 +6,9 @@ import { cx } from 'class-variance-authority';
 import { ChangeEvent, FC, MouseEvent, useCallback, useRef } from 'react';
 import { IoCheckmark } from 'react-icons/io5';
 import { TbFileUpload } from 'react-icons/tb';
-import { formatAcceptedTypesToInputAccept } from './FileUplader';
 import { FileUploaderProps } from './FileUploader.types';
 import { UploadedFilePreview } from './ui/UploadedFilePreview';
+import { formatAcceptedTypesToInputAccept } from './utils';
 
 export const FileUploader: FC<FileUploaderProps> = ({
   title,
@@ -69,7 +69,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
               <TbFileUpload className='stroke-blue-400 stroke-[2px] w-[32px] h-[32px]' />
             )}
           </Box>
-          <Typography className='text-center'>{title}</Typography>
+          <Typography className='text-center'>{title || 'Загрузите файл'}</Typography>
           {description && <Typography as='span'>{description}</Typography>}
           {files?.map((file: File, index: number) => (
             <UploadedFilePreview
