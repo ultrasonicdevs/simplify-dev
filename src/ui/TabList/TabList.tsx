@@ -23,16 +23,16 @@ export const TabList: FC<TabListProps> = ({
   const childrenList: ReactElement[] = Array.isArray(children) ? children : [children];
 
   return (
-    <Box {...props} ref={listRef} role='tablist' aria-label={id} onKeyDown={onKeyDown}>
+    <Box as='article' {...props} ref={listRef} role='tablist' aria-label={id} onKeyDown={onKeyDown}>
       {childrenList?.map((child, index) => {
         const key = child.props?.id || `${id}-${index}`;
         const props: ComponentProps<any> = {
+          ...child.props,
           onClick: () => {
             child.props?.onClick?.();
             select(key);
           },
           role: 'tab',
-          key: key,
           'aria-selected': selectedTab === key,
           'aria-controls': `${tabsPrefix}-tab-panel-${key}`,
           tabIndex: selectedTab === key ? 0 : -1,
