@@ -1,16 +1,32 @@
 {
   "name": "simplify-dev",
-  "version": "2.0.13-alpha",
+  "version": "3.0.6-alpha",
   "description": "React library for speeding up creation of interfaces. It includes UI components stylized with tailwindcss and a set of some commonly used hooks. The main feature of the project is the changeability of library styles out of the box. Styles are applied to components directly in your project using preset and plugin with prepared default values and utilities that can be changed in tailwind configuration file.",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "dist/utils",
-    "dist/hooks"
+    "dist/"
   ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/cjs/index.cjs"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "import": "./dist/utils/index.js",
+      "default": "./dist/utils/index.cjs"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js",
+      "default": "./dist/hooks/cjs/index.cjs"
+    }
+  },
   "author": "Michail Panfilov <mic.panfil0v@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/ultrasonicdevs/simplify-dev.git",
