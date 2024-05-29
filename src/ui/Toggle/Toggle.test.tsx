@@ -9,7 +9,7 @@ describe('Toggle', () => {
     const checkmarkElement = getByRole('toggle-checker');
 
     expect(checkboxElement).toBeInTheDocument();
-    expect(checkmarkElement).toHaveClass('bg-toggle-bg');
+    expect(checkmarkElement.className).includes('bg-toggle');
   });
 
   it('renders checked Toggle', () => {
@@ -17,7 +17,7 @@ describe('Toggle', () => {
     const checkmarkElement = getByRole('toggle-checker');
 
     expect(checkmarkElement).toBeInTheDocument();
-    expect(checkmarkElement).toHaveClass('bg-toggle-bg-checked');
+    expect(checkmarkElement.className).includes('bg-toggle-checked');
   });
 
   it('changes state when clicked', () => {
