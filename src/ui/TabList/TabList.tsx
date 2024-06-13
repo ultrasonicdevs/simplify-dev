@@ -1,4 +1,5 @@
 import { useListItemFocus } from '@hooks/useListItemFocus';
+import { cn } from '@utils/cn';
 import { ComponentProps, FC, ReactElement, useCallback, useContext, useId } from 'react';
 import { Box, BoxProps } from '../Box';
 import clone from './lib/clone';
@@ -25,7 +26,10 @@ export const TabList: FC<TabListProps> = ({
   return (
     <Box as='article' {...props} ref={listRef} role='tablist' aria-label={id} onKeyDown={onKeyDown}>
       {childrenList?.map((child, index) => {
-        const key = child.props?.id || `${id}-${index}`;
+        const key = child.props?.id ?? `${id}-${index}`;
+
+        const isSelected = selectedTab === key;
+
         const props: ComponentProps<any> = {
           ...child.props,
           onClick: () => {
@@ -35,9 +39,9 @@ export const TabList: FC<TabListProps> = ({
           role: 'tab',
           'aria-selected': selectedTab === key,
           'aria-controls': `${tabsPrefix}-tab-panel-${key}`,
-          tabIndex: selectedTab === key ? 0 : -1,
-          variant: selectedTab === key ? selectedVariant : child.props?.variant,
-          className: selectedTab === key ? selectedClassName : child.props?.className
+          tabIndex: isSelected ? 0 : -1,
+          variant: isSelected ? selectedVariant : child.props?.variant,
+          className: cn(child.props?.className, isSelected && selectedClassName)
         };
 
         return clone(child, props);
