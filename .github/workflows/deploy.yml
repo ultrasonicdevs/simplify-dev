@@ -3,44 +3,33 @@ run-name: CD to dev environment
 
 on:
   push:
-    branches: master
-    
+    branches: master    
 
 jobs:
   ci:
     runs-on: ubuntu-22.04
         
-    name: Lint checking
+    name: CI/CD
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Nodejs
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with: 
           node-version: '21.5'
     
       - name: Install dependencies
         run: npm i
 
-      - name: Check linting
-        run: npm run lint
+      - run: npm run lint
+      - run: npm run test
 
-      - name: Check linting
-        run: npm run test
-              
-  cd:
-    needs: ci
-    runs-on: ubuntu-22.04
-      
-    name: Build
-    steps:
-        - run: npm run build
-    
-        - uses: JS-DevTools/npm-publish@v3
-          with:
-            token: ${{ secrets.NPM_TOKEN }}
+      - run: npm run build
+  
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
 
-        - uses: actions/upload-artifact@v4
-          with:
-            name: dist
-            path: dist/
-            retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
