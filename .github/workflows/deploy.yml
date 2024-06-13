@@ -1,0 +1,46 @@
+name: Continues integration to dev environment
+run-name: CD to dev environment
+
+on:
+  push:
+    branches: master
+    
+
+jobs:
+  ci:
+    runs-on: ubuntu-22.04
+        
+    name: Lint checking
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Nodejs
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '21.5'
+    
+      - name: Install dependencies
+        run: npm i
+
+      - name: Check linting
+        run: npm run lint
+
+      - name: Check linting
+        run: npm run test
+              
+  cd:
+    needs: ci
+    runs-on: ubuntu-22.04
+      
+    name: Build
+    steps:
+        - run: npm run build
+    
+        - uses: JS-DevTools/npm-publish@v3
+          with:
+            token: ${{ secrets.NPM_TOKEN }}
+
+        - uses: actions/upload-artifact@v4
+          with:
+            name: dist
+            path: dist/
+            retention-days: 7
