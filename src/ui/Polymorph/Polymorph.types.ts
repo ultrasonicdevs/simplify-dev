@@ -14,14 +14,12 @@ type PolymorphicPropsWithoutRef<
   P = object,
 > = PropsWithChildren<P> & AsProp<C> & ComponentPropsWithoutRef<C>;
 
-type PolymorphicComponentPropWithRef<
+export type PolymorphProps<
   C extends ElementType,
   Props = object,
-> = PolymorphicPropsWithoutRef<C, Props> & { ref?: PolymorphicRef<C> };
-
-export type PolymorphProps<C extends ElementType, Props = object> =
-  | PolymorphicPropsWithoutRef<C>
-  | PolymorphicComponentPropWithRef<C, Props>;
+> = PolymorphicPropsWithoutRef<C, Props> & {
+  ref?: ComponentPropsWithRef<C>['ref'];
+};
 
 export type PolymorphicRef<C extends ElementType> =
   ComponentPropsWithRef<C>['ref'];
