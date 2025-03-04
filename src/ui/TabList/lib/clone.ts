@@ -1,9 +1,16 @@
-import { ComponentProps, ReactElement } from 'react';
+import { JSXElementConstructor, ReactElement } from 'react';
 
-type CloneElement = (element: ReactElement, props: ComponentProps<any>) => ReactElement;
-
-const clone: CloneElement = (element, props) => {
-  return { ...element, props: { ...element.props, ...props } };
+const clone = <P = unknown>(
+  element: ReactElement<P, JSXElementConstructor<P>>,
+  props: Partial<P>
+): ReactElement<P, JSXElementConstructor<P>> => {
+  return {
+    ...element,
+    props: {
+      ...element.props,
+      ...props,
+    },
+  };
 };
 
 export default clone;

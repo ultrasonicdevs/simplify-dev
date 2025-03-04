@@ -25,7 +25,7 @@ export const BUTTON_COLORS = {
   // tertiary
   'btn-tertiary': '#303030',
   'btn-tertiary-hover': '#303030',
-  'btn-disabled': '#D2D4D8'
+  'btn-disabled': '#D2D4D8',
 };
 
 export const BUTTON_BG = {
@@ -52,7 +52,7 @@ export const BUTTON_BG = {
 
   'btn-bg-tertiary': '#ffffff',
   'btn-bg-tertiary-hover': '#f1f1f1',
-  'btn-bg-disabled': '#93959D'
+  'btn-bg-disabled': '#93959D',
 };
 
 export const TEXT_BUTTON_COLORS = {
@@ -66,9 +66,9 @@ export const TEXT_BUTTON_COLORS = {
   'btn-text-tertiary-hover': '#303030',
 
   'btn-text-reject': '#ff5555',
-  'btn-text-reject-hover': '#cc4444'
+  'btn-text-reject-hover': '#cc4444',
 };
 
 export const TEXT_BUTTON_BG = {
-  'btn-text-bg-secondary': '#E0E0E0'
+  'btn-text-bg-secondary': '#E0E0E0',
 };

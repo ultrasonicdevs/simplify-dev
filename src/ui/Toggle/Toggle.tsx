@@ -1,5 +1,7 @@
-import { Box } from '@ui/Box';
 import { FC } from 'react';
+
+import { Box } from '@ui/Box';
+
 import { toggleHandleVariants, toggleVariants } from './Toggle.styles';
 
 export type ToggleProps = {
@@ -15,18 +17,21 @@ export const Toggle: FC<ToggleProps> = ({
   changeState,
   disabled = false,
   className,
-  handleClassName
+  handleClassName,
 }) => {
   const onClick = () => !disabled && changeState?.();
 
   return (
     <Box
-      role='toggle'
+      role="button"
       className={toggleVariants(disabled)({ checked: toggle, className })}
       onClick={onClick}>
       <Box
-        role='toggle-checker'
-        className={toggleHandleVariants(disabled)({ checked: toggle, className: handleClassName })}
+        role="checkbox"
+        className={toggleHandleVariants(disabled)({
+          checked: toggle,
+          className: handleClassName,
+        })}
       />
     </Box>
   );

@@ -1,11 +1,12 @@
 import type { Config } from 'tailwindcss';
+
 import { simplifyDefaultsPlugin, simplifyUtilitiesPreset } from './src/utils';
 
 export default {
   content: ['./src/**/*', './stories/**/*', './.storybook/**/*'],
   theme: {
-    extend: {}
+    extend: {},
   },
   plugins: [simplifyDefaultsPlugin],
-  presets: [simplifyUtilitiesPreset]
+  presets: [simplifyUtilitiesPreset],
 } satisfies Config;

@@ -1,5 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+
+import { Meta, StoryObj } from '@storybook/react';
+
 import { FileUploader } from './FileUploader';
 
 type FileUploaderStory = StoryObj<typeof FileUploader>;
@@ -7,9 +9,9 @@ type FileUploaderStory = StoryObj<typeof FileUploader>;
 const meta: Meta<typeof FileUploader> = {
   component: FileUploader,
   parameters: {
-    componentSubtitle: 'File uploader component'
+    componentSubtitle: 'File uploader component',
   },
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -19,7 +21,7 @@ export const FileUploaderDefault: FileUploaderStory = {
     title: 'Загрузите файл',
     description: 'PDF, JPEG, JPG, PNG — 10МБ',
     disabled: false,
-    acceptedFileTypes: ['image/jpeg', 'image/jpg', 'application/pdf']
+    acceptedFileTypes: ['image/jpeg', 'image/jpg', 'application/pdf'],
   },
   render: (props: {
     title?: string;
@@ -28,7 +30,7 @@ export const FileUploaderDefault: FileUploaderStory = {
     acceptedFileTypes: string[];
   }) => {
     const [file, setFiles] = useState<File[]>([]);
-  
+
     return <FileUploader {...props} files={file} setFiles={setFiles} />;
-  }
+  },
 };

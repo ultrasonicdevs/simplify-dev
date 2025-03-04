@@ -52,7 +52,13 @@ export default [
     },
   },
   {
-    ignores: ['coverage', 'dist', 'vite.config.ts', 'vitest.config.ts'],
+    ignores: [
+      'coverage',
+      'dist',
+      'vite.config.ts',
+      'vitest.config.ts',
+      '**/*.stories.tsx',
+    ],
   },
   eslintConfigPrettier,
 ];
