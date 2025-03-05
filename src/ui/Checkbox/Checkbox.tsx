@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import { IoCheckmark } from 'react-icons/io5';
 
-import { Box } from '@ui/Box';
-
 import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles';
 
 export interface CheckboxProps {
