@@ -8,7 +8,7 @@ export const buttonVariants = cva(
     'text-base font-medium select-none',
     'transition-all duration-300',
     'cursor-pointer disabled:pointer-events-none',
-    'no-underline',
+    'no-underline active:ring-2 focus:outline-2 outline-offset-1',
   ],
   {
     variants: {
@@ -17,21 +17,21 @@ export const buttonVariants = cva(
           'bg-button-primary-bg-idle text-button-primary-text-idle',
           'hover:bg-button-primary-bg-hover hover:text-button-primary-text-hover',
           'active:bg-button-primary-bg-active active:text-button-primary-text-active',
-          'focus:outline focus:ring-2 focus:ring-button-primary-ring-focus',
+          'outline-button-primary-ring-focus ring-button-primary-ring-focus',
           'disabled:bg-button-primary-bg-disabled disabled:text-button-primary-text-disabled'
         ),
         secondary: cn(
           'bg-button-secondary-bg-idle text-button-secondary-text-idle',
           'hover:bg-button-secondary-bg-hover hover:text-button-secondary-text-hover',
           'active:bg-button-secondary-bg-active active:text-button-secondary-text-active',
-          'focus:outline focus:ring-2 focus:ring-button-secondary-ring-focus',
+          'outline-button-secondary-ring-focus ring-button-secondary-ring-focus',
           'disabled:bg-button-secondary-bg-disabled disabled:text-button-secondary-text-disabled'
         ),
         reject: cn(
           'bg-button-reject-bg-idle text-button-reject-text-idle',
           'hover:bg-button-reject-bg-hover hover:text-button-reject-text-hover',
           'active:bg-button-reject-bg-active active:text-button-reject-text-active',
-          'focus:outline focus:ring-2 focus:ring-button-reject-ring-focus',
+          'outline-button-reject-ring-focus ring-button-reject-ring-focus',
           'disabled:bg-button-reject-bg-disabled disabled:text-button-reject-text-disabled'
         ),
         null: '',
@@ -63,21 +63,18 @@ export const textButtonVariants = cva(
           'text-button-primary-bg-idle',
           'hover:text-button-primary-bg-hover hover:underline',
           'active:text-button-primary-bg-active active:opacity-80',
-          'focus:outline focus:ring-2 focus:ring-button-primary-ring-focus',
           'disabled:text-button-primary-bg-disabled disabled:opacity-50'
         ),
         secondary: cn(
           'text-button-secondary-bg-idle',
           'hover:text-button-secondary-bg-hover hover:underline',
           'active:text-button-secondary-bg-active active:opacity-80',
-          'focus:outline focus:ring-2 focus:ring-button-secondary-ring-focus',
           'disabled:text-button-secondary-bg-disabled disabled:opacity-50'
         ),
         reject: cn(
           'text-button-reject-bg-idle',
           'hover:text-button-reject-bg-hover hover:underline',
           'active:text-button-reject-bg-active active:opacity-80',
-          'focus:outline focus:ring-2 focus:ring-button-reject-ring-focus',
           'disabled:text-button-reject-bg-disabled disabled:opacity-50'
         ),
         null: '',
