@@ -11,5 +11,5 @@ export const TabListContext = createContext<TabsContext>({
   selectTab: (tab: string) => {
     console.warn(`"${tab}" should not be used without TabsContext.Provider`);
   },
-  tabsPrefix: ''
+  tabsPrefix: '',
 });

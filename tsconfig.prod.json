@@ -13,10 +13,8 @@
     "emitDeclarationOnly": true,
 
     /* Emit */
-//    "declaration": true,
-//    "declarationDir": "types",
-//    "sourceMap": true,
-    "outDir": "dist",
+    //    "sourceMap": true,
+    "outDir": "./dist",
 
     /* Interop Constraints */
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
@@ -31,9 +29,9 @@
       "@*": ["src/*"],
       "@ui/*": ["src/ui/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@utils/*": ["src/utils/*"],
-    },
+      "@utils/*": ["src/utils/*"]
+    }
   },
   "include": ["src/**/*"],
-  "exclude": [ "/**/*.stories.ts", "/**/*.stories.tsx", "test/**/*"]
+  "exclude": ["/**/*.stories.ts", "/**/*.stories.tsx", "/**/*.test.ts", "/**/*.stories.tsx", "test/**/*"]
 }

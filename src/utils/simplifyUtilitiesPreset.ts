@@ -1,20 +1,26 @@
 import { Config } from 'tailwindcss';
+
 import {
   CHECKBOX_BG,
   CHECKBOX_BORDER,
   CHECKBOX_HEIGHT,
   CHECKBOX_OUTLINE,
   CHECKBOX_STROKE,
-  CHECKBOX_WIDTH
+  CHECKBOX_WIDTH,
 } from './constants/checkbox';
 import { COLORS } from './constants/colors';
 import { InputFontSize, InputMargin } from './constants/input';
-import { ToggleColors, ToggleHeight, ToggleMargin, ToggleWidth } from './constants/toggle';
+import {
+  ToggleColors,
+  ToggleHeight,
+  ToggleMargin,
+  ToggleWidth,
+} from './constants/toggle';
 import {
   TypographyColors,
   TypographyFontSize,
   TypographyFontWeight,
-  TypographyLineHeight
+  TypographyLineHeight,
 } from './constants/typography';
 
 export const simplifyUtilitiesPreset: Partial<Config> = {
@@ -24,36 +30,36 @@ export const simplifyUtilitiesPreset: Partial<Config> = {
         ...COLORS,
         ...TypographyColors,
         ...ToggleColors,
-        ...ToggleColors
+        ...ToggleColors,
       },
       backgroundColor: {
-        ...CHECKBOX_BG
+        ...CHECKBOX_BG,
       },
       stroke: {
-        ...CHECKBOX_STROKE
+        ...CHECKBOX_STROKE,
       },
       borderColor: {
-        ...CHECKBOX_BORDER
+        ...CHECKBOX_BORDER,
       },
       outlineColor: {
-        ...CHECKBOX_OUTLINE
+        ...CHECKBOX_OUTLINE,
       },
       fontFamily: {
-        serif: '"Inter", sans-serif'
+        serif: '"Inter", sans-serif',
       },
       width: { ...CHECKBOX_WIDTH, ...ToggleWidth },
       height: { ...CHECKBOX_HEIGHT, ...ToggleHeight },
       fontSize: {
         ...TypographyFontSize,
-        ...InputFontSize
+        ...InputFontSize,
       },
       lineHeight: {
-        ...TypographyLineHeight
+        ...TypographyLineHeight,
       },
       fontWeight: {
-        ...TypographyFontWeight
+        ...TypographyFontWeight,
       },
-      margin: { ...InputMargin, ...ToggleMargin }
-    }
-  }
+      margin: { ...InputMargin, ...ToggleMargin },
+    },
+  },
 };

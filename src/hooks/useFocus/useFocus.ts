@@ -1,14 +1,22 @@
-import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
-export type Focus = () => [boolean, RefObject<HTMLElement>, () => void, () => void];
+export type Focus = () => [
+  boolean,
+  RefObject<HTMLElement | null>,
+  () => void,
+  () => void,
+];
 
 export const useFocus: Focus = () => {
   const [isFocused, setIsFocused] = useState(false);
-  const wrapperRef: LegacyRef<HTMLElement> = useRef<HTMLElement>(null);
+  const wrapperRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleFocus = (event: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as HTMLElement)) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as HTMLElement)
+      ) {
         setIsFocused(false);
       } else setIsFocused(true);
     };

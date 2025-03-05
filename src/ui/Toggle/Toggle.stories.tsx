@@ -10,17 +10,17 @@ const meta: Meta<typeof Toggle> = {
   argTypes: {
     disabled: {
       defaultValue: { summary: false },
-      type: 'boolean'
+      type: 'boolean',
     },
     toggle: {
       defaultValue: { summary: false },
-      type: 'boolean'
+      type: 'boolean',
     },
     className: {
       defaultValue: { summary: '' },
-      type: 'string'
-    }
-  }
+      type: 'string',
+    },
+  },
 };
 
 export default meta;
@@ -28,8 +28,8 @@ export default meta;
 export const ToggleDefault: ToggleStory = {
   args: {
     disabled: false,
-    toggle: false
-  }
+    toggle: false,
+  },
 };
 
 export const ToggleDefaultUsage: ToggleStory = {
@@ -37,26 +37,26 @@ export const ToggleDefaultUsage: ToggleStory = {
     const t = useToggle(false);
 
     return <Toggle {...t} />;
-  }
+  },
 };
 
 export const ToggleVariants: ToggleStory = {
   render: () => (
-    <div className='space-y-3'>
+    <div className="space-y-3">
       <div>
         <Typography>Checked</Typography>
-        <div className='flex gap-3'>
+        <div className="flex gap-3">
           <Toggle toggle />
           <Toggle disabled toggle />
         </div>
       </div>
       <div>
         <Typography>Unchecked</Typography>
-        <div className='flex gap-3'>
+        <div className="flex gap-3">
           <Toggle toggle={false} />
           <Toggle disabled toggle={false} />
         </div>
       </div>
     </div>
-  )
+  ),
 };

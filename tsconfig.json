@@ -1,19 +1,14 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
     /* Language and Environment */
 
     "jsx": "react-jsx" /* Specify what JSX code is generated. */,
     "types": ["node", "vitest/globals", "@testing-library/jest-dom"],
     /* Modules */
-    "module": "esnext"  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-     /* Specify what module code is generated. */
+    "module": "esnext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    /* Specify what module code is generated. */
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     /* Emit */
@@ -28,6 +23,7 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@*": ["src/*"],

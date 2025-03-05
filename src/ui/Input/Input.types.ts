@@ -10,7 +10,7 @@ export enum InputTypeVariants {
   date,
   text,
   time,
-  tel
+  tel,
 }
 
 export type InputProps = PolymorphProps<'input'> & {

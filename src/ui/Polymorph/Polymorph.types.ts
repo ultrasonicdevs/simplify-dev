@@ -1,26 +1,25 @@
 import {
-  ComponentPropsWithoutRef,
   ComponentPropsWithRef,
+  ComponentPropsWithoutRef,
   ElementType,
-  PropsWithChildren
+  PropsWithChildren,
 } from 'react';
 
 type AsProp<C extends ElementType> = {
   as?: C;
 };
 
-type PolymorphicPropsWithoutRef<C extends ElementType, P = {}> = PropsWithChildren<P> &
-  AsProp<C> &
-  ComponentPropsWithoutRef<C>;
-
-type PolymorphicComponentPropWithRef<
+type PolymorphicPropsWithoutRef<
   C extends ElementType,
-  Props = {}
-> = PolymorphicPropsWithoutRef<C, Props> & { ref?: PolymorphicRef<C> };
+  P = object,
+> = PropsWithChildren<P> & AsProp<C> & ComponentPropsWithoutRef<C>;
 
-export type PolymorphProps<C extends ElementType, Props = {}> =
-  | PolymorphicPropsWithoutRef<C>
-  | PolymorphicComponentPropWithRef<C, Props>;
+export type PolymorphProps<
+  C extends ElementType,
+  Props = object,
+> = PolymorphicPropsWithoutRef<C, Props> & {
+  ref?: ComponentPropsWithRef<C>['ref'];
+};
 
-// This is the type for the "ref" only
-export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
+export type PolymorphicRef<C extends ElementType> =
+  ComponentPropsWithRef<C>['ref'];

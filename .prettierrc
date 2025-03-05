@@ -1,28 +1,26 @@
 {
-  "bracketSameLine": true,
-  "parser": "typescript",
-  "printWidth": 100,
-  "endOfLine": "lf",
-  "trailingComma": "none",
-  "tabWidth": 2,
-  "arrowParens": "always",
+  "semi": true,
   "singleQuote": true,
-  "jsxSingleQuote": true,
-  "bracketSpacing": true,
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports",
-    "prettier-plugin-organize-imports"
-  ],
+  "printWidth": 80,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "bracketSameLine": true,
+  "endOfLine": "lf",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": [
-    "^@/ui/(.*)$",
-    "^@/hooks/(.*)$",
-    "^@/utils/(.*)$",
-    "^@/lib/(.*)$",
-    "^@/(.*)$",
+    "^[react]",
+    "^@(?!/)",
+    "^@app/(.*)$",
+    "^@widgets/(.*)$",
+    "^@features/(.*)$",
+    "^@entities/(.*)$",
+    "^@shared/(.*)$",
+    "^./hooks",
+    "^./libs",
+    "^./utils",
+    "^./ui",
     "^[./]"
   ],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "importOrderCaseInsensitive": true,
-  "organizeImportsSkipDestructiveCodeActions": false
+  "importOrderSortSpecifiers": true
 }

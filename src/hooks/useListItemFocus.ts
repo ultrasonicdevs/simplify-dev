@@ -8,7 +8,9 @@ export const useListItemFocus = (role: string) => {
       const list = listRef.current;
       if (!list) return;
 
-      const tabs = Array.from<HTMLElement>(list.querySelectorAll(`[role=${role}]:not([disabled])`));
+      const tabs = Array.from<HTMLElement>(
+        list.querySelectorAll(`[role=${role}]:not([disabled])`)
+      );
       const index = tabs.indexOf(document.activeElement as HTMLElement);
 
       if (index < 0) return;

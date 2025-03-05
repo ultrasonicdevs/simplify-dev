@@ -1,23 +1,25 @@
 import { Preview } from '@storybook/react';
-import './tw.css';
+
 import { CodeBlock } from './ui/CodeBlock';
+
+import './tw.css';
 
 const preview: Preview = {
   parameters: {
     docs: {
       components: {
-        code: CodeBlock
-      }
+        code: CodeBlock,
+      },
     },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
-    }
+        date: /Date$/,
+      },
+    },
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;
