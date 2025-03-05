@@ -1,0 +1,36 @@
+@import '@styles/colors.css';
+
+@theme {
+  /* Primary Button */
+--color-button-primary-bg-idle: var(--color-indigo-500);
+--color-button-primary-bg-hover: var(--color-indigo-400);
+--color-button-primary-bg-active: var(--color-indigo-600);
+--color-button-primary-bg-disabled: var(--color-indigo-100);
+--color-button-primary-text-idle: var(--color-white);
+--color-button-primary-text-hover: var(--color-white);
+--color-button-primary-text-active: var(--color-white);
+--color-button-primary-text-disabled: var(--color-indigo-300);
+--color-button-primary-ring-focus: var(--color-indigo-600);
+
+/* Secondary Button */
+--color-button-secondary-bg-idle: var(--color-ash-500);
+--color-button-secondary-bg-hover: var(--color-ash-400);
+--color-button-secondary-bg-active: var(--color-ash-600);
+--color-button-secondary-bg-disabled: var(--color-ash-200);
+--color-button-secondary-text-idle: var(--color-white);
+--color-button-secondary-text-hover: var(--color-white);
+--color-button-secondary-text-active: var(--color-white);
+--color-button-secondary-text-disabled: var(--color-ash-300);
+--color-button-secondary-ring-focus: var(--color-ash-600);
+
+/* Reject Button */
+--color-button-reject-bg-idle: var(--color-coral-500);
+--color-button-reject-bg-hover: var(--color-coral-400);
+--color-button-reject-bg-active: var(--color-coral-600);
+--color-button-reject-bg-disabled: var(--color-coral-100);
+--color-button-reject-text-idle: var(--color-white);
+--color-button-reject-text-hover: var(--color-white);
+--color-button-reject-text-active: var(--color-white);
+--color-button-reject-text-disabled: var(--color-coral-300);
+--color-button-reject-ring-focus: var(--color-coral-600);
+}

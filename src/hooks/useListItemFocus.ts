@@ -7,8 +7,10 @@ export const useListItemFocus = (role: string) => {
     (e: KeyboardEvent) => {
       const list = listRef.current;
       if (!list) return;
-      const tabs = Array.from<HTMLElement>(list.querySelectorAll(`[role=${role}]:not([diabled])`));
+
+      const tabs = Array.from<HTMLElement>(list.querySelectorAll(`[role=${role}]:not([disabled])`));
       const index = tabs.indexOf(document.activeElement as HTMLElement);
+
       if (index < 0) return;
 
       switch (e.key) {
@@ -22,6 +24,16 @@ export const useListItemFocus = (role: string) => {
         case 'ArrowRight': {
           const next = (index + 1 + tabs.length) % tabs.length;
           tabs[next]?.focus();
+          break;
+        }
+        case 'Tab': {
+          if (e.shiftKey) {
+            const prev = (index - 1 + tabs.length) % tabs.length;
+            tabs[prev]?.focus();
+          } else {
+            const next = (index + 1 + tabs.length) % tabs.length;
+            tabs[next]?.focus();
+          }
           break;
         }
       }

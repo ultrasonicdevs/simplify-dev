@@ -6,7 +6,7 @@ enum buttonAsVariants {
 }
 
 export type ButtonProps = PolymorphProps<keyof typeof buttonAsVariants> & {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'reject';
-  size?: 'xs' | 'sm' | 'md';
+  variant?: 'primary' | 'secondary' | 'reject' | 'null';
+  size?: 'sm' | 'md' | 'null';
   buttonType?: 'button' | 'text';
 };

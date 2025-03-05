@@ -72,15 +72,15 @@ export default function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Box as="section" className="flex flex-col items-center justify-center gap-5 min-h-screen">
-      <Box className="flex justify-center">
+    <div as="section" className="flex flex-col items-center justify-center gap-5 min-h-screen">
+      <div className="flex justify-center">
         <Button as="a" buttonType="text" href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} alt="Vite logo" width="120px" />
         </Button>
         <Button as="a" buttonType="text" href="https://react.dev" target="_blank">
           <img src={reactLogo} alt="React logo" width="120px" />
         </Button>
-      </Box>
+      </div>
       <Typography as="h1">Project with simplify-dev</Typography>
         <Button as="button" variant="reject" className="w-[300px]" onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -91,7 +91,7 @@ export default function App() {
       <Typography>
         Click on the Vite and React logos to learn more
       </Typography>
-    </Box>
+    </div>
   )
 }
 ```

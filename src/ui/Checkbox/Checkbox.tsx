@@ -1,4 +1,3 @@
-import { Box } from '@ui/Box';
 import { FC } from 'react';
 import { IoCheckmark } from 'react-icons/io5';
 import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles';
@@ -24,7 +23,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   const onClick = () => !disabled && changeState?.();
 
   return (
-    <Box
+    <div
       role='checkbox'
       onClick={onClick}
       className={checkboxVariants(disabled, toggle)({ variant, className })}>
@@ -35,6 +34,6 @@ export const Checkbox: FC<CheckboxProps> = ({
           disabled
         })}
       />
-    </Box>
+    </div>
   );
 };

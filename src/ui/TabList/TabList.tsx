@@ -1,7 +1,7 @@
 import { useListItemFocus } from '@hooks/useListItemFocus';
-import { cn } from '@utils/cn';
+import { cn } from '@libs/cn';
 import { ComponentProps, FC, ReactElement, useCallback, useContext, useId } from 'react';
-import { Box, BoxProps } from '../Box';
+import { BoxProps } from '../div';
 import clone from './lib/clone';
 import { TabListContext } from './lib/tabContext';
 
@@ -24,7 +24,7 @@ export const TabList: FC<TabListProps> = ({
   const childrenList: ReactElement[] = Array.isArray(children) ? children : [children];
 
   return (
-    <Box as='article' {...props} ref={listRef} role='tablist' aria-label={id} onKeyDown={onKeyDown}>
+    <div as='article' {...props} ref={listRef} role='tablist' aria-label={id} onKeyDown={onKeyDown}>
       {childrenList?.map((child, index) => {
         const key = child.props?.id ?? `${id}-${index}`;
 
@@ -46,6 +46,6 @@ export const TabList: FC<TabListProps> = ({
 
         return clone(child, props);
       })}
-    </Box>
+    </div>
   );
 };

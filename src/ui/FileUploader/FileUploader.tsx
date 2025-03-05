@@ -1,4 +1,3 @@
-import { Box } from '@ui/Box';
 import { Polymorph } from '@ui/Polymorph';
 import { Typography } from '@ui/Typography';
 import { cn } from '@utils';
@@ -40,7 +39,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
   };
 
   return (
-    <Box className={cx(className, disabled && 'pointer-event-none')} onClick={clickOnInput}>
+    <div className={cx(className, disabled && 'pointer-event-none')} onClick={clickOnInput}>
       <Polymorph
         as='input'
         className={cn(disabled && 'pointer-event-none', 'invisible opacity-0 absolute')}
@@ -50,15 +49,15 @@ export const FileUploader: FC<FileUploaderProps> = ({
         onChange={uploadFile}
         multiple
       />
-      <Box
+      <div
         as='article'
         className={cn(
           'overflow-hidden h-full w-full border-[2px] border-dashed border-grey-300 rounded-[16px] p-[24px]',
           error && 'border-red-500',
           disabled && 'bg-grey-100'
         )}>
-        <Box className='w-full h-full grid grid-cols-1 place-items-center gap-[12px]'>
-          <Box
+        <div className='w-full h-full grid grid-cols-1 place-items-center gap-[12px]'>
+          <div
             className={cn(
               'grid place-content-center bg-blue-100 h-[60px] w-[60px] rounded-[8px]',
               files?.length && 'bg-green-200'
@@ -68,7 +67,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
             ) : (
               <TbFileUpload className='stroke-blue-400 stroke-[2px] w-[32px] h-[32px]' />
             )}
-          </Box>
+          </div>
           <Typography className='text-center'>{title || 'Загрузите файл'}</Typography>
           {description && <Typography as='span'>{description}</Typography>}
           {files?.map((file: File, index: number) => (
@@ -80,13 +79,13 @@ export const FileUploader: FC<FileUploaderProps> = ({
               onDelete={deleteFile(file)}
             />
           ))}
-        </Box>
-      </Box>
+        </div>
+      </div>
       {error?.message && (
         <Typography as='span' className='text-sm font-medium text-red-500'>
           {error.message}
         </Typography>
       )}
-    </Box>
+    </div>
   );
 };

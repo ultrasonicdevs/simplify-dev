@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Typography } from '@ui';
 import { FC, ReactNode } from 'react';
 import { Button } from './Button';
 
@@ -20,12 +19,12 @@ const meta: Meta<typeof Button> = {
     size: {
       description: '**Button HTML size**',
       defaultValue: { summary: 'md' },
-      options: ['xs', 'sm', 'md']
+      options: ['sm', 'md', 'null']
     },
     variant: {
       description: '**Button HTML variant**',
       defaultValue: { summary: 'primary' },
-      options: ['primary', 'secondary', 'tertiary', 'reject']
+      options: ['primary', 'secondary', 'reject', 'null']
     },
     buttonType: {
       defaultValue: { summary: 'button' },
@@ -90,57 +89,54 @@ const ButtonVariants: FC<ButtonVariantsProps> = ({
   buttonType = 'button',
   children
 }) => (
-  <Box>
-    <Typography>Primary</Typography>
-    <Box className={'flex gap-[10px]'}>
-      <Button as={as} variant='primary' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='primary' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='primary' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
-    </Box>
-
-    <Typography>Secondary</Typography>
-    <Box className={'flex gap-[10px]'}>
-      <Button as={as} variant='secondary' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='secondary' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='secondary' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
-    </Box>
-
-    <Typography>Tertiary</Typography>
-    <Box className={'flex gap-[10px]'}>
-      <Button as={as} variant='tertiary' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='tertiary' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='tertiary' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
-    </Box>
-
-    <Typography>Reject</Typography>
-    <Box className={'flex gap-[10px]'}>
-      <Button as={as} variant='reject' size='xs' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='reject' size='sm' buttonType={buttonType}>
-        {children}
-      </Button>
-      <Button as={as} variant='reject' size='md' buttonType={buttonType}>
-        {children}
-      </Button>
-    </Box>
-  </Box>
+  <div className='overflow-x-auto p-4'>
+    <table className='w-full border-collapse border border-gray-300 shadow-md rounded-lg'>
+      <thead>
+        <tr className='bg-gray-100 text-gray-700'>
+          <th className='p-3 border border-gray-300'></th>
+          <th className='p-3 border border-gray-300'>Primary</th>
+          <th className='p-3 border border-gray-300'>Secondary</th>
+          <th className='p-3 border border-gray-300'>Reject</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className='bg-white hover:bg-gray-50'>
+          <th className='p-3 border border-gray-300'>Size: md</th>
+          <td className='p-3 border border-gray-300'>
+            <Button as={as} variant='primary' size='md' buttonType={buttonType}>
+              {children}
+            </Button>
+          </td>
+          <td className='p-3 border border-gray-300'>
+            <Button as={as} variant='secondary' size='md' buttonType={buttonType}>
+              {children}
+            </Button>
+          </td>
+          <td className='p-3 border border-gray-300'>
+            <Button as={as} variant='reject' size='md' buttonType={buttonType}>
+              {children}
+            </Button>
+          </td>
+        </tr>
+        <tr className='bg-white hover:bg-gray-50'>
+          <th className='p-3 border border-gray-300'>Size: sm</th>
+          <td className='p-3 border border-gray-300'>
+            <Button as={as} variant='primary' size='sm' buttonType={buttonType}>
+              {children}
+            </Button>
+          </td>
+          <td className='p-3 border border-gray-300'>
+            <Button as={as} variant='secondary' size='sm' buttonType={buttonType}>
+              {children}
+            </Button>
+          </td>
+          <td className='p-3 border border-gray-300'>
+            <Button as={as} variant='reject' size='sm' buttonType={buttonType}>
+              {children}
+            </Button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 );

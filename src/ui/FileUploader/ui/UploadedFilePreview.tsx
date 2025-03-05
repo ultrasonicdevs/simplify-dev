@@ -1,4 +1,3 @@
-import { Box } from '@ui/Box';
 import { Button } from '@ui/Button';
 import { Typography } from '@ui/Typography';
 import { cn } from '@utils';
@@ -20,8 +19,8 @@ export const UploadedFilePreview = ({
   disabled
 }: UploadedFilePreviewProps) => {
   return (
-    <Box className='overflow-hidden w-full'>
-      <Box
+    <div className='overflow-hidden w-full'>
+      <div
         className={cn(
           'flex items-center p-2 border border-grey-300 rounded-xl gap-2 bg-white',
           error && 'border-red-500 bg-red-100',
@@ -37,20 +36,20 @@ export const UploadedFilePreview = ({
         <Button buttonType='text' variant='tertiary' onClick={onDelete}>
           <RxCross2 className='w-6 h-6' />
         </Button>
-      </Box>
+      </div>
       {error && (
         <Typography as='span' className='text-sm font-medium text-red-500'>
           {Array.isArray(error) ? error.join(', ') : error}
         </Typography>
       )}
-    </Box>
+    </div>
   );
 };
 
 const FileType = ({ type }: { type: string }) => (
-  <Box className='px-[6px] py-[5px] rounded bg-[#2358E1]'>
+  <div className='px-[6px] py-[5px] rounded bg-[#2358E1]'>
     <Typography as='p' className='text-white text-[10px] whitespace-nowrap'>
       {type}
     </Typography>
-  </Box>
+  </div>
 );

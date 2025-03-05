@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -11,7 +12,7 @@ export default defineConfig({
     root: 'src/',
     setupFiles: 'test/setup.ts'
   },
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     extensions: ['.ts', '.tsx', '.mdx', '.js'],
     alias: {
@@ -19,7 +20,8 @@ export default defineConfig({
       '@ui': path.resolve(__dirname, './src/ui'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@utils': path.resolve(__dirname, './src/utils'),
-      '@lib': path.resolve(__dirname, './src/lib')
+      '@libs': path.resolve(__dirname, './src/libs'),
+      '@styles': path.resolve(__dirname, 'src/styles')
     }
   }
 });

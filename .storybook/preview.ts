@@ -1,8 +1,14 @@
-import type { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react';
 import './tw.css';
+import { CodeBlock } from './ui/CodeBlock';
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      components: {
+        code: CodeBlock
+      }
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

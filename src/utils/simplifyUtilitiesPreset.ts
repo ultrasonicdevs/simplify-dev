@@ -1,5 +1,4 @@
 import { Config } from 'tailwindcss';
-import { BUTTON_BG, BUTTON_COLORS, TEXT_BUTTON_BG, TEXT_BUTTON_COLORS } from './constants/button';
 import {
   CHECKBOX_BG,
   CHECKBOX_BORDER,
@@ -24,15 +23,11 @@ export const simplifyUtilitiesPreset: Partial<Config> = {
       colors: {
         ...COLORS,
         ...TypographyColors,
-        ...TEXT_BUTTON_COLORS,
-        ...BUTTON_COLORS,
         ...ToggleColors,
         ...ToggleColors
       },
       backgroundColor: {
-        ...TEXT_BUTTON_BG,
-        ...CHECKBOX_BG,
-        ...BUTTON_BG
+        ...CHECKBOX_BG
       },
       stroke: {
         ...CHECKBOX_STROKE
@@ -41,9 +36,7 @@ export const simplifyUtilitiesPreset: Partial<Config> = {
         ...CHECKBOX_BORDER
       },
       outlineColor: {
-        ...CHECKBOX_OUTLINE,
-        ...TEXT_BUTTON_BG,
-        ...BUTTON_BG
+        ...CHECKBOX_OUTLINE
       },
       fontFamily: {
         serif: '"Inter", sans-serif'

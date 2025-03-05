@@ -1,6 +1,6 @@
 import { useToggle } from '@hooks';
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Toggle, Typography } from '@ui';
+import { Toggle, Typography } from '@ui';
 
 type ToggleStory = StoryObj<typeof Toggle>;
 
@@ -42,21 +42,21 @@ export const ToggleDefaultUsage: ToggleStory = {
 
 export const ToggleVariants: ToggleStory = {
   render: () => (
-    <Box className='space-y-3'>
-      <Box>
+    <div className='space-y-3'>
+      <div>
         <Typography>Checked</Typography>
-        <Box className='flex gap-3'>
+        <div className='flex gap-3'>
           <Toggle toggle />
           <Toggle disabled toggle />
-        </Box>
-      </Box>
-      <Box>
+        </div>
+      </div>
+      <div>
         <Typography>Unchecked</Typography>
-        <Box className='flex gap-3'>
+        <div className='flex gap-3'>
           <Toggle toggle={false} />
           <Toggle disabled toggle={false} />
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   )
 };
