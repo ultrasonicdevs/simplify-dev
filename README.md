@@ -39,22 +39,17 @@ npx tailwindcss init -p
 Add the paths to all of your template files in your tailwind.config.js file.
 
 ```js
-import { simplifyDefaultsPlugin, simplifyUtilitiesPreset } from 'simplify-dev';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/simplify-dev/*', // styling simplify-dev components
+    './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
       // your configuration
     },
   },
-  plugins: [simplifyDefaultsPlugin],
-  presets: [simplifyUtilitiesPreset],
 };
 ```
 
@@ -87,7 +82,6 @@ export default function App() {
   const [count, setCount] = useState(0);
 
   return (
-<<<<<<< HEAD
     <section className="flex flex-col items-center justify-center gap-5 min-h-screen">
       <div className="flex justify-center">
         <Button as="a" buttonType="text" href="https://vitejs.dev" target="_blank">
@@ -101,7 +95,7 @@ export default function App() {
           <img src={reactLogo} alt="React logo" width="120px" />
         </Button>
       </div>
-      <Typography as="h1">Project with simplify-dev</Typography>
+      <h1>Project with simplify-dev</h1>
       <Button
         as="button"
         variant="reject"
@@ -109,10 +103,10 @@ export default function App() {
         onClick={() => setCount((count) => count + 1)}>
         count is {count}
       </Button>
-      <Typography>
+      <p>
         Edit <code>src/App.tsx</code> and save to test HMR
-      </Typography>
-      <Typography>Click on the Vite and React logos to learn more</Typography>
+      </p>
+      <p>Click on the Vite and React logos to learn more</p>
     </section>
   );
 }

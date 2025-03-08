@@ -16,19 +16,12 @@ import {
   ToggleMargin,
   ToggleWidth,
 } from './constants/toggle';
-import {
-  TypographyColors,
-  TypographyFontSize,
-  TypographyFontWeight,
-  TypographyLineHeight,
-} from './constants/typography';
 
 export const simplifyUtilitiesPreset: Partial<Config> = {
   theme: {
     extend: {
       colors: {
         ...COLORS,
-        ...TypographyColors,
         ...ToggleColors,
         ...ToggleColors,
       },
@@ -49,16 +42,6 @@ export const simplifyUtilitiesPreset: Partial<Config> = {
       },
       width: { ...CHECKBOX_WIDTH, ...ToggleWidth },
       height: { ...CHECKBOX_HEIGHT, ...ToggleHeight },
-      fontSize: {
-        ...TypographyFontSize,
-        ...InputFontSize,
-      },
-      lineHeight: {
-        ...TypographyLineHeight,
-      },
-      fontWeight: {
-        ...TypographyFontWeight,
-      },
       margin: { ...InputMargin, ...ToggleMargin },
     },
   },

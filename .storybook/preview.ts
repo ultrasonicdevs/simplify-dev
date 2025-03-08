@@ -1,8 +1,19 @@
-import { Preview } from '@storybook/react';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import type { Preview } from '@storybook/react';
+import '@styles/tailwind.css';
 
 import { CodeBlock } from './ui/CodeBlock';
 
-import './tw.css';
+export const decorators = [
+  withThemeByDataAttribute({
+    themes: {
+      light: 'light',
+      dark: 'dark',
+    },
+    defaultTheme: 'light',
+    attributeName: 'data-theme',
+  }),
+];
 
 const preview: Preview = {
   parameters: {
@@ -14,11 +25,10 @@ const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
+        date: /Date$/i,
       },
     },
   },
-
   tags: ['autodocs'],
 };
 

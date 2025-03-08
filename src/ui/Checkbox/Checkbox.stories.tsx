@@ -1,6 +1,5 @@
 import { useToggle } from '@hooks';
 import { Meta, StoryObj } from '@storybook/react';
-import { Typography } from '@ui';
 
 import { Checkbox } from './Checkbox';
 
@@ -45,14 +44,14 @@ export const CheckboxVariants: CheckboxStory = {
   render: () => (
     <div className="space-y-3">
       <div>
-        <Typography>Checked</Typography>
+        <p>Checked</p>
         <div className="flex gap-3">
           <Checkbox toggle />
           <Checkbox disabled toggle />
         </div>
       </div>
       <div>
-        <Typography>Unchecked</Typography>
+        <p>Unchecked</p>
         <div className="flex gap-3">
           <Checkbox toggle={false} />
           <Checkbox disabled toggle={false} />

@@ -1,0 +1,187 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="ui/Typography" />
+
+# Typography
+
+This section describes the styles of headings, paragraphs, and other text elements used in the project.  
+The styles are based on CSS variables for easy maintenance and customization.
+
+## Tag Appearance
+
+<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
+  <thead>
+    <tr className="bg-gray-100 text-gray-700">
+      <th className="p-3 border border-gray-300">Tag</th>
+      <th className="p-3 border border-gray-300">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">h1</td>
+      <td className="p-3 border border-gray-300"><h1>Heading H1</h1></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">h2</td>
+      <td className="p-3 border border-gray-300"><h2>Heading H2</h2></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">h3</td>
+      <td className="p-3 border border-gray-300"><h3>Heading H3</h3></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">h4</td>
+      <td className="p-3 border border-gray-300"><h4>Heading H4</h4></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">h5</td>
+      <td className="p-3 border border-gray-300"><h5>Heading H5</h5></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">h6</td>
+      <td className="p-3 border border-gray-300"><h6>Heading H6</h6></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">p</td>
+      <td className="p-3 border border-gray-300"><p>This is a paragraph.</p></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">span</td>
+      <td className="p-3 border border-gray-300"><span>This is a span.</span></td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="p-3 border border-gray-300">label</td>
+      <td className="p-3 border border-gray-300"><label>This is a label.</label></td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## CSS Variables
+
+### Color Variables
+
+<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
+  <thead>
+    <tr className="bg-gray-100 text-gray-700">
+      <th className="p-3 border border-gray-300">Variable</th>
+      <th className="p-3 border border-gray-300">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["--color-h1", "#303030"],
+      ["--color-h2", "#303030"],
+      ["--color-h3", "#303030"],
+      ["--color-h4", "#303030"],
+      ["--color-h5", "#303030"],
+      ["--color-h6", "#303030"],
+      ["--color-p", "#303030"],
+      ["--color-span", "#30303099"],
+      ["--color-label", "#303030"]
+    ].map(([variable, value]) => (
+      <tr key={variable} className="bg-white hover:bg-gray-50">
+        <td className="p-3 border border-gray-300">{variable}</td>
+        <td className="p-3 border border-gray-300">{value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+### Font Size Variables
+
+<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
+  <thead>
+    <tr className="bg-gray-100 text-gray-700">
+      <th className="p-3 border border-gray-300">Variable</th>
+      <th className="p-3 border border-gray-300">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["--text-h1", "60px"],
+      ["--text-h2", "32px"],
+      ["--text-h3", "28px"],
+      ["--text-h4", "24px"],
+      ["--text-h5", "20px"],
+      ["--text-h6", "18px"],
+      ["--text-p", "16px"],
+      ["--text-span", "16px"],
+      ["--text-label", "18px"]
+    ].map(([variable, value]) => (
+      <tr key={variable} className="bg-white hover:bg-gray-50">
+        <td className="p-3 border border-gray-300">{variable}</td>
+        <td className="p-3 border border-gray-300">{value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+### Line Height Variables
+
+<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
+  <thead>
+    <tr className="bg-gray-100 text-gray-700">
+      <th className="p-3 border border-gray-300">Variable</th>
+      <th className="p-3 border border-gray-300">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["--leading-h1", "100%"],
+      ["--leading-h2", "100%"],
+      ["--leading-h3", "100%"],
+      ["--leading-h4", "100%"],
+      ["--leading-h5", "100%"],
+      ["--leading-h6", "100%"],
+      ["--leading-p", "100%"],
+      ["--leading-span", "100%"],
+      ["--leading-label", "100%"]
+    ].map(([variable, value]) => (
+      <tr key={variable} className="bg-white hover:bg-gray-50">
+        <td className="p-3 border border-gray-300">{variable}</td>
+        <td className="p-3 border border-gray-300">{value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+### Font Weight Variables
+
+<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
+  <thead>
+    <tr className="bg-gray-100 text-gray-700">
+      <th className="p-3 border border-gray-300">Variable</th>
+      <th className="p-3 border border-gray-300">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["--font-weight-h1", "700"],
+      ["--font-weight-h2", "600"],
+      ["--font-weight-h3", "600"],
+      ["--font-weight-h4", "600"],
+      ["--font-weight-h5", "600"],
+      ["--font-weight-h6", "600"],
+      ["--font-weight-p", "600"],
+      ["--font-weight-span", "500"],
+      ["--font-weight-label", "600"]
+    ].map(([variable, value]) => (
+      <tr key={variable} className="bg-white hover:bg-gray-50">
+        <td className="p-3 border border-gray-300">{variable}</td>
+        <td className="p-3 border border-gray-300">{value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+Now you can easily customize styles by modifying CSS variables. 🚀

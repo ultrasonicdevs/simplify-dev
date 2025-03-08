@@ -4,4 +4,3 @@ export * from './FileUploader';
 export * from './Input';
 export * from './TabList';
 export * from './Toggle';
-export * from './Typography';

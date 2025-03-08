@@ -1,12 +1,10 @@
-import { FC } from 'react';
-
 import { Polymorph } from '@ui/Polymorph';
 import { cn } from '@utils';
 
 import { buttonVariants, textButtonVariants } from './Button.styles';
 import { ButtonProps } from './Button.types';
 
-export const Button: FC<ButtonProps> = ({
+export const Button = ({
   buttonType = 'button',
   className,
   children,
@@ -14,7 +12,7 @@ export const Button: FC<ButtonProps> = ({
   size,
   as = 'button',
   ...props
-}) => {
+}: ButtonProps) => {
   return (
     <Polymorph
       as={as}

@@ -2,7 +2,6 @@ import { MouseEvent } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 
 import { Button } from '@ui/Button';
-import { Typography } from '@ui/Typography';
 import { cn } from '@utils';
 
 import { formatBytes, formatFileName, formatFileType } from '../utils';
@@ -29,22 +28,20 @@ export const UploadedFilePreview = ({
           disabled && 'bg-gray-300'
         )}>
         <FileType type={formatFileType(file.type)} />
-        <Typography
-          as="p"
-          className="grow text-ellipsis overflow-hidden font-medium">
+        <p className="grow text-ellipsis overflow-hidden font-medium">
           {formatFileName(file.name)}
-        </Typography>
-        <Typography as="span" className="font-medium whitespace-nowrap">
+        </p>
+        <span className="font-medium whitespace-nowrap">
           {formatBytes(file.size)}
-        </Typography>
+        </span>
         <Button buttonType="text" variant="secondary" onClick={onDelete}>
           <RxCross2 className="w-6 h-6" />
         </Button>
       </div>
       {error && (
-        <Typography as="span" className="text-sm font-medium text-red-500">
+        <span className="text-sm font-medium text-red-500">
           {Array.isArray(error) ? error.join(', ') : error}
-        </Typography>
+        </span>
       )}
     </div>
   );
@@ -52,8 +49,6 @@ export const UploadedFilePreview = ({
 
 const FileType = ({ type }: { type: string }) => (
   <div className="px-[6px] py-[5px] rounded bg-[#2358E1]">
-    <Typography as="p" className="text-white text-[10px] whitespace-nowrap">
-      {type}
-    </Typography>
+    <p className="text-white text-[10px] whitespace-nowrap">{type}</p>
   </div>
 );

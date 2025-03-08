@@ -5,20 +5,20 @@ import {
   PropsWithChildren,
 } from 'react';
 
-type AsProp<C extends ElementType> = {
-  as?: C;
+type AsProp<Tag extends ElementType> = {
+  as?: Tag;
 };
 
 type PolymorphicPropsWithoutRef<
-  C extends ElementType,
+  Tag extends ElementType,
   P = object,
-> = PropsWithChildren<P> & AsProp<C> & ComponentPropsWithoutRef<C>;
+> = PropsWithChildren<P> & AsProp<Tag> & ComponentPropsWithoutRef<Tag>;
 
 export type PolymorphProps<
-  C extends ElementType,
+  Tag extends ElementType,
   Props = object,
-> = PolymorphicPropsWithoutRef<C, Props> & {
-  ref?: ComponentPropsWithRef<C>['ref'];
+> = PolymorphicPropsWithoutRef<Tag, Props> & {
+  ref?: ComponentPropsWithRef<Tag>['ref'];
 };
 
 export type PolymorphicRef<C extends ElementType> =

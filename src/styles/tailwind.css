@@ -1,3 +1,7 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @import "./roundings.css";
 @import "./colors.css";
 @import "@ui/Button/style.css";

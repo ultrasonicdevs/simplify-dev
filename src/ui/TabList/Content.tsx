@@ -1,8 +1,7 @@
 import { FC, ReactNode, useContext } from 'react';
 
+import { TabListContext } from '@libs/react/tabContext';
 import { PolymorphProps } from '@ui/Polymorph';
-
-import { TabListContext } from './lib/tabContext';
 
 export type TabContentProps = PolymorphProps<'div'> & {
   tab: string;

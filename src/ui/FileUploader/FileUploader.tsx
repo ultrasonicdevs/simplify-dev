@@ -3,7 +3,6 @@ import { IoCheckmark } from 'react-icons/io5';
 import { TbFileUpload } from 'react-icons/tb';
 
 import { Polymorph } from '@ui/Polymorph';
-import { Typography } from '@ui/Typography';
 import { cn } from '@utils';
 
 import { formatAcceptedTypesToInputAccept } from './utils';
@@ -77,10 +76,8 @@ export const FileUploader: FC<FileUploaderProps> = ({
               <TbFileUpload className="stroke-blue-400 stroke-[2px] w-[32px] h-[32px]" />
             )}
           </div>
-          <Typography className="text-center">
-            {title || 'Загрузите файл'}
-          </Typography>
-          {description && <Typography as="span">{description}</Typography>}
+          <p className="text-center">{title || 'Загрузите файл'}</p>
+          {description && <span>{description}</span>}
           {files?.map((file: File, index: number) => (
             <UploadedFilePreview
               key={`${file.name}`}
@@ -93,9 +90,9 @@ export const FileUploader: FC<FileUploaderProps> = ({
         </div>
       </article>
       {error?.message && (
-        <Typography as="span" className="text-sm font-medium text-red-500">
+        <span className="text-sm font-medium text-red-500">
           {error.message}
-        </Typography>
+        </span>
       )}
     </div>
   );

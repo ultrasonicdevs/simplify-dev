@@ -54,13 +54,12 @@
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@storybook/addon-essentials": "^8.6.3",
-    "@storybook/addon-interactions": "^8.6.3",
-    "@storybook/addon-links": "^8.6.3",
-    "@storybook/blocks": "^8.6.3",
-    "@storybook/react": "^8.6.3",
-    "@storybook/react-vite": "^8.6.3",
-    "@storybook/test": "^8.6.3",
+    "@storybook/addon-docs": "^8.6.4",
+    "@storybook/addon-essentials": "^8.6.4",
+    "@storybook/addon-onboarding": "^8.6.4",
+    "@storybook/addon-themes": "^8.6.4",
+    "@storybook/experimental-addon-test": "^8.6.4",
+    "@storybook/react-vite": "^8.6.4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
@@ -89,7 +88,6 @@
     "rollup-plugin-delete": "^3.0.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "storybook": "^8.6.3",
     "tailwind-merge": "^3.0.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.0",
@@ -103,5 +101,11 @@
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended"
+    ]
   }
 }

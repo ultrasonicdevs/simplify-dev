@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, useId, useMemo, useState } from 'react';
 
-import { TabListContext } from './lib/tabContext';
+import { TabListContext } from '@libs/react/tabContext';
 
 export type ProviderProps = PropsWithChildren & { defaultSelectedId: string };
 

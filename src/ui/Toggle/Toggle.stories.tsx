@@ -1,6 +1,6 @@
 import { useToggle } from '@hooks';
 import { Meta, StoryObj } from '@storybook/react';
-import { Toggle, Typography } from '@ui';
+import { Toggle } from '@ui';
 
 type ToggleStory = StoryObj<typeof Toggle>;
 
@@ -44,14 +44,14 @@ export const ToggleVariants: ToggleStory = {
   render: () => (
     <div className="space-y-3">
       <div>
-        <Typography>Checked</Typography>
+        <p>Checked</p>
         <div className="flex gap-3">
           <Toggle toggle />
           <Toggle disabled toggle />
         </div>
       </div>
       <div>
-        <Typography>Unchecked</Typography>
+        <p>Unchecked</p>
         <div className="flex gap-3">
           <Toggle toggle={false} />
           <Toggle disabled toggle={false} />

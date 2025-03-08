@@ -1,4 +1,5 @@
 'use client';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface CopyToClipboardInput {
@@ -10,7 +11,7 @@ interface CopyToClipboardInput {
 export const useCopyToClipboard = ({
   copyValue,
   onError,
-  onSuccess
+  onSuccess,
 }: CopyToClipboardInput): [() => void, boolean, (value: boolean) => void] => {
   const copyableString = useRef(copyValue);
   const [copied, setCopied] = useState(false);

@@ -10,8 +10,8 @@ import { useListItemFocus } from '@hooks/useListItemFocus';
 import { cn } from '@libs/cn';
 import { PolymorphProps } from '@ui/Polymorph';
 
-import clone from './lib/clone';
-import { TabListContext } from './lib/tabContext';
+import clone from '../../libs/react/clone';
+import { TabListContext } from '../../libs/react/tabContext';
 
 export type TabListProps = {
   selectedVariant?: string;
