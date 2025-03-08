@@ -1,19 +1,14 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
     /* Language and Environment */
 
     "jsx": "react-jsx" /* Specify what JSX code is generated. */,
     "types": ["node", "vitest/globals", "@testing-library/jest-dom"],
     /* Modules */
-    "module": "esnext"  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-     /* Specify what module code is generated. */
+    "module": "esnext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    /* Specify what module code is generated. */
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     /* Emit */
@@ -34,8 +29,8 @@
       "@ui/*": ["src/ui/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@lib/*": ["src/ui/TabList/lib/*"],
-    },
+      "@lib/*": ["src/ui/TabList/lib/*"]
+    }
   },
   "include": ["src/**/*", ".storybook/**/*"]
 }

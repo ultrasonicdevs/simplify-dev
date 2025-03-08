@@ -1,7 +1,8 @@
 /// <reference types="vitest" />
-import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
+
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     root: 'src/',
-    setupFiles: 'test/setup.ts'
+    setupFiles: 'test/setup.ts',
   },
   plugins: [react()],
   resolve: {
@@ -19,7 +20,7 @@ export default defineConfig({
       '@ui': path.resolve(__dirname, './src/ui'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@utils': path.resolve(__dirname, './src/utils'),
-      '@lib': path.resolve(__dirname, './src/lib')
-    }
-  }
+      '@lib': path.resolve(__dirname, './src/lib'),
+    },
+  },
 });

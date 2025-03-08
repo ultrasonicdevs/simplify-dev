@@ -1,5 +1,6 @@
-import { cn } from '@utils';
 import { cva } from 'class-variance-authority';
+
+import { cn } from '@utils';
 
 export const checkboxVariants = (disabled: boolean, checked: boolean) =>
   cva(
@@ -22,19 +23,23 @@ export const checkboxVariants = (disabled: boolean, checked: boolean) =>
               checked &&
               'border-cb-checked bg-cb-checked hover:border-cb-hover-checked hover:bg-cb-hover-checked active:border-cb-active-checked active:bg-cb-active-checked focus:border-cb-hover-checked focus:bg-cb-focus-checked outline-cb-checked',
             disabled && !checked && 'border-cb-disabled bg-cb-disabled',
-            disabled && checked && 'border-cb-disabled-checked bg-cb-disabled-checked'
+            disabled &&
+              checked &&
+              'border-cb-disabled-checked bg-cb-disabled-checked'
           ),
           error: cn(
             'border-cb-error bg-cb-error',
             disabled && !checked && 'border-cb-disabled bg-cb-disabled',
             !disabled && checked && 'border-cb-checked bg-cb-checked',
-            disabled && checked && 'border-cb-checked-disabled bg-cb-checked-disabled'
-          )
-        }
+            disabled &&
+              checked &&
+              'border-cb-checked-disabled bg-cb-checked-disabled'
+          ),
+        },
       },
       defaultVariants: {
-        variant: 'default'
-      }
+        variant: 'default',
+      },
     }
   );
 
@@ -42,15 +47,15 @@ export const checkboxToggleVariants = cva(['w-cb h-cb'], {
   variants: {
     disabled: {
       false: cn('stroke-cb'),
-      true: cn('stroke-cb-disabled')
+      true: cn('stroke-cb-disabled'),
     },
     checked: {
       true: cn('opacity-1'),
-      false: cn('opacity-0')
-    }
+      false: cn('opacity-0'),
+    },
   },
   defaultVariants: {
     disabled: false,
-    checked: false
-  }
+    checked: false,
+  },
 });

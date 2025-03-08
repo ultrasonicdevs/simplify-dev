@@ -2,12 +2,12 @@ import { COLORS } from './colors';
 
 export const CHECKBOX_STROKE = {
   cb: COLORS['blue-50'],
-  'cb-disabled': COLORS['blue-50']
+  'cb-disabled': COLORS['blue-50'],
 };
 
 export const CHECKBOX_OUTLINE = {
   cb: COLORS['blue-500'],
-  'cb-disabled': COLORS['blue-500']
+  'cb-disabled': COLORS['blue-500'],
 };
 
 export const CHECKBOX_BORDER = {
@@ -24,7 +24,7 @@ export const CHECKBOX_BORDER = {
   'cb-focus-checked': COLORS['blue-300'],
 
   'cb-disabled': COLORS['grey-200'],
-  'cb-disabled-checked': COLORS.transparent
+  'cb-disabled-checked': COLORS.transparent,
 };
 
 export const CHECKBOX_BG = {
@@ -41,12 +41,12 @@ export const CHECKBOX_BG = {
   'cb-focus-checked': COLORS['blue-500'],
 
   'cb-disabled': COLORS['grey-50'],
-  'cb-disabled-checked': COLORS['blue-300']
+  'cb-disabled-checked': COLORS['blue-300'],
 };
 
 export const CHECKBOX_WIDTH = {
-  cb: '24px'
+  cb: '24px',
 };
 export const CHECKBOX_HEIGHT = {
-  cb: '24px'
+  cb: '24px',
 };

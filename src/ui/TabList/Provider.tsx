@@ -1,9 +1,13 @@
 import { FC, PropsWithChildren, useId, useMemo, useState } from 'react';
+
 import { TabListContext } from './lib/tabContext';
 
 export type ProviderProps = PropsWithChildren & { defaultSelectedId: string };
 
-export const TabListProvider: FC<ProviderProps> = ({ children, defaultSelectedId }) => {
+export const TabListProvider: FC<ProviderProps> = ({
+  children,
+  defaultSelectedId,
+}) => {
   const [selectedTab, selectTab] = useState(defaultSelectedId);
   const prefix = useId();
 
@@ -11,10 +15,14 @@ export const TabListProvider: FC<ProviderProps> = ({ children, defaultSelectedId
     () => ({
       selectTab,
       selectedTab,
-      tabsPrefix: prefix
+      tabsPrefix: prefix,
     }),
     [selectedTab, prefix]
   );
 
-  return <TabListContext.Provider value={contextValue}>{children}</TabListContext.Provider>;
+  return (
+    <TabListContext.Provider value={contextValue}>
+      {children}
+    </TabListContext.Provider>
+  );
 };

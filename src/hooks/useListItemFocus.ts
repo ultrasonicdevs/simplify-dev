@@ -7,7 +7,9 @@ export const useListItemFocus = (role: string) => {
     (e: KeyboardEvent) => {
       const list = listRef.current;
       if (!list) return;
-      const tabs = Array.from<HTMLElement>(list.querySelectorAll(`[role=${role}]:not([diabled])`));
+      const tabs = Array.from<HTMLElement>(
+        list.querySelectorAll(`[role=${role}]:not([diabled])`)
+      );
       const index = tabs.indexOf(document.activeElement as HTMLElement);
       if (index < 0) return;
 

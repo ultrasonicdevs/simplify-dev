@@ -7,7 +7,7 @@ export const TypographyColors = {
   'h4-col': '#303030',
   'h5-col': '#303030',
   'h6-col': '#303030',
-  'p-col': '#303030'
+  'p-col': '#303030',
 };
 export const TypographyFontSize = {
   'span-fs': '16px',
@@ -18,7 +18,7 @@ export const TypographyFontSize = {
   'h4-fs': '24px',
   'h5-fs': '20px',
   'h6-fs': '18px',
-  'p-fs': '16px'
+  'p-fs': '16px',
 };
 export const TypographyLineHeight = {
   'label-lh': '100%',
@@ -29,7 +29,7 @@ export const TypographyLineHeight = {
   'h4-lh': '100%',
   'h5-lh': '100%',
   'h6-lh': '100%',
-  'p-lh': '100%'
+  'p-lh': '100%',
 };
 export const TypographyFontWeight = {
   'label-fw': '600',
@@ -40,5 +40,5 @@ export const TypographyFontWeight = {
   'h4-fw': '600',
   'h5-fw': '600',
   'h6-fw': '600',
-  'p-fw': '600'
+  'p-fw': '600',
 };

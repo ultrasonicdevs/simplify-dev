@@ -1,5 +1,6 @@
-import { cn } from '@utils';
 import { cva } from 'class-variance-authority';
+
+import { cn } from '@utils';
 
 export const buttonVariants = cva(
   [
@@ -8,7 +9,7 @@ export const buttonVariants = cva(
     'transition-all duration-300',
     'outline-none',
     'w-full',
-    'cursor-pointer disabled:pointer-events-none'
+    'cursor-pointer disabled:pointer-events-none',
   ],
   {
     variants: {
@@ -39,18 +40,18 @@ export const buttonVariants = cva(
           'active:bg-btn-reject-active active:text-btn-reject-active',
           'focus:bg-btn-reject-focus focus:text-btn-reject-focus focus:outline outline-offset-2 outline-3 focus:outline-btn-reject-focus',
           'disabled:bg-btn-reject-disabled disabled:text-btn-reject-disabled '
-        )
+        ),
       },
       size: {
         xs: 'h-[30px] rounded-[30px] px-5',
         sm: 'h-[40px] rounded-[16px] px-5',
-        md: 'h-[50px] rounded-[16px] px-5'
-      }
+        md: 'h-[50px] rounded-[16px] px-5',
+      },
     },
     defaultVariants: {
       variant: 'primary',
-      size: 'md'
-    }
+      size: 'md',
+    },
   }
 );
 
@@ -58,7 +59,7 @@ export const textButtonVariants = cva(
   [
     'flex items-center gap-2 rounded-md px-2',
     'font-medium',
-    'cursor-pointer disabled:pointer-events-none'
+    'cursor-pointer disabled:pointer-events-none',
   ],
   {
     variants: {
@@ -66,29 +67,33 @@ export const textButtonVariants = cva(
         primary: [
           'text-btn-text-primary',
           'hover:text-btn-text-primary-hover',
-          'disabled:opacity-50'
+          'disabled:opacity-50',
         ],
         secondary: [
           'text-btn-text-secondary',
           'hover:text-btn-text-secondary-hover hover:bg-btn-text-bg-secondary',
-          'disabled:opacity-50'
+          'disabled:opacity-50',
         ],
         tertiary: [
           'text-btn-text-tertiary',
           'hover:text-btn-text-tertiary-hover',
-          'disabled:opacity-50'
+          'disabled:opacity-50',
         ],
-        reject: ['text-btn-text-reject', 'hover:text-btn-text-reject-hover', 'disabled:opacity-50']
+        reject: [
+          'text-btn-text-reject',
+          'hover:text-btn-text-reject-hover',
+          'disabled:opacity-50',
+        ],
       },
       size: {
         xs: 'text-xs',
         sm: 'text-sm',
-        md: 'text-base'
-      }
+        md: 'text-base',
+      },
     },
     defaultVariants: {
       variant: 'primary',
-      size: 'md'
-    }
+      size: 'md',
+    },
   }
 );

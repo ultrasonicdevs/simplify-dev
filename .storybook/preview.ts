@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+
 import './tw.css';
 
 const preview: Preview = {
@@ -6,12 +7,12 @@ const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
-    }
+        date: /Date$/,
+      },
+    },
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;

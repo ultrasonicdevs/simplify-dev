@@ -1,8 +1,8 @@
 import { PolymorphProps } from '../Polymorph/Polymorph.types';
 
-enum buttonAsVariants {
+export enum buttonAsVariants {
   button,
-  a
+  a,
 }
 
 export type ButtonProps = PolymorphProps<keyof typeof buttonAsVariants> & {

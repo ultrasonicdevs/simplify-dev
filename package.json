@@ -42,10 +42,10 @@
   "scripts": {
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "lint:fix": "eslint --ext ts --ext tsx --ext js ./src --fix && npx prettier --write ./src/**/*.{ts,tsx}",
+    "lint:fix": "eslint ./src --fix && npx prettier --write ./src",
     "format": "npx prettier --write ./src/**/*.{ts,tsx}",
     "build": "rollup -c",
-    "lint": "eslint --ext ts --ext tsx --ext js ./src",
+    "lint": "eslint ./src",
     "test:watch": "vitest",
     "test": "vitest run"
   },
@@ -92,6 +92,7 @@
     "storybook": "^8.6.3",
     "tailwind-merge": "^3.0.2",
     "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0",
     "vite": "^6.2.0",
     "vitest": "^3.0.7"
   },

@@ -1,6 +1,6 @@
 import { PolymorphProps } from '../Polymorph/Polymorph.types';
 
-enum BoxAsVariants {
+export enum BoxAsVariants {
   article,
   section,
   header,
@@ -12,7 +12,7 @@ enum BoxAsVariants {
   nav,
   ul,
   ol,
-  li
+  li,
 }
 
 export type BoxProps = PolymorphProps<keyof typeof BoxAsVariants>;

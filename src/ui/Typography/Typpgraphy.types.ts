@@ -9,7 +9,7 @@ export enum TypographyAsVariants {
   h6,
   p,
   span,
-  label
+  label,
 }
 
 export type TypographyProps = PolymorphProps<keyof typeof TypographyAsVariants>;
