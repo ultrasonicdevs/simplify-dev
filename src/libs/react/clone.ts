@@ -1,6 +1,6 @@
 import { JSXElementConstructor, ReactElement } from 'react';
 
-const clone = <P = unknown>(
+export const clone = <P = unknown>(
   element: ReactElement<P, JSXElementConstructor<P>>,
   props: Partial<P>
 ): ReactElement<P, JSXElementConstructor<P>> => {
@@ -12,5 +12,3 @@ const clone = <P = unknown>(
     },
   };
 };
-
-export default clone;
