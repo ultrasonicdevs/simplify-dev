@@ -2,7 +2,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 import '@styles/tailwind.css';
 
-import { CodeBlock } from './ui/CodeBlock';
+import { CodeBlock } from './ui';
 
 export const decorators = [
   withThemeByDataAttribute({
@@ -29,7 +29,6 @@ const preview: Preview = {
       },
     },
   },
-  tags: ['autodocs'],
 };
 
 export default preview;
