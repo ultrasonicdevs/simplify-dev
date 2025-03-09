@@ -3,13 +3,13 @@ import { FC, ReactNode } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@ui';
 
+import { Table } from '../../../.storybook/ui';
+
 type ButtonStory = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
   component: Button,
   title: 'ui/Button',
-
-  tags: ['autodocs'],
   argTypes: {
     as: {
       description: '**Button tag**',
@@ -25,7 +25,7 @@ const meta: Meta<typeof Button> = {
     size: {
       description: '**Button HTML size**',
       defaultValue: { summary: 'md' },
-      options: ['sm', 'md', 'null'],
+      options: ['sm', 'md', 'lg', 'null'],
     },
     variant: {
       description: '**Button HTML variant**',
@@ -34,7 +34,11 @@ const meta: Meta<typeof Button> = {
     },
     buttonType: {
       defaultValue: { summary: 'button' },
-      options: ['button', 'text'],
+      options: ['button', 'text', 'icon'],
+    },
+    disabled: {
+      defaultValue: { summary: false },
+      control: 'boolean',
     },
   },
 };
@@ -66,39 +70,19 @@ export const ButtonTypeTextVariants: ButtonStory = {
   ),
 };
 
-export const LinkTypeButtonVariants: ButtonStory = {
+export const ButtonTypeIconVariants: ButtonStory = {
   args: {
-    as: 'a',
-    children: 'ссылка',
-    buttonType: 'button',
+    children: '🖼️',
+    buttonType: 'icon',
   },
   render: (args) => (
-    <ButtonVariants
-      as={args.as}
-      buttonType={args.buttonType}
-      children={args.children}
-    />
-  ),
-};
-
-export const LinkTypeTextVariants: ButtonStory = {
-  args: {
-    as: 'a',
-    children: 'ссылка',
-    buttonType: 'text',
-  },
-  render: (args) => (
-    <ButtonVariants
-      as={args.as}
-      buttonType={args.buttonType}
-      children={args.children}
-    />
+    <ButtonVariants buttonType={args.buttonType} children={args.children} />
   ),
 };
 
 interface ButtonVariantsProps {
   as?: 'button' | 'a';
-  buttonType?: 'button' | 'text';
+  buttonType?: 'button' | 'text' | 'icon';
   children: ReactNode;
 }
 
@@ -106,53 +90,74 @@ const ButtonVariants: FC<ButtonVariantsProps> = ({
   as = 'button',
   buttonType = 'button',
   children,
-}) => (
-  <table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
-    <thead>
-      <tr className="bg-gray-100 text-gray-700">
-        <th className="p-3 border border-gray-300"></th>
-        <th className="p-3 border border-gray-300">Primary</th>
-        <th className="p-3 border border-gray-300">Secondary</th>
-        <th className="p-3 border border-gray-300">Reject</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr className="bg-white hover:bg-gray-50">
-        <th className="p-3 border border-gray-300">Size: md</th>
-        <td className="p-3 border border-gray-300">
-          <Button as={as} variant="primary" size="md" buttonType={buttonType}>
-            {children}
-          </Button>
-        </td>
-        <td className="p-3 border border-gray-300">
-          <Button as={as} variant="secondary" size="md" buttonType={buttonType}>
-            {children}
-          </Button>
-        </td>
-        <td className="p-3 border border-gray-300">
-          <Button as={as} variant="reject" size="md" buttonType={buttonType}>
-            {children}
-          </Button>
-        </td>
-      </tr>
-      <tr className="bg-white hover:bg-gray-50">
-        <th className="p-3 border border-gray-300">Size: sm</th>
-        <td className="p-3 border border-gray-300">
-          <Button as={as} variant="primary" size="sm" buttonType={buttonType}>
-            {children}
-          </Button>
-        </td>
-        <td className="p-3 border border-gray-300">
-          <Button as={as} variant="secondary" size="sm" buttonType={buttonType}>
-            {children}
-          </Button>
-        </td>
-        <td className="p-3 border border-gray-300">
-          <Button as={as} variant="reject" size="sm" buttonType={buttonType}>
-            {children}
-          </Button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-);
+}) => {
+  const headers = ['Size', 'Primary', 'Secondary', 'Reject'];
+
+  // Компоненты для каждой строки таблицы
+  const rows = [
+    {
+      size: 'lg',
+      primary: (
+        <Button as={as} variant="primary" size="lg" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+      secondary: (
+        <Button as={as} variant="secondary" size="lg" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+      reject: (
+        <Button as={as} variant="reject" size="lg" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+    },
+    {
+      size: 'md',
+      primary: (
+        <Button as={as} variant="primary" size="md" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+      secondary: (
+        <Button as={as} variant="secondary" size="md" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+      reject: (
+        <Button as={as} variant="reject" size="md" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+    },
+    {
+      size: 'sm',
+      primary: (
+        <Button as={as} variant="primary" size="sm" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+      secondary: (
+        <Button as={as} variant="secondary" size="sm" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+      reject: (
+        <Button as={as} variant="reject" size="sm" buttonType={buttonType}>
+          {children}
+        </Button>
+      ),
+    },
+  ];
+
+  // Преобразуем строки в формат для Table
+  const data = rows.map((row) => [
+    { content: row.size },
+    { content: row.primary },
+    { content: row.secondary },
+    { content: row.reject },
+  ]);
+
+  return <Table headers={headers} data={data} />;
+};
