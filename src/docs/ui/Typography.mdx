@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/addon-docs';
+import { Table } from '../../../.storybook/ui';
 
 <Meta title="ui/Typography" />
 
@@ -9,52 +10,47 @@ The styles are based on CSS variables for easy maintenance and customization.
 
 ## Tag Appearance
 
-<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
-  <thead>
-    <tr className="bg-gray-100 text-gray-700">
-      <th className="p-3 border border-gray-300">Tag</th>
-      <th className="p-3 border border-gray-300">Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">h1</td>
-      <td className="p-3 border border-gray-300"><h1>Heading H1</h1></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">h2</td>
-      <td className="p-3 border border-gray-300"><h2>Heading H2</h2></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">h3</td>
-      <td className="p-3 border border-gray-300"><h3>Heading H3</h3></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">h4</td>
-      <td className="p-3 border border-gray-300"><h4>Heading H4</h4></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">h5</td>
-      <td className="p-3 border border-gray-300"><h5>Heading H5</h5></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">h6</td>
-      <td className="p-3 border border-gray-300"><h6>Heading H6</h6></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">p</td>
-      <td className="p-3 border border-gray-300"><p>This is a paragraph.</p></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">span</td>
-      <td className="p-3 border border-gray-300"><span>This is a span.</span></td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="p-3 border border-gray-300">label</td>
-      <td className="p-3 border border-gray-300"><label>This is a label.</label></td>
-    </tr>
-  </tbody>
-</table>
+<Table
+  headers={['Tag', 'Example']}
+  data={[
+    [
+      { content: 'h1' },
+      { content: <h1>Heading H1</h1> }
+    ],
+    [
+      { content: 'h2' },
+      { content: <h2>Heading H2</h2> }
+    ],
+    [
+      { content: 'h3' },
+      { content: <h3>Heading H3</h3> }
+    ],
+    [
+      { content: 'h4' },
+      { content: <h4>Heading H4</h4> }
+    ],
+    [
+      { content: 'h5' },
+      { content: <h5>Heading H5</h5> }
+    ],
+    [
+      { content: 'h6' },
+      { content: <h6>Heading H6</h6> }
+    ],
+    [
+      { content: 'p' },
+      { content: <p>This is a paragraph.</p> }
+    ],
+    [
+      { content: 'span' },
+      { content: <span>This is a span.</span> }
+    ],
+    [
+      { content: 'label' },
+      { content: <label>This is a label.</label> }
+    ]
+  ]}
+/>
 
 ---
 
@@ -62,125 +58,185 @@ The styles are based on CSS variables for easy maintenance and customization.
 
 ### Color Variables
 
-<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
-  <thead>
-    <tr className="bg-gray-100 text-gray-700">
-      <th className="p-3 border border-gray-300">Variable</th>
-      <th className="p-3 border border-gray-300">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {[
-      ["--color-h1", "#303030"],
-      ["--color-h2", "#303030"],
-      ["--color-h3", "#303030"],
-      ["--color-h4", "#303030"],
-      ["--color-h5", "#303030"],
-      ["--color-h6", "#303030"],
-      ["--color-p", "#303030"],
-      ["--color-span", "#30303099"],
-      ["--color-label", "#303030"]
-    ].map(([variable, value]) => (
-      <tr key={variable} className="bg-white hover:bg-gray-50">
-        <td className="p-3 border border-gray-300">{variable}</td>
-        <td className="p-3 border border-gray-300">{value}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+<Table
+  headers={['Variable', 'Value']}
+  data={[
+    [
+      { content: '`--color-h1`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-h2`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-h3`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-h4`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-h5`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-h6`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-p`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ],
+    [
+      { content: '`--color-span`' },
+      { content: <span className="px-2 py-1 rounded bg-[#30303099] text-white">#30303099</span> }
+    ],
+    [
+      { content: '`--color-label`' },
+      { content: <span className="px-2 py-1 rounded bg-[#303030] text-white">#303030</span> }
+    ]
+  ]}
+/>
 
 ---
 
 ### Font Size Variables
 
-<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
-  <thead>
-    <tr className="bg-gray-100 text-gray-700">
-      <th className="p-3 border border-gray-300">Variable</th>
-      <th className="p-3 border border-gray-300">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {[
-      ["--text-h1", "60px"],
-      ["--text-h2", "32px"],
-      ["--text-h3", "28px"],
-      ["--text-h4", "24px"],
-      ["--text-h5", "20px"],
-      ["--text-h6", "18px"],
-      ["--text-p", "16px"],
-      ["--text-span", "16px"],
-      ["--text-label", "18px"]
-    ].map(([variable, value]) => (
-      <tr key={variable} className="bg-white hover:bg-gray-50">
-        <td className="p-3 border border-gray-300">{variable}</td>
-        <td className="p-3 border border-gray-300">{value}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+<Table
+  headers={['Variable', 'Value']}
+  data={[
+    [
+      { content: '`--text-h1`' },
+      { content: '60px' }
+    ],
+    [
+      { content: '`--text-h2`' },
+      { content: '32px' }
+    ],
+    [
+      { content: '`--text-h3`' },
+      { content: '28px' }
+    ],
+    [
+      { content: '`--text-h4`' },
+      { content: '24px' }
+    ],
+    [
+      { content: '`--text-h5`' },
+      { content: '20px' }
+    ],
+    [
+      { content: '`--text-h6`' },
+      { content: '18px' }
+    ],
+    [
+      { content: '`--text-p`' },
+      { content: '16px' }
+    ],
+    [
+      { content: '`--text-span`' },
+      { content: '16px' }
+    ],
+    [
+      { content: '`--text-label`' },
+      { content: '18px' }
+    ]
+  ]}
+/>
 
 ---
 
 ### Line Height Variables
 
-<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
-  <thead>
-    <tr className="bg-gray-100 text-gray-700">
-      <th className="p-3 border border-gray-300">Variable</th>
-      <th className="p-3 border border-gray-300">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {[
-      ["--leading-h1", "100%"],
-      ["--leading-h2", "100%"],
-      ["--leading-h3", "100%"],
-      ["--leading-h4", "100%"],
-      ["--leading-h5", "100%"],
-      ["--leading-h6", "100%"],
-      ["--leading-p", "100%"],
-      ["--leading-span", "100%"],
-      ["--leading-label", "100%"]
-    ].map(([variable, value]) => (
-      <tr key={variable} className="bg-white hover:bg-gray-50">
-        <td className="p-3 border border-gray-300">{variable}</td>
-        <td className="p-3 border border-gray-300">{value}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+<Table
+  headers={['Variable', 'Value']}
+  data={[
+    [
+      { content: '`--leading-h1`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-h2`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-h3`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-h4`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-h5`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-h6`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-p`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-span`' },
+      { content: '100%' }
+    ],
+    [
+      { content: '`--leading-label`' },
+      { content: '100%' }
+    ]
+  ]}
+/>
 
 ---
 
 ### Font Weight Variables
 
-<table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
-  <thead>
-    <tr className="bg-gray-100 text-gray-700">
-      <th className="p-3 border border-gray-300">Variable</th>
-      <th className="p-3 border border-gray-300">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {[
-      ["--font-weight-h1", "700"],
-      ["--font-weight-h2", "600"],
-      ["--font-weight-h3", "600"],
-      ["--font-weight-h4", "600"],
-      ["--font-weight-h5", "600"],
-      ["--font-weight-h6", "600"],
-      ["--font-weight-p", "600"],
-      ["--font-weight-span", "500"],
-      ["--font-weight-label", "600"]
-    ].map(([variable, value]) => (
-      <tr key={variable} className="bg-white hover:bg-gray-50">
-        <td className="p-3 border border-gray-300">{variable}</td>
-        <td className="p-3 border border-gray-300">{value}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+<Table
+  headers={['Variable', 'Value']}
+  data={[
+    [
+      { content: '`--font-weight-h1`' },
+      { content: '700' }
+    ],
+    [
+      { content: '`--font-weight-h2`' },
+      { content: '600' }
+    ],
+    [
+      { content: '`--font-weight-h3`' },
+      { content: '600' }
+    ],
+    [
+      { content: '`--font-weight-h4`' },
+      { content: '600' }
+    ],
+    [
+      { content: '`--font-weight-h5`' },
+      { content: '600' }
+    ],
+    [
+      { content: '`--font-weight-h6`' },
+      { content: '600' }
+    ],
+    [
+      { content: '`--font-weight-p`' },
+      { content: '600' }
+    ],
+    [
+      { content: '`--font-weight-span`' },
+      { content: '500' }
+    ],
+    [
+      { content: '`--font-weight-label`' },
+      { content: '600' }
+    ]
+  ]}
+/>
 
 ---
 
