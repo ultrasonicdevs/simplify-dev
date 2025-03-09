@@ -1,24 +1,30 @@
-import { FC, PropsWithChildren, useId, useMemo, useState } from 'react';
+import { PropsWithChildren, useId, useState } from 'react';
 
-import { TabListContext } from '@libs/react/tabContext';
+import { useMemoObject } from '@hooks';
+import { createAccurateContext } from '@libs';
+
+type TabsContext = {
+  selectTab: (tab: string) => void;
+  selectedTab: string | null;
+  tabsPrefix: string;
+};
+
+export const TabListContext = createAccurateContext<TabsContext>();
 
 export type ProviderProps = PropsWithChildren & { defaultSelectedId: string };
 
-export const TabListProvider: FC<ProviderProps> = ({
+export const TabListProvider = ({
   children,
   defaultSelectedId,
-}) => {
+}: ProviderProps) => {
   const [selectedTab, selectTab] = useState(defaultSelectedId);
   const prefix = useId();
 
-  const contextValue = useMemo(
-    () => ({
-      selectTab,
-      selectedTab,
-      tabsPrefix: prefix,
-    }),
-    [selectedTab, prefix]
-  );
+  const contextValue = useMemoObject({
+    selectTab,
+    selectedTab,
+    tabsPrefix: prefix,
+  });
 
   return (
     <TabListContext.Provider value={contextValue}>

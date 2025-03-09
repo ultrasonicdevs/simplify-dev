@@ -1,32 +1,26 @@
-import {
-  JSXElementConstructor,
-  ReactElement,
-  useCallback,
-  useContext,
-  useId,
-} from 'react';
+import { JSXElementConstructor, ReactElement, useCallback, useId } from 'react';
 
+import { useAccurateContext } from '@hooks';
 import { useListItemFocus } from '@hooks/useListItemFocus';
-import { cn } from '@libs/cn';
+import { clone, cn } from '@libs';
 import { PolymorphProps } from '@ui/Polymorph';
 
-import clone from '../../libs/react/clone';
-import { TabListContext } from '../../libs/react/tabContext';
+import { TabListContext } from './Provider';
 
 export type TabListProps = {
   selectedVariant?: string;
   selectedClassName?: string;
 } & PolymorphProps<'article'>;
 
-export const TabList = ({
+export const TabListContainer = ({
   children,
   selectedVariant,
   selectedClassName,
   ...props
 }: TabListProps) => {
   const { listRef, onKeyDown } = useListItemFocus('tab');
-  const { selectedTab, selectTab, tabsPrefix } = useContext(TabListContext);
-  const select = useCallback((id: string) => selectTab(id), [selectTab]);
+  const { selectedTab, selectTab, tabsPrefix } =
+    useAccurateContext(TabListContext);
   const id = useId();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -48,12 +42,12 @@ export const TabList = ({
         const props: typeof child.props = {
           onClick: () => {
             child.props?.onClick?.();
-            select(key);
+            selectTab(key);
           },
           role: 'tab',
           'aria-selected': selectedTab === key,
           'aria-controls': `${tabsPrefix}-tab-panel-${key}`,
-          tabIndex: isSelected ? 0 : -1,
+          tabIndex: 0,
           variant: isSelected ? selectedVariant : child.props?.variant,
           className: cn(
             child.props?.className,
