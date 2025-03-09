@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { act, renderHook } from '@testing-library/react';
 
-import { useToggle } from './useToggle';
+import { useToggle } from '.';
 
 describe('useToggle', () => {
   it('initialize with correct toggle value', () => {
@@ -17,7 +17,7 @@ describe('useToggle', () => {
     const initValue = false;
     const { result } = renderHook(() => useToggle(initValue));
 
-    act(() => result.current.changeState());
+    act(() => result.current.onToggle());
 
     expect(result.current.toggle).toBe(!initValue);
   });
