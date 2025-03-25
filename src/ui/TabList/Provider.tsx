@@ -1,7 +1,7 @@
 import { PropsWithChildren, useId, useState } from 'react';
 
 import { useMemoObject } from '@hooks';
-import { createAccurateContext } from '@libs';
+import { createAccurateContext } from '@utils';
 
 type TabsContext = {
   selectTab: (tab: string) => void;

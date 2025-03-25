@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { SetState } from '@libs';
+import { SetState } from '@utils';
 
 export type Toggle = (initialState?: boolean) => {
   toggle: boolean;

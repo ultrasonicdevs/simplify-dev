@@ -1,40 +1,49 @@
-import { FC } from 'react';
+import { useId } from 'react';
 import { IoCheckmark } from 'react-icons/io5';
 
-import { checkboxToggleVariants, checkboxVariants } from './Checkbox.styles';
+import { PolymorphProps } from '@ui/Polymorph';
 
-export interface CheckboxProps {
-  toggle: boolean;
-  changeState?: () => void;
-  className?: string;
-  disabled?: boolean;
-  checkedIcon?: string;
+import { checkboxVariants } from './Checkbox.styles';
+
+export type CheckboxProps = {
   isError?: boolean;
-}
+  label?: string;
+} & Omit<PolymorphProps<'input'>, 'type'>;
 
-export const Checkbox: FC<CheckboxProps> = ({
-  toggle = false,
-  changeState,
-  disabled = false,
+export const Checkbox = ({
   className,
-  isError,
-}) => {
-  const variant = isError ? 'error' : 'default';
-
-  const onClick = () => !disabled && changeState?.();
+  checked,
+  isError = false,
+  disabled = false,
+  label,
+  ...props
+}: CheckboxProps) => {
+  const id = useId();
+  const {
+    base,
+    input,
+    box,
+    icon,
+    label: labelStyle,
+  } = checkboxVariants({ isError });
 
   return (
-    <div
-      role="checkbox"
-      onClick={onClick}
-      className={checkboxVariants(disabled, toggle)({ variant, className })}>
-      <IoCheckmark
-        role="checkbox"
-        className={checkboxToggleVariants({
-          checked: toggle,
-          disabled,
-        })}
+    <label
+      htmlFor={id}
+      className={base({ className })}
+      aria-disabled={disabled}>
+      <input
+        id={id}
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        className={input()}
+        {...props}
       />
-    </div>
+      <div className={box()}>
+        <IoCheckmark className={icon()} />
+      </div>
+      {label && <span className={labelStyle()}>{label}</span>}
+    </label>
   );
 };

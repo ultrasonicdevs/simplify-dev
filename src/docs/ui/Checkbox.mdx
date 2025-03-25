@@ -1,0 +1,351 @@
+import { Meta, Story, Canvas, Controls, ArgTypes } from '@storybook/addon-docs';
+import * as CheckboxStories from './Checkbox.stories';
+import { Table } from '../../../.storybook/ui';
+
+<Meta title="ui/Checkbox" />
+
+# Checkbox
+
+Компонент `Checkbox` используется для выбора одного или нескольких вариантов из списка. Он поддерживает различные состояния, такие как включённый, отключённый и состояние ошибки.
+
+<Canvas of={CheckboxStories.Default} />
+<Controls of={CheckboxStories.Default} />
+
+## Props
+<ArgTypes of={CheckboxStories} />
+
+## Basic Usage
+
+Пример использования `Checkbox`:
+<Story of={CheckboxStories.BasicUsage} />
+```tsx
+import { Checkbox } from '@ui';
+
+export const Example = () => (
+  <Checkbox checked={true} label="I agree to the terms" />
+);
+```
+
+## Variants
+<Table className='w-full'
+  headers={[
+    'Variant',
+    'Unchecked',
+    'Checked',
+    'Unchecked disabled',
+    'Checked disabled',
+  ]}
+  data={[
+    [
+      { content: 'Default' },
+      { content: <Story of={CheckboxStories.Unchecked} /> },
+      { content: <Story of={CheckboxStories.Checked} /> },
+      { content: <Story of={CheckboxStories.Disabled} /> },
+      { content: <Story of={CheckboxStories.DisabledChecked} /> },
+    ],
+    [
+      { content: 'Error' },
+      { content: <Story of={CheckboxStories.ErrorState} /> },
+      { content: <Story of={CheckboxStories.ErrorStateChecked} /> },
+      { content: <Story of={CheckboxStories.ErrorStateDisabled} /> },
+      { content: <Story of={CheckboxStories.ErrorStateCheckedDisabled} /> }
+    ],
+  ]}
+/>
+
+## 🎨 CSS Variables for Button Styling  
+
+### Outlines
+<Table
+  headers={['Variable', 'Description', 'Default Value']}
+  data={[
+    [
+      { content: '`--color-checkbox-outline`' },
+      { content: 'Outline color (focus)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-500 text-white">#4f46e5 (--color-indigo-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-outline-disabled`' },
+      { content: 'Outline color (disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-500 text-white">#4f46e5 (--color-indigo-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-outline-error`' },
+      { content: 'Outline color (error)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-700 text-white">#c03a58 (--color-wine-700)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-outline-error-disabled`' },
+      { content: 'Outline color (error + disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-500 text-white">#d06e84 (--color-wine-500)</span> }
+    ]
+  ]}
+/>
+
+### Strokes (for checkmark)
+<Table
+  headers={['Variable', 'Description', 'Default Value']}
+  data={[
+    [
+      { content: '`--color-checkbox-stroke`' },
+      { content: 'Checkmark color' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-50 text-gray-900">#e0e7ff (--color-indigo-50)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-stroke-disabled`' },
+      { content: 'Checkmark color (disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-ash-50 text-gray-900">#f9fafb (--color-ash-50)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-stroke-error`' },
+      { content: 'Checkmark color (error)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-50 text-gray-900">#f8f0f2 (--color-wine-50)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-stroke-error-disabled`' },
+      { content: 'Checkmark color (error + disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-100 text-gray-900">#f0d6dc (--color-wine-100)</span> }
+    ]
+  ]}
+/>
+
+### Borders
+<Table
+  headers={['Variable', 'Description', 'Default Value']}
+  data={[
+    // Default states
+    [
+      { content: '`--color-checkbox-border`' },
+      { content: 'Border (default)' },
+      { content: <span className="px-2 py-1 rounded bg-ash-300 text-gray-900">#d1d5db (--color-ash-300)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-hover`' },
+      { content: 'Border (hover)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-300 text-white">#818cf8 (--color-indigo-300)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-active`' },
+      { content: 'Border (active)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-200 text-white">#a5b4fc (--color-indigo-200)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-focus`' },
+      { content: 'Border (focus)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-500 text-white">#4f46e5 (--color-indigo-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-disabled`' },
+      { content: 'Border (disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-ash-200 text-gray-900">#e5e7eb (--color-ash-200)</span> }
+    ],
+
+    // Checked states
+    [
+      { content: '`--color-checkbox-border-checked`' },
+      { content: 'Border (checked)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-checked-hover`' },
+      { content: 'Border (checked + hover)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-checked-active`' },
+      { content: 'Border (checked + active)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-checked-focus`' },
+      { content: 'Border (checked + focus)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-disabled-checked`' },
+      { content: 'Border (disabled + checked)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+
+    // Error states
+    [
+      { content: '`--color-checkbox-border-error`' },
+      { content: 'Border (error)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-500 text-white">#d06e84 (--color-wine-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-hover`' },
+      { content: 'Border (error + hover)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-700 text-white">#c03a58 (--color-wine-700)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-active`' },
+      { content: 'Border (error + active)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-400 text-white">#d8889a (--color-wine-400)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-focus`' },
+      { content: 'Border (error + focus)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-500 text-white">#d06e84 (--color-wine-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-checked`' },
+      { content: 'Border (error + checked)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-checked-hover`' },
+      { content: 'Border (error + checked + hover)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-checked-active`' },
+      { content: 'Border (error + checked + active)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-checked-focus`' },
+      { content: 'Border (error + checked + focus)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-disabled`' },
+      { content: 'Border (error + disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-300 text-white">#e0a2b0 (--color-wine-300)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-border-error-disabled-checked`' },
+      { content: 'Border (error + disabled + checked)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-400 text-white">#d8889a (--color-wine-400)</span> }
+    ]
+  ]}
+/>
+
+### Backgrounds 
+<Table
+  headers={['Variable', 'Description', 'Default Value']}
+  data={[
+    // Default states
+    [
+      { content: '`--color-checkbox-bg`' },
+      { content: 'Background (default)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-hover`' },
+      { content: 'Background (hover)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-50 text-gray-900">#e0e7ff (--color-indigo-50)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-active`' },
+      { content: 'Background (active)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-200 text-gray-900">#a5b4fc (--color-indigo-200)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-focus`' },
+      { content: 'Background (focus)' },
+      { content: <span className="px-2 py-1 rounded border border-dashed border-gray-400">transparent</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-disabled`' },
+      { content: 'Background (disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-ash-100 text-gray-900">#f3f4f6 (--color-ash-100)</span> }
+    ],
+
+    // Checked states
+    [
+      { content: '`--color-checkbox-bg-checked`' },
+      { content: 'Background (checked)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-500 text-white">#4f46e5 (--color-indigo-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-checked-hover`' },
+      { content: 'Background (checked + hover)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-700 text-white">#3730a3 (--color-indigo-700)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-checked-active`' },
+      { content: 'Background (checked + active)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-400 text-white">#6366f1 (--color-indigo-400)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-checked-focus`' },
+      { content: 'Background (checked + focus)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-500 text-white">#4f46e5 (--color-indigo-500)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-disabled-checked`' },
+      { content: 'Background (disabled + checked)' },
+      { content: <span className="px-2 py-1 rounded bg-indigo-300 text-white">#818cf8 (--color-indigo-300)</span> }
+    ],
+
+    // Error states
+    [
+      { content: '`--color-checkbox-bg-error`' },
+      { content: 'Background (error)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-50 text-gray-900">#f8f0f2 (--color-wine-50)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-hover`' },
+      { content: 'Background (error + hover)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-100 text-gray-900">#f0d6dc (--color-wine-100)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-focus`' },
+      { content: 'Background (error + focus)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-200 text-gray-900">#e8bcc6 (--color-wine-200)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-active`' },
+      { content: 'Background (error + active)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-200 text-gray-900">#e8bcc6 (--color-wine-200)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-checked`' },
+      { content: 'Background (error + checked)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-700 text-white">#c03a58 (--color-wine-700)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-checked-hover`' },
+      { content: 'Background (error + checked + hover)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-300 text-white">#e0a2b0 (--color-wine-300)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-checked-focus`' },
+      { content: 'Background (error + checked + focus)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-200 text-gray-900">#e8bcc6 (--color-wine-200)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-checked-active`' },
+      { content: 'Background (error + checked + active)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-200 text-gray-900">#e8bcc6 (--color-wine-200)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-disabled`' },
+      { content: 'Background (error + disabled)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-50 text-gray-900">#f8f0f2 (--color-wine-50)</span> }
+    ],
+    [
+      { content: '`--color-checkbox-bg-error-disabled-checked`' },
+      { content: 'Background (error + disabled + checked)' },
+      { content: <span className="px-2 py-1 rounded bg-wine-500 text-white">#d06e84 (--color-wine-500)</span> }
+    ]
+  ]}
+/>
+
+### Size 
+<Table
+  headers={['Variable', 'Description', 'Default Value']}
+  data={[
+    [
+      { content: '`--spacing-checkbox-width`' },
+      { content: 'Checkbox width' },
+      { content: '24px' }
+    ],
+    [
+      { content: '`--spacing-checkbox-height`' },
+      { content: 'Checkbox height' },
+      { content: '24px' }
+    ]
+  ]}
+/>

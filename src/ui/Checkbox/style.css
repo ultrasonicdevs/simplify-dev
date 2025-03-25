@@ -1,0 +1,74 @@
+@theme {
+  
+  /* outlines */
+  --color-checkbox-outline: var(--color-indigo-500);
+  --color-checkbox-outline-disabled: var(--color-indigo-500);
+
+  --color-checkbox-outline-error: var(--color-wine-700);
+  --color-checkbox-outline-error-disabled: var(--color-wine-500);
+  
+  /* strokes */
+  --color-checkbox-stroke: var(--color-indigo-50);
+  --color-checkbox-stroke-disabled: var(--color-ash-50);
+  
+  --color-checkbox-stroke-error: var(--color-wine-50);
+  --color-checkbox-stroke-error-disabled: var(--color-wine-100);
+
+  /* borders */
+  --color-checkbox-border: var(--color-ash-300);
+  --color-checkbox-border-hover: var(--color-indigo-300);
+  --color-checkbox-border-active: var(--color-indigo-200);
+  --color-checkbox-border-focus: var(--color-indigo-500);
+  
+  --color-checkbox-border-disabled: var(--color-ash-200);
+  --color-checkbox-border-disabled-checked: transparent;
+
+  --color-checkbox-border-checked: transparent;
+  --color-checkbox-border-checked-hover: transparent;
+  --color-checkbox-border-checked-active: transparent;
+  --color-checkbox-border-checked-focus: transparent;
+  
+  --color-checkbox-border-error: var(--color-wine-500);
+  --color-checkbox-border-error-hover: var(--color-wine-700);
+  --color-checkbox-border-error-active: var(--color-wine-400);
+  --color-checkbox-border-error-focus: var(--color-wine-500);
+  
+  --color-checkbox-border-error-checked: transparent;
+  --color-checkbox-border-error-checked-hover: transparent;
+  --color-checkbox-border-error-checked-active: transparent;
+  --color-checkbox-border-error-checked-focus: transparent;
+
+  --color-checkbox-border-error-disabled: var(--color-wine-300);
+  --color-checkbox-border-error-disabled-checked: var(--color-wine-400);
+  
+  /* backgrounds */
+  --color-checkbox-bg: transparent;
+  --color-checkbox-bg-hover: var(--color-indigo-50);
+  --color-checkbox-bg-active: var(--color-indigo-200);
+  --color-checkbox-bg-focus: transparent;
+  
+  --color-checkbox-bg-checked: var(--color-indigo-500);
+  --color-checkbox-bg-checked-hover: var(--color-indigo-700);
+  --color-checkbox-bg-checked-active: var(--color-indigo-400);
+  --color-checkbox-bg-checked-focus: var(--color-indigo-500);
+  
+  --color-checkbox-bg-disabled: var(--color-ash-100);
+  --color-checkbox-bg-disabled-checked: var(--color-indigo-300);
+  
+  --color-checkbox-bg-error: var(--color-wine-50);
+  --color-checkbox-bg-error-checked: var(--color-wine-700);
+  --color-checkbox-bg-error-hover: var(--color-wine-100);
+  --color-checkbox-bg-error-focus: var(--color-wine-200);
+  --color-checkbox-bg-error-active: var(--color-wine-200);
+
+  --color-checkbox-bg-error-checked-hover: var(--color-wine-300);
+  --color-checkbox-bg-error-checked-focus: var(--color-wine-200);
+  --color-checkbox-bg-error-checked-active: var(--color-wine-200);
+
+  --color-checkbox-bg-error-disabled-checked: var(--color-wine-500);
+  --color-checkbox-bg-error-disabled: var(--color-wine-50);
+
+  /* size */
+  --spacing-checkbox-width: 24px;
+  --spacing-checkbox-height: 24px;
+}

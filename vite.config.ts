@@ -10,8 +10,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    root: 'src/',
-    setupFiles: 'test/setup.ts',
   },
   plugins: [react(), tailwindcss()],
   resolve: {

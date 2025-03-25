@@ -6,8 +6,8 @@ import { Checkbox } from './Checkbox';
 
 describe('Checkbox', () => {
   it('renders unchecked checkbox', () => {
-    const { getByRole } = render(<Checkbox toggle={false} />);
-    const checkboxElement = getByRole('button');
+    const { getByRole } = render(<Checkbox checked={false} />);
+    const checkboxElement = getByRole('checkbox');
     const checkmarkElement = getByRole('checkbox');
 
     expect(checkboxElement).toBeInTheDocument();
@@ -15,7 +15,7 @@ describe('Checkbox', () => {
   });
 
   it('renders checked checkbox', () => {
-    const { getByRole } = render(<Checkbox toggle />);
+    const { getByRole } = render(<Checkbox checked />);
     const checkmarkElement = getByRole('checkbox');
 
     expect(checkmarkElement).toHaveClass('opacity-1');
@@ -24,7 +24,7 @@ describe('Checkbox', () => {
   it('changes state when clicked', () => {
     const changeStateMock = vi.fn();
     const { getByRole } = render(
-      <Checkbox toggle={false} changeState={changeStateMock} />
+      <Checkbox checked={false} onChange={changeStateMock} />
     );
     const checkboxElement = getByRole('checkbox');
 
@@ -35,17 +35,17 @@ describe('Checkbox', () => {
   it('does not change state when disabled and clicked', () => {
     const changeStateMock = vi.fn();
     const { getByRole } = render(
-      <Checkbox toggle={false} changeState={changeStateMock} disabled />
+      <Checkbox checked={false} onChange={changeStateMock} disabled />
     );
-    const checkboxElement = getByRole('button');
+    const checkboxElement = getByRole('checkbox');
 
     fireEvent.click(checkboxElement);
     expect(changeStateMock).not.toHaveBeenCalled();
   });
 
   it('renders error variant when isError is true', () => {
-    const { getByRole } = render(<Checkbox toggle={false} isError />);
-    const checkboxElement = getByRole('button');
+    const { getByRole } = render(<Checkbox checked={false} isError />);
+    const checkboxElement = getByRole('checkbox');
 
     expect(checkboxElement).toHaveClass('bg-cb-error');
   });

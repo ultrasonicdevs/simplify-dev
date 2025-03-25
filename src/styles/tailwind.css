@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@import "./roundings.css";
-@import "./colors.css";
+@import "./global-variables/rounding.css";
+@import "./global-variables/colors.css";
+
+/* Components or tags styles */
 @import "@ui/Button/style.css";
+@import "@ui/Checkbox/style.css";
+@import './typography.css';

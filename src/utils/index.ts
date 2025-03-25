@@ -1,3 +1,2 @@
-export * from '../libs/cn';
-export * from './simplifyDefaultsPlugin';
-export * from './simplifyUtilitiesPreset';
+export * from './cn';
+export * from './react';

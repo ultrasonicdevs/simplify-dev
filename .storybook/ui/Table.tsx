@@ -8,7 +8,7 @@ interface TableProps {
   }>[];
 }
 
-export const Table: React.FC<TableProps> = ({ headers, data }) => (
+export const Table = ({ headers, data }: TableProps) => (
   <table className="w-full border-collapse border-gray-300 text-left">
     <thead>
       <tr className="bg-gray-100">

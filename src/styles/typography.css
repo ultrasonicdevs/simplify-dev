@@ -44,19 +44,6 @@
   --font-weight-p: 500;
 }
 
-@theme dark {
-    /* Dark theme colors */
-    --color-span: #ffffff99;
-    --color-label: #ffffff;
-    --color-h1: #ffffff;
-    --color-h2: #ffffff;
-    --color-h3: #ffffff;
-    --color-h4: #ffffff;
-    --color-h5: #ffffff;
-    --color-h6: #ffffff;
-    --color-p: #ffffff;  
-}
-
 @layer base {
   span,
   label,

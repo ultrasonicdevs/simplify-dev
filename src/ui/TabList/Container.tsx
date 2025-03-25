@@ -2,8 +2,8 @@ import { JSXElementConstructor, ReactElement, useCallback, useId } from 'react';
 
 import { useAccurateContext } from '@hooks';
 import { useListItemFocus } from '@hooks/useListItemFocus';
-import { clone, cn } from '@libs';
 import { PolymorphProps } from '@ui/Polymorph';
+import { clone, cn } from '@utils';
 
 import { TabListContext } from './Provider';
 

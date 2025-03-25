@@ -1,4 +1,4 @@
-@import '@styles/colors.css';
+@import '@styles/global-variables/colors.css';
 
 @theme {
   /* Primary Button */

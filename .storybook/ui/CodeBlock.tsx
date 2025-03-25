@@ -3,12 +3,12 @@ import { IoCheckmark } from 'react-icons/io5';
 import { PiCopySimpleThin } from 'react-icons/pi';
 
 import { useCopyToClipboard } from '@hooks';
-import { cn } from '@libs';
 import {
   SyntaxHighlighter,
   SyntaxHighlighterProps,
 } from '@storybook/components';
 import { Button } from '@ui';
+import { cn } from '@utils';
 
 type CodeBlockProps = SyntaxHighlighterProps & {
   className: string;
