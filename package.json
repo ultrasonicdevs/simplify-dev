@@ -53,13 +53,21 @@
     "build": "rollup -c",
     "lint": "eslint ./src",
     "test:watch": "vitest",
-    "test": "vitest run"
+    "test": "vitest run",
+    "semantic-release": "semantic-release"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@storybook/addon-essentials": "^8.6.3",
     "@storybook/addon-interactions": "^8.6.3",
     "@storybook/addon-links": "^8.6.3",
@@ -95,6 +103,7 @@
     "rollup-plugin-delete": "^3.0.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "semantic-release": "^24.2.9",
     "storybook": "^8.6.3",
     "tailwind-merge": "^3.0.2",
     "typescript": "^5.8.2",
