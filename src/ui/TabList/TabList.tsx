@@ -52,7 +52,7 @@ export const TabList = ({
             select(key);
           },
           role: 'tab',
-          'aria-selected': selectedTab === key,
+          'data-selected': selectedTab === key,
           'aria-controls': `${tabsPrefix}-tab-panel-${key}`,
           tabIndex: isSelected ? 0 : -1,
           variant: isSelected ? selectedVariant : child.props?.variant,
