@@ -7,7 +7,7 @@ export const buttonVariants = cva(
     'flex items-center justify-center',
     'text-base font-semibold select-none',
     'transition-all duration-300',
-    'outline-none',
+    'w-auto outline-none',
     'cursor-pointer disabled:pointer-events-none',
   ],
   {
