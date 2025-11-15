@@ -24,7 +24,7 @@ export const buttonVariants = cva(
         md: 'h-[50px] rounded-[16px] px-5',
       },
       type: {
-        button: 'w-full',
+        button: '',
         text: [
           'flex items-center gap-2 rounded-md px-2',
           'font-medium',
