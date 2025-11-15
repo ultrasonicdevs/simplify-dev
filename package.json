@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ultrasonicdevs/simplify-dev.git"
+    "url": "git+https://github.com/ultrasonicdevs/simplify-dev.git"
   },
   "homepage": "https://github.com/ultrasonicdevs/simplify-dev/wiki",
   "keywords": [
